@@ -1,8 +1,16 @@
 import React from "react";
 
-const PopularNewsCard = () => {
+export interface IPopularNewsCard {
+    tag: string,
+    title: string,
+    image: string,
+}
+
+const PopularNewsCard: React.FC<IPopularNewsCard> = ({tag, title, image}) => {
     return (
-        <div>Card Test</div>
+        <div className="">
+            <div className="text-center text-red-500">TAG</div>
+        </div>
     );
 }
 
