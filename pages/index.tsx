@@ -8,8 +8,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <PopularNewsCard />
-      <Footer />
+      {/* <PopularNewsCard/> */}
+      <Footer /> 
+      
     </>
   )
 }
