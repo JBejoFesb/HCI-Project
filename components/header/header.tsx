@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./header.module.css";
 import HCLlogo from "../../public/images/HCLtransparent.png";
 import { StaticImageData } from "next/image";
-
-
+import Link from 'next/link';
 
 const Header = () => {
     return(
@@ -12,11 +11,11 @@ const Header = () => {
                 <div className="flex flex-row items-center space-x-3">
                     <img className="h-12" src={HCLlogo.src} alt="HCL header logo" />
                     <ul className="flex flex-row space-x-3">
-                        <li>Vijesti</li>
-                        <li>Recenzije</li>
-                        <li>Specijali</li>
-                        <li>Video</li>
-                        <li>Forum</li>
+                        <li><Link href="/news">Vijesti</Link></li>
+                        <li><Link href="/reviews">Recenzije</Link></li>
+                        <li><Link href="/specials">Specijali</Link></li>
+                        <li><Link href="/video">Video</Link></li>
+                        <li><Link href="/">Forum</Link></li>
                     </ul>
                 </div>
                 <div>sredina
