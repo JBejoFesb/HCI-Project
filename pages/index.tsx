@@ -7,10 +7,9 @@ import PopularNewsCard from '../components/cards/popular-news-card/popular-news-
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header/>
       {/* <PopularNewsCard/> */}
-      <Footer /> 
-      
+      <Footer/> 
     </>
   )
 }
