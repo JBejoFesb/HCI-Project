@@ -1,4 +1,6 @@
 import React from "react";
+import style from "./popular-news-card.module.css";
+import Link from 'next/link';
 
 export interface IPopularNewsCard {
     tag: string,
@@ -9,10 +11,18 @@ export interface IPopularNewsCard {
 
 const PopularNewsCard: React.FC<IPopularNewsCard> = ({tag, title, image, suffix}) => {
     return (
-        <div className=" ">
-            <div className="text-center text-red-500">{tag}</div>
-            <div>{title}</div>
-        </div>
+        <Link href="/news">
+            <div className={style.container}
+            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0)), url(/images/${image}.${suffix})`,
+                    backgroundSize: 'cover', backgroundPosition: 'center'}}
+            >
+                <div className={style.tag_container}>
+                    <div className={style.tag}>{tag}</div>
+                </div>
+                <div className={style.title}>{title}</div>
+            </div>
+        </Link>
+        
     );
 }
 

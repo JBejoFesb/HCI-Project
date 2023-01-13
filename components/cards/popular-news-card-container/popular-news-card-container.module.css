@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    margin: auto;
+    height: fit-content;
+    padding: 40px;
+    width: auto;
+}
