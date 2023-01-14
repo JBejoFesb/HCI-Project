@@ -9,7 +9,7 @@ export interface IPopularNewsCard {
     suffix: string
 }
 
-const PopularNewsCard: React.FC<IPopularNewsCard> = ({tag, title, image, suffix}) => {
+const PopularNewsCard: React.FC<IPopularNewsCard> = ({ tag, title, image, suffix }) => {
     return (
         <Link href="/news">
             <div className={style.container}
@@ -22,7 +22,6 @@ const PopularNewsCard: React.FC<IPopularNewsCard> = ({tag, title, image, suffix}
                 <div className={style.title}>{title}</div>
             </div>
         </Link>
-        
     );
 }
 

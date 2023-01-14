@@ -1,3 +1,33 @@
-.card {
+.container {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: auto;
+    max-height: 30em;
+    max-width: 18em;
+    height: 100vh;
+    width: 33%;
+    border-radius: 10px;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 31px;
+    display: flex;
+    align-items: flex-end;
+    color: #ECECEC;
+    text-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
+    padding: 0.5em;
+}
+
+.desc_container {
+    padding: 0.5em 1em 1em 1em;
+    color:  #1A1A1A;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.25em;
+    background: rgba(255, 255, 255, 0.92);
+    mix-blend-mode: normal;
+    border-top: 0.3em solid #FF7A00;
 }
