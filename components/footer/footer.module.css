@@ -1,0 +1,14 @@
+@tailwind components;
+
+@tailwind utilities;
+
+.footer{
+    @apply dark:bg-slate-900 
+    h-16  
+    flex
+    fixed bottom-0 left-0 right-0
+}
+
+.footer_links{
+    @apply flex flex-row
+}
