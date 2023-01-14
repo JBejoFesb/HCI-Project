@@ -1,11 +1,14 @@
 import React from "react";
+import style from "./footer.module.css";
+import Link from 'next/link';
 
 const Footer = () => {
     return(
-        <div className="dark:bg-slate-900 h-16 flex fixed bottom-0 left-0 right-0">
-            <div className=" mx-auto ">
+        <div className={style.footer}>
+            <div className={style.footer_links}>
                 Footer Test
             </div>
+            
         </div>
     );
 }
