@@ -12,13 +12,17 @@
 
 .title {
     font-weight: 800;
-    font-size: 26px;
-    line-height: 31px;
+    font-size: 1.5em;
+    line-height: 1.2em;
     display: flex;
     align-items: flex-end;
     color: #ECECEC;
-    text-shadow: 0px 6px 15px rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 0.2em 0.2em rgba(0, 0, 0, 0.8);
     padding: 0.5em;
+}
+
+.extra_text {
+    color: #FF7A00;
 }
 
 .desc_container {

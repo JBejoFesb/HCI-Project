@@ -11,8 +11,8 @@ const test: INewsCard[] = [
     {
         title: "The Callisto Protocol navodno je podbacio u prodaji",
         desc: "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
-        date: new Date("2018-05-18T04:00:00.000Z"),
-        image: "hog",
+        date: "2023-01-14",
+        image: "cal",
         suffix: "jpg",
         author: "string",
     },
