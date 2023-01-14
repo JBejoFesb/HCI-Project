@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 2em;
+    row-gap: 2em;
+    margin: auto;
+    height: fit-content;
+    padding: 40px;
+    width: max-content;
+}

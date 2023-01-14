@@ -13,7 +13,7 @@ const PopularNewsCard: React.FC<IPopularNewsCard> = ({ tag, title, image, suffix
     return (
         <Link href="/news">
             <div className={style.container}
-            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0)), url(/images/${image}.${suffix})`,
+            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0)), url(/images/popularNewsCards/${image}.${suffix})`,
                     backgroundSize: 'cover', backgroundPosition: 'center'}}
             >
                 <div className={style.tag_container}>

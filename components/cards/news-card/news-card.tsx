@@ -21,15 +21,17 @@ const NewsCard: React.FC<INewsCard> = ({ title, desc, date, author, image, suffi
     return (
         <Link href="/news">
             <div className={style.container}
-            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(/images/${image}.${suffix})`,
+            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(/images/newsCards/${image}.${suffix})`,
             backgroundSize: 'cover', backgroundPosition: 'center'}}
             >
                 <div className={style.title}>{title}</div>
                 <div className={style.desc_container}>
                     <div className={style.extra_text}>
-                        {dayjs(date).startOf('seconds').fromNow()}
+                        <i>{author}</i> | {dayjs(date).startOf('seconds').fromNow()}
                     </div>
-                    {desc}
+                    <div className={style.desc}>
+                        {desc}
+                    </div>
                 </div>
             </div>
         </Link>

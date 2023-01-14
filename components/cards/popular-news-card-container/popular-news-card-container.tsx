@@ -21,6 +21,7 @@ const PopularNewsCardContainer: React.FC<IPopularNewsCardContainer> = ({ data })
         <div className={style.container}>
             <PopularNewsCard tag={test[0].tag} title={test[0].title} image={test[0].image} suffix={test[0].suffix}/>
         </div>
+        
     );
 }
 
