@@ -7,9 +7,9 @@ import Link from 'next/link';
 const Header = () => {
     return(
         <>
-            <div className=" dark:bg-slate-900 h-16 fixed top-0 left-0 right-0 px-10 grid grid-cols-3 gap-16">
-                <div className="flex flex-row items-center space-x-3 justify-self-start ">
-                    <img className="h-12" src={HCLlogo.src} alt="HCL header logo" />
+            <div className=" dark:bg-slate-900 h-16 fixed top-0 left-0 right-0 grid grid-cols-3 gap-16 z-50">
+                <div className="flex flex-row items-center space-x-3 justify-self-start px-10">
+                    <Link href="/"><img className="w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110" src={HCLlogo.src} alt="HCL logo" /></Link>
                     <ul className="flex flex-row space-x-3">
                         <li><Link href="/news">Vijesti</Link></li>
                         <li><Link href="/reviews">Recenzije</Link></li>

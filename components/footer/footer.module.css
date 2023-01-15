@@ -3,12 +3,62 @@
 @tailwind utilities;
 
 .footer{
-    @apply dark:bg-slate-900 
-    h-16  
-    flex
-    fixed bottom-0 left-0 right-0
+    @apply dark:bg-slate-900  
+    flex flex-col
+    sticky bottom-0 left-0 right-0
+    space-y-1
+    items-center
 }
 
 .footer_links{
-    @apply flex flex-row
+    @apply flex flex-col justify-between md:flex-row
+    px-20
+    pt-9
+    w-full
+    max-w-4xl
+    items-center
+}
+
+.p{
+    @apply text-gray-200
+    font-thin
+    pt-3
+    px-6
+    text-center
+}
+
+.p2{
+    @apply text-gray-400
+    font-thin
+    pb-9
+    px-6
+    text-center
+}
+
+.socials{
+    @apply
+    space-x-4 sm:space-x-8
+    flex flex-row 
+    pt-9 pb-6
+}
+
+.flogo{
+    @apply w-20 max-w-none
+    transition-all duration-300 transform-gpu 
+    hover:scale-125
+}
+
+.fsvg{
+    @apply w-12 max-w-none
+    transition-all duration-300 transform-gpu 
+    hover:scale-125
+}
+
+.finfo{
+    @apply space-y-2 text-center flex flex-col
+    py-3
+}
+
+.finfo > li{
+    @apply hover:underline
 }
