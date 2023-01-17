@@ -21,3 +21,14 @@
     position: relative;
     min-width: 132px;
 }
+
+.title {
+    padding: 0.5em;
+    height: fit-content;
+    line-height: 1.78em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

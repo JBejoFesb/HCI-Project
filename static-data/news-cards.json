@@ -1,0 +1,76 @@
+{
+    "newsCards" : [
+        {
+            "title": "Novosti vezane uz Metal Gear stižu u narednim tjednima",
+            "desc": "Jedan od glumaca iz serijala Metal Gear dao je malu naznaku da ćemo uskoro dočekati neke najave vezane uz tu franšizu.",
+            "date": "2023-01-17 13:00",
+            "image": "metal",
+            "suffix": "jpg",
+            "author": "Zoran Žalac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-17 12:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        },
+        {
+            "title": "Suicide Squad igra ima live service elemente po uzoru na Fortnite",
+            "desc": "Pojavila se slika iz igre Suicide Squad: Kill the Justice League koja koja pokazuje da će igra imati opcionalni battle pass.",
+            "date": "2023-01-17 11:00",
+            "image": "superman",
+            "suffix": "jpg",
+            "author": "Zoran Žalac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-14 11:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-14 11:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-14 11:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-14 11:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-14 11:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        },
+        {
+            "title": "The Callisto Protocol navodno je podbacio u prodaji",
+            "desc": "Horor avantura The Callisto Protocol navodno je trebala prodati pet milijuna primjeraka da ostvari dobit, što se za sada još uvijek nije dogodilo.",
+            "date": "2023-01-14 11:00",
+            "image": "cal",
+            "suffix": "jpg",
+            "author": "Lovro Maroševac"
+        }
+    ]
+}

@@ -3,7 +3,7 @@ import CurrentNewsContainer from "../parts/current-news-container/current-news-c
 import { ICurrentNews } from "../parts/current-news/current-news";
 
 export interface ISidebarContainer {
-
+    data: ICurrentNews[],
 }
 
 const newsTest: ICurrentNews[] = [
@@ -48,7 +48,7 @@ const videoTest: ICurrentNews[] = [
     },
 ];
 
-const SidebarContainer: React.FC<ISidebarContainer> = ({}) => {
+const SidebarContainer: React.FC<ISidebarContainer> = ({ data }) => {
     return (
         <div className=" flex flex-col mx-auto w-96 h-fit gap-5">
             <CurrentNewsContainer data={videoTest} />

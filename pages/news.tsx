@@ -9,7 +9,8 @@ export default function News() {
         <title>Gaming vijesti</title>
       </Head>
       <Header/>
-      test
+      <div className=' pt-16 pb-20 flex flex-col items-center bg-soft-marine'>
+      </div>
       <Footer/> 
     </>
   )

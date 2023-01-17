@@ -1,0 +1,22 @@
+{
+    "popularNewsCards" : [
+        {
+                "tag": "SPECIJAL",
+                "title": "Ovo su najočekivanije igre 2023. godine",
+                "image": "link",
+                "suffix": "jpg"
+        },
+        {
+            "tag": "RECENZIJA",
+            "title": "Marvel's Midnight Suns",
+            "image": "midnight",
+            "suffix": "jpg"
+        },
+        {
+            "tag": "RECENZIJA",
+            "title": "God of War: Ragnarok",
+            "image": "war",
+            "suffix": "jpg"
+        }
+    ]
+}

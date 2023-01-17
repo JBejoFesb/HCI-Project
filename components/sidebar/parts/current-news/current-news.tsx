@@ -33,7 +33,7 @@ const CurrentNews: React.FC<ICurrentNews> = ({ title, image, suffix, video }) =>
                         />}
                         
                     </div>
-                    <div className=" text-base font-medium pl-2 pr-2 pt-1 pb-2 text-bright-text h-32">
+                    <div className={`${style.title} pt-1 pb-2 text-bright-text`}>
                         {title}
                     </div>
                 </div>
