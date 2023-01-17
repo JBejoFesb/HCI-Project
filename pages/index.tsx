@@ -12,9 +12,9 @@ export default function Home() {
         <title>HCL Gaming Portal</title>
       </Head>
       <Header/>
-      <div className=' pt-20 pb-20 flex flex-col items-center'>
+      <div className=' pt-16 pb-20 flex flex-col items-center bg-soft-marine'>
         <PopularNewsCardContainer data={[]}/>
-        <div className=' flex flex-row justify-between gap-10'>
+        <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
           <NewsCardContainer data={[]} />
           <SidebarContainer />
         </div>

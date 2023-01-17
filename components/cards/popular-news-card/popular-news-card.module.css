@@ -5,7 +5,7 @@
     flex-direction: column;
     border: 0.2em solid #ECECEC;
     border-radius: 25px;
-    filter: drop-shadow(0em 0em 1em rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0em 0em 0.5em rgba(255, 255, 255, 0.5));
     margin: auto;
     align-items: center;
     justify-content: space-between;
@@ -19,12 +19,13 @@
 
 .tag_container {
     width: 100%;
+    margin: 15px;
 }
 
 .tag {
     width: fit-content;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 15px;
     padding: 5px 20px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);

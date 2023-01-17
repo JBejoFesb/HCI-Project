@@ -21,19 +21,24 @@ const test: INewsCard[] = [
 
 const NewsCardContainer: React.FC<INewsCardContainer> = ({ data }) => {
     return (
-        <div className=" flex flex-col">
+        <div className=" flex flex-col bg-dirty-white rounded-[30px] w-max-[700px]">
             <div className={style.container}>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
-                <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                <div className={style.grid_row}>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                    <NewsCard title={test[0].title} desc={test[0].desc} date={test[0].date} image={test[0].image} suffix={test[0].suffix} author={test[0].author}/>
+                </div>
             </div>
-            <MoreNewsButton />
+            <div className=" px-5 py-5">
+                <MoreNewsButton />
+            </div>
+            
         </div>
         
     );

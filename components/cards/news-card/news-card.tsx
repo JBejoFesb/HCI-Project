@@ -19,7 +19,8 @@ export interface INewsCard {
 
 const NewsCard: React.FC<INewsCard> = ({ title, desc, date, author, image, suffix }) => {
     return (
-        <Link href="/news">
+        <div className={style.grid_item}>
+            <Link href="/news" className={style.link_container}></Link>
             <div className={style.container}
             style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(/images/newsCards/${image}.${suffix})`,
             backgroundSize: 'cover', backgroundPosition: 'center'}}
@@ -34,7 +35,7 @@ const NewsCard: React.FC<INewsCard> = ({ title, desc, date, author, image, suffi
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 

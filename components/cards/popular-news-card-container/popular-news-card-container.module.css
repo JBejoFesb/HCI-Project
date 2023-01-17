@@ -1,6 +1,7 @@
 .container {
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
     margin: auto;
     height: fit-content;
     padding: 40px;

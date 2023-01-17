@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .footer{
-    @apply dark:bg-slate-900  
+    @apply bg-dark-marine  
     flex flex-col
     sticky bottom-0 left-0 right-0
     space-y-1
