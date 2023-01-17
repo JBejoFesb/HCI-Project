@@ -6,20 +6,19 @@ export interface ICurrentNewsContainer {
     data: ICurrentNews[];
 }
 
-const test: ICurrentNews[] = [
-    {
-        title: "The Callisto Protocol navodno je podbacio u prodaji",
-        image: "cal",
-        suffix: "jpg",
-    },
-];
-
-const CurrentNewsContainer: React.FC<ICurrentNewsContainer> = ({}) => {
+const CurrentNewsContainer: React.FC<ICurrentNewsContainer> = ({ data }) => {
     return (
-        <div className=" bg-dirty-white rounded-[30px] pt-5">
-            <CurrentNews title={test[0].title} image={test[0].image} suffix={test[0].suffix} />
-            <CurrentNews title={test[0].title} image={test[0].image} suffix={test[0].suffix} />
-            <CurrentNews title={test[0].title} image={test[0].image} suffix={test[0].suffix} />
+        <div className=" flex flex-col gap-5 bg-dirty-white rounded-[30px] pt-5 pr-5 pl-5 pb-5 relative">
+            <div className=" text-2xl font-bold text-bright-text text-center pt-1 pb-1">
+                {data[0].video ? "Video" : "Aktualno" }
+            </div>
+                {
+                    data.map((card: ICurrentNews) => {
+                        return (
+                            <CurrentNews key={`${card.title}-${card.video ? 'video' : 'current'}`} title={card.title} image={card.image} suffix={card.suffix} video={card.video} />
+                        )
+                    })
+                }
         </div>
     );
 }

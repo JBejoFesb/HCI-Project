@@ -1,12 +1,12 @@
 import React from "react";
 import style from "./footer.module.css";
 import Link from 'next/link';
-import HCLlogo from "../../public/images/HCLtransparent.png";
-import Youtube from "../../public/images/youtube-svgrepo-com.svg";
-import Discord from "../../public/images/discord-icon-svgrepo-com.svg";
-import Steam from "../../public/images/steam-svgrepo-com.svg";
-import Facebook from "../../public/images/facebook-svgrepo-com.svg";
-import Twitter from "../../public/images/twitter-svgrepo-com.svg";
+import HCLlogo from "../../public/images/icons/HCLtransparent.png";
+import Youtube from "../../public/images/icons/youtube-svgrepo-com.svg";
+import Discord from "../../public/images/icons/discord-icon-svgrepo-com.svg";
+import Steam from "../../public/images/icons/steam-svgrepo-com.svg";
+import Facebook from "../../public/images/icons/facebook-svgrepo-com.svg";
+import Twitter from "../../public/images/icons/twitter-svgrepo-com.svg";
 
 const Footer = () => {
     return(

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./header.module.css";
-import HCLlogo from "../../public/images/HCLtransparent.png";
+import HCLlogo from "../../public/images/icons/HCLtransparent.png";
 import { StaticImageData } from "next/image";
 import Link from 'next/link';
 

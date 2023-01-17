@@ -9,7 +9,9 @@ module.exports = {
       colors: {
         'soft-marine' : '#222B3A',
         'dark-marine' : '#1B1D2A',
-        'dirty-white' : '#ECECEC'
+        'dirty-white' : '#ECECEC',
+        'bright-text' : '#484848',
+        'dark-text' : '#1A1A1A',
       },
     },
   },

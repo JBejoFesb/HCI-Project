@@ -82,10 +82,8 @@
 
 .grid_item:hover {
     transform: scale(1.02);
-    transition: 0.1s;
 }
 
 .grid_item:hover > .container > .desc_container > .desc {
     -webkit-line-clamp: 10;
-    transition: 0.25s;
 }
