@@ -6,7 +6,6 @@
     position: relative;
     box-sizing: border-box;
     padding: 1em;
-    transition: all 0.25s ease-in-out;
 }
 
 @media(max-width: 1256px) {
@@ -81,7 +80,7 @@
 }
 
 .grid_item:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .grid_item:hover > .container > .desc_container > .desc {
