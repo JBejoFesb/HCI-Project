@@ -20,8 +20,8 @@ export default function Home() {
         
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-          <NewsCardContainer data={news_cards.newsCards} />
-          <SidebarContainer data={sidebarCards.cards}/>
+          <NewsCardContainer data={news_cards.newsCards} showType={false} type={""} />
+          <SidebarContainer data={sidebarCards.cards} widgets={true}/>
         </div>
       </div>
       <Footer/>
