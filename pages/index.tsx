@@ -6,6 +6,7 @@ import NewsCardContainer from '../components/cards/news-card-container/news-card
 import SidebarContainer from '../components/sidebar/sidebar-container/sidebar-container';
 import news_cards from "../static-data/news-cards.json";
 import popular_news_cards from "../static-data/popular-news-cards.json";
+import sidebarCards from "../static-data/sidebar-cards.json";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
           <NewsCardContainer data={news_cards.newsCards} />
-          <SidebarContainer data={[]}/>
+          <SidebarContainer data={sidebarCards.cards}/>
         </div>
       </div>
       <Footer/>

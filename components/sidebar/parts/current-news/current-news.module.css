@@ -19,7 +19,7 @@
 
 .image_container {
     position: relative;
-    min-width: 132px;
+    min-width: 8rem;
 }
 
 .title {

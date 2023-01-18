@@ -1,0 +1,50 @@
+{
+    "cards" : [
+        {
+            "key" : "sidebar-video-card",
+            "cards" : [
+                {
+                    "title": "The Callisto Protocol navodno je podbacio u prodaji",
+                    "image": "cal",
+                    "suffix": "jpg",
+                    "video": true
+                },
+                {
+                    "title": "Novosti vezane uz Metal Gear stižu u narednim tjednima",
+                    "image": "metal",
+                    "suffix": "jpg",
+                    "video": true
+                },
+                {
+                    "title": "Serija The Last of Us imala je drugu najgledaniju premijeru među HBO serijama u zadnjih 13 godina",
+                    "image": "last",
+                    "suffix": "jpg",
+                    "video": true
+                }
+            ]
+        },
+        {
+            "key" : "sidebar-news-card",
+            "cards" : [
+                {
+                    "title": "The Callisto Protocol navodno je podbacio u prodaji",
+                    "image": "cal",
+                    "suffix": "jpg",
+                    "video": false
+                },
+                {
+                    "title": "Novosti vezane uz Metal Gear stižu u narednim tjednima",
+                    "image": "metal",
+                    "suffix": "jpg",
+                    "video": false
+                },
+                {
+                    "title": "Serija The Last of Us imala je drugu najgledaniju premijeru među HBO serijama u zadnjih 13 godina",
+                    "image": "last",
+                    "suffix": "jpg",
+                    "video": false
+                }
+            ]
+        }
+    ]
+}
