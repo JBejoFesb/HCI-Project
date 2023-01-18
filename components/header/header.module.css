@@ -1,0 +1,8 @@
+@tailwind components;
+
+@tailwind utilities;
+
+
+.header_container{
+    @apply bg-dark-marine h-20 fixed top-0 left-0 right-0 grid grid-cols-3 gap-16 z-50
+}

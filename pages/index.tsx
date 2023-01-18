@@ -7,6 +7,7 @@ import SidebarContainer from '../components/sidebar/sidebar-container/sidebar-co
 import news_cards from "../static-data/news-cards.json";
 import popular_news_cards from "../static-data/popular-news-cards.json";
 import sidebarCards from "../static-data/sidebar-cards.json";
+import Slider from '../components/slider/slider';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-soft-marine'>
+        
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
           <NewsCardContainer data={news_cards.newsCards} />

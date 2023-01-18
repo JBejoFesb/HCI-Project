@@ -17,3 +17,8 @@ body {
     font-family: 'Inter';
     font-style: normal;
 }
+
+::selection{
+  @apply bg-orange-500
+  text-black
+}

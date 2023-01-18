@@ -1,10 +1,10 @@
 {
     "popularNewsCards" : [
         {
-                "tag": "SPECIJAL",
-                "title": "Ovo su najočekivanije igre 2023. godine",
-                "image": "link",
-                "suffix": "jpg"
+            "tag": "SPECIJAL",
+            "title": "Ovo su najočekivanije igre 2023. godine",
+            "image": "link",
+            "suffix": "jpg"
         },
         {
             "tag": "RECENZIJA",

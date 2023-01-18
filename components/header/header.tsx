@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./header.module.css";
+import style from "./header.module.css";
 import HCLlogo from "../../public/images/icons/HCLtransparent.png";
 import { StaticImageData } from "next/image";
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import Link from 'next/link';
 const Header = () => {
     return(
         <>
-            <div className=" bg-dark-marine h-16 fixed top-0 left-0 right-0 grid grid-cols-3 gap-16 z-50">
+            <div className={style.header_container}>
                 <div className="flex flex-row items-center space-x-3 justify-self-start px-10">
                     <Link href="/"><img className="w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110" src={HCLlogo.src} alt="HCL logo" /></Link>
                     <ul className="flex flex-row space-x-3">
