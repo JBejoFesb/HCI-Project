@@ -20,7 +20,7 @@ const NewsPost: React.FC<INewsPostContainer> = ({ post }) => {
         <>
         <Header />
         <div>
-            testing <span className=" text-red-500">{post.title}</span>
+            testing <span className=" text-red-500">{}</span>
         </div>
         <Footer />
         </>
