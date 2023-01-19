@@ -8,9 +8,9 @@ const Header = () => {
     return(
         <>
             <div className={style.header_container}>
-                <div className="flex flex-row items-center space-x-3 justify-self-start px-10">
-                    <Link href="/"><img className="w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110" src={HCLlogo.src} alt="HCL logo" /></Link>
-                    <ul className="flex flex-row space-x-3">
+                <div className={style.header_left}>
+                    <Link href="/"><img className={style.logo} src={HCLlogo.src} alt="HCL logo" /></Link>
+                    <ul className={style.nav_links}>
                         <li><Link href="/news">Vijesti</Link></li>
                         <li><Link href="/reviews">Recenzije</Link></li>
                         <li><Link href="/specials">Specijali</Link></li>
@@ -18,14 +18,14 @@ const Header = () => {
                         <li><Link href="/">Forum</Link></li>
                     </ul>
                 </div>
-                <div className="flex flex-row items-center space-x-3 justify-self-center">
+                <div className={style.header_right}>
                     <input 
                         type="text" 
                         placeholder="Pretrazi portal..."
-                        className="bg-slate-600 w-96 px-3 py-1 rounded-2xl"
+                        className={style.searchbar}
                     />
+                    <button></button>
                 </div>
-                <div className="flex flex-row items-center space-x-3 justify-self-end">placeholder-right</div>
             </div>
 
         </>

@@ -4,5 +4,46 @@
 
 
 .header_container{
-    @apply bg-dark-marine h-20 fixed top-0 left-0 right-0 grid grid-cols-3 gap-16 z-50
+    @apply h-20 fixed top-0 left-0 right-0 z-50
+    flex flex-row justify-between
+    border-b border-slate-300/10
+    bg-slate-900/75 hover:bg-slate-900 transition-colors duration-1000
+    backdrop-blur
+
 }
+
+.header_left{
+    @apply flex flex-row items-center space-x-16 justify-self-start px-10
+}
+
+.header_right{
+    @apply flex flex-row items-center space-x-16 justify-self-end px-10
+}
+
+.logo{
+    @apply w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
+}
+
+.nav_links{
+    @apply flex flex-row space-x-2
+    text-2xl
+    font-medium
+}
+
+.nav_links > li{
+    @apply
+    text-slate-400
+    hover:bg-slate-700 transition-colors duration-500 hover:text-dirty-white
+    px-3 py-1
+    rounded-xl
+}
+
+.searchbar{
+    @apply
+    bg-slate-700 
+    w-96 
+    px-3 py-2 
+    outline-offset-4 outline-1
+    rounded-xl
+}
+
