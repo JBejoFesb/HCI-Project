@@ -15,7 +15,7 @@ export default function Video() {
       <div className=' pt-16 pb-20 flex flex-col items-center bg-soft-marine'>
         {/*<PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>*/}
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-          <NewsCardContainer data={news_cards.newsCards} showType={true} type={"VIDEO"}/>
+          <NewsCardContainer data={[]} showType={true} type={"VIDEO"}/>
           <SidebarContainer data={[]} widgets={true}/>
         </div>
       </div>
