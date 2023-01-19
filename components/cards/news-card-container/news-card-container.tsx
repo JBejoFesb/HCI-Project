@@ -21,9 +21,9 @@ const NewsCardContainer: React.FC<INewsCardContainer> = ({ data, showType, type 
                 }
                 <div className={style.grid_row}>
                     {
-                        data.map((card: INewsCard, i: number) => {
+                        data.map((card: INewsCard) => {
                             return (
-                                <NewsCard title={card.title} desc={card.desc} date={card.date} image={card.image} suffix={card.suffix} author={card.author} key={`${card.title}-newscard-${i}`}/>
+                                <NewsCard slug={card.slug} title={card.title} description={card.description} creation={card.creation} mainImage={card.mainImage} author={card.author} key={`${card.slug}`}/>
                             )
                         })
                     }

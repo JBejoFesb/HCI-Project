@@ -4,12 +4,17 @@ import Head from 'next/head'
 import PopularNewsCardContainer from '../components/cards/popular-news-card-container/popular-news-card-container';
 import NewsCardContainer from '../components/cards/news-card-container/news-card-container';
 import SidebarContainer from '../components/sidebar/sidebar-container/sidebar-container';
-import news_cards from "../static-data/news-cards.json";
 import popular_news_cards from "../static-data/popular-news-cards.json";
 import sidebarCards from "../static-data/sidebar-cards.json";
 import Slider from '../components/slider/slider';
+import { getAllPosts } from './api/ContentfulAPI';
+import { INewsCard } from '../components/cards/news-card/news-card';
 
-export default function Home() {
+export interface IHome {
+  newsPosts: INewsCard[],
+}
+
+const Home: React.FC<IHome> = ({ newsPosts }) => {
   return (
     <>
       <Head>
@@ -20,11 +25,21 @@ export default function Home() {
         
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-          <NewsCardContainer data={news_cards.newsCards} showType={false} type={""} />
+          <NewsCardContainer data={newsPosts} showType={false} type={""} />
           <SidebarContainer data={sidebarCards.cards} widgets={true}/>
         </div>
       </div>
       <Footer/>
     </>
   )
+}
+
+export default Home;
+
+export async function getStaticProps() {
+  const newsPosts = await getAllPosts();
+
+  return {
+    props: { newsPosts: newsPosts },
+  };
 }

@@ -1,58 +1,128 @@
 import axios from "axios";
 
 // product fields to fetch
-const NEWS_GRAPHQL_FIELDS = `
-  title
-  slug
-  author
-  mainImage {
-    url
-  }
-  otherImages {
-
-  }
-  description
+const NEWS_POST_GRAPHQL_FIELDS = `
+slug  
+title 
+author 
+mainImage {
+  url
+}
+description 
+creation
+content {
+  json
+}
 `;
 
+const PARTIAL_POST_FIELDS = `
+slug
+title
+author
+mainImage {
+  url
+}
+creation
+description`;
+
 async function fetchGraphQL(query) {
-  try {
-    const res = await axios.post(
-      `https://graphql.contentful.com/content/v1/spaces/g7gmdfw1bcha`,
-      { query },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer MFKp7NKX3VBYIL8Hl_EHOG537xa8rvZlp9NyLQ8hkKk`,
-        },
-      }
-    );
-    console.log("test");
-
-    return res.data;
-  } catch (error) {
-    console.error("Failed to fetch Contentful");
-  }
+  const res = await axios
+  .post(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      query: query
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENT_PREVIEW_TOKEN}`,
+      },
+    }
+  )
+    
+  return res.data;
 }
 
-function extractNews(fetchResponse) {
-  return fetchResponse?.data?.newsCollection?.items?.[0];
+function extractNewsPost(fetchResponse) {
+  return fetchResponse?.data?.newsPostCollection?.items?.[0]
 }
 
-function extractNewsEntries(fetchResponse) {
-  return fetchResponse?.data?.newsCollection?.items;
+function extractNewsPostEntries(fetchResponse) {
+  return fetchResponse?.data?.newsPostCollection?.items
 }
 
 // get all news
 export async function getAllNewsPosts() {
   const entries = await fetchGraphQL(
     `query {
-      newsCollection(where: { slug_exists: true }) {
+      newsPostCollection {
         items {
-          ${NEWS_GRAPHQL_FIELDS}
+          ${PARTIAL_POST_FIELDS}
         }
       }
     }`
   );
 
-  return extractNewsEntries(entries);
+  if (!entries) {
+    console.log("problem");
+    return {};
+  }
+
+  return extractNewsPostEntries(entries);
+}
+
+// get one news based on slug
+export async function getNewsPostBySlug(slug) {
+  const entries = await fetchGraphQL(
+    `query {
+      newsPostCollection (where: {slug: "${slug}"}) {
+        items {
+          ${NEWS_POST_GRAPHQL_FIELDS}
+        }
+      }
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractNewsPost(entries);
+}
+
+// get all news slugs
+export async function getAllNewsSlugs() {
+  const entries = await fetchGraphQL(
+    `query {
+      newsPostCollection {
+        items {
+          slug
+        }
+      }
+    }`
+  );
+    console.log(entries.data.newsPostCollection);
+  if (!entries) {
+    return {};
+  }
+
+  return extractNewsPostEntries(entries);
+}
+
+// get all posts, regardless of type
+export async function getAllPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      newsPostCollection {
+        items {
+          ${PARTIAL_POST_FIELDS}
+        }
+      }
+    }`
+  );
+    console.log(entries.data.newsPostCollection);
+  if (!entries) {
+    return {};
+  }
+
+  return extractNewsPostEntries(entries);
 }

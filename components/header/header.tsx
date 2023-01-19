@@ -21,7 +21,7 @@ const Header = () => {
                 <div className={style.header_right}>
                     <input 
                         type="text" 
-                        placeholder="Pretrazi portal..."
+                        placeholder="Pretraži portal..."
                         className={style.searchbar}
                     />
                     <button></button>

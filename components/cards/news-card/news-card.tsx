@@ -8,30 +8,34 @@ import 'dayjs/locale/hr';
 dayjs.extend(relativeTime);
 dayjs.locale('hr');
 
-export interface INewsCard {
-    title: string,
-    desc: string,
-    date: string,
-    image: string,
-    suffix: string,
-    author: string,
+export interface IImage {
+    url: string,
 }
 
-const NewsCard: React.FC<INewsCard> = ({ title, desc, date, author, image, suffix }) => {
+export interface INewsCard {
+    slug: string,
+    title: string,
+    author: string,
+    mainImage: IImage,
+    creation: string,
+    description: string,
+}
+
+const NewsCard: React.FC<INewsCard> = ({ slug, title, author, mainImage, creation, description }) => {
     return (
         <div className={style.grid_item}>
-            <Link href="/news" className={style.link_container}></Link>
+            <Link href={`/news/${slug}`} className={style.link_container}></Link>
             <div className={style.container}
-            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(/images/newsCards/${image}.${suffix})`,
+            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(${mainImage.url})`,
             backgroundSize: 'cover', backgroundPosition: 'center'}}
             >
                 <div className={style.title}>{title}</div>
                 <div className={style.desc_container}>
                     <div className={style.extra_text}>
-                        <i>{author}</i> | {dayjs(date).startOf('seconds').fromNow()}
+                        <i>{author}</i> | {dayjs(creation).startOf('seconds').fromNow()}
                     </div>
                     <div className={style.desc}>
-                        {desc}
+                        {description}
                     </div>
                 </div>
             </div>

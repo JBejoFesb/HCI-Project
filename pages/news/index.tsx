@@ -7,18 +7,23 @@ import PopularNewsCardContainer from '../../components/cards/popular-news-card-c
 import news_cards from "../../static-data/news-cards.json";
 import popular_news_cards from "../../static-data/popular-news-cards.json";
 import { getAllNewsPosts } from "../api/ContentfulAPI";
+import { INewsCard } from '../../components/cards/news-card/news-card';
 
-const News = () => {
+export interface NewsPosts {
+  newsPosts: INewsCard[],
+}
+
+const News: React.FC<NewsPosts> = ({ newsPosts }) => {
   return (
     <>
       <Head>
-        <title>HCL Video</title>
+        <title>HCL Vijesti</title>
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-soft-marine'>
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-          <NewsCardContainer data={news_cards.newsCards} showType={true} type={"VIJESTI"}/>
+          <NewsCardContainer data={newsPosts} showType={true} type={"VIJESTI"}/>
           <SidebarContainer data={[]} widgets={true}/>
         </div>
       </div>
@@ -28,11 +33,13 @@ const News = () => {
 }
 
 export default News;
-/*
+
 export async function getStaticProps() {
   const newsPosts = await getAllNewsPosts();
+  
   console.log(newsPosts);
+
   return {
     props: { newsPosts: newsPosts },
   };
-}*/
+}
