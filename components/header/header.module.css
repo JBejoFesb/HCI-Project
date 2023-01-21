@@ -7,7 +7,7 @@
     @apply h-20 fixed top-0 left-0 right-0 z-50
     flex flex-row justify-between
     border-b border-slate-300/10
-    bg-slate-900/75 hover:bg-slate-900 transition-colors duration-1000
+    bg-slate-900/75 hover:bg-slate-900 transition-colors duration-300
     backdrop-blur
 
 }
@@ -33,7 +33,7 @@
 .nav_links > li{
     @apply
     text-slate-400
-    hover:bg-slate-700 transition-colors duration-500 hover:text-dirty-white
+    hover:bg-slate-700 transition-colors duration-300 hover:text-dirty-white
     px-3 py-1
     rounded-xl
 }
