@@ -25,17 +25,14 @@
 }
 
 .nav_links{
-    @apply flex flex-row space-x-2
+    @apply flex flex-row space-x-8
     text-2xl
     font-medium
 }
 
 .nav_links > li{
     @apply
-    text-slate-400
-    hover:bg-slate-700 transition-colors duration-300 hover:text-dirty-white
-    px-3 py-1
-    rounded-xl
+    transition-all duration-300 hover:text-dirty-white transform-gpu hover:scale-110
 }
 
 .searchbar{
