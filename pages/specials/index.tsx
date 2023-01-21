@@ -16,7 +16,7 @@ const Specials: React.FC<ISpecialPosts> = ({ specialPosts }) => {
   return (
     <>
       <Head>
-        <title>HCL Vijesti</title>
+        <title>HCL Specijali</title>
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
@@ -36,7 +36,11 @@ export default Specials;
 export async function getStaticProps() {
   const specialPosts = await getAllSpecialPosts();
 
-  return {
+  if (specialPosts) return {
     props: { specialPosts: specialPosts },
+  }
+
+  return {
+    notFound: true,
   };
 }

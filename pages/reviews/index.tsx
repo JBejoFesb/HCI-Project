@@ -16,7 +16,7 @@ const Reviews: React.FC<IReviewPosts> = ({ reviewPosts }) => {
   return (
     <>
       <Head>
-        <title>HCL Vijesti</title>
+        <title>HCL Recenzije</title>
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
@@ -36,7 +36,11 @@ export default Reviews;
 export async function getStaticProps() {
   const reviewPosts = await getAllReviewPosts();
 
-  return {
+  if (reviewPosts) return {
     props: { reviewPosts: reviewPosts },
+  }
+
+  return {
+    notFound: true,
   };
 }

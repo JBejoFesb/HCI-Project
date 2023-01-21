@@ -185,7 +185,7 @@ export async function getAllSpecialPosts() {
 export async function getAllVideoPosts() {
   const entries = await fetchGraphQL(
     `query {
-      specialPostCollection {
+      videoPostCollection {
         items {
           ${PARTIAL_POST_FIELDS}
         }

@@ -37,7 +37,11 @@ export default News;
 export async function getStaticProps() {
   const newsPosts = await getAllNewsPosts();
 
-  return {
+  if (newsPosts) return {
     props: { newsPosts: newsPosts },
+  }
+
+  return {
+    notFound: true,
   };
 }

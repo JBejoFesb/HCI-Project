@@ -16,7 +16,7 @@ const Videos: React.FC<IVideoPosts> = ({ videoPosts }) => {
   return (
     <>
       <Head>
-        <title>HCL Vijesti</title>
+        <title>HCL Video</title>
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
@@ -36,7 +36,12 @@ export default Videos;
 export async function getStaticProps() {
   const videoPosts = await getAllVideoPosts();
 
-  return {
+  if (videoPosts) return {
     props: { videoPosts: videoPosts },
+  }
+
+  return {
+    notFound: true,
   };
+  
 }
