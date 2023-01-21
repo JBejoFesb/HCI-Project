@@ -23,7 +23,14 @@ const NewsCardContainer: React.FC<INewsCardContainer> = ({ data, showType, type 
                     {
                         data.map((card: INewsCard) => {
                             return (
-                                <NewsCard slug={card.slug} title={card.title} description={card.description} creation={card.creation} mainImage={card.mainImage} author={card.author} key={`${card.slug}`}/>
+                                <NewsCard slug={card.slug} 
+                                        title={card.title} 
+                                        description={card.description} 
+                                        creation={card.creation} 
+                                        mainImage={card.mainImage} 
+                                        author={card.author} 
+                                        type={card.type}
+                                        key={`${card.slug}`}/>
                             )
                         })
                     }

@@ -1,24 +1,28 @@
 import React from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import { getNewsPostBySlug, getAllNewsSlugs } from "../api/ContentfulAPI";
 import SidebarContainer from "../../components/sidebar/sidebar-container/sidebar-container";
+import { getAllReviewSlugs, getReviewPostBySlug } from "../api/ContentfulAPI";
 
-export interface INewsPostContainer {
-    newsPost: INewsPostContents,
+
+export interface IReviewPostContainer {
+    reviewPost: IReviewPostContents,
 }
 
-export interface INewsPostContents {
+export interface IReviewPostContents {
     title: string,
-    type: string,
     slug: string,
+    type: string,
+    headline: string,
+    creation: string,
     author: string,
     mainImage: string,
     description: string,
+    score: number,
     content: string,
 }
 
-const NewsPost: React.FC<INewsPostContainer> = ({ newsPost }) => {
+const ReviewPost: React.FC<IReviewPostContainer> = ({ reviewPost }) => {
 
     return (
         <>
@@ -26,7 +30,8 @@ const NewsPost: React.FC<INewsPostContainer> = ({ newsPost }) => {
         <div className=' pt-20 pb-20 flex flex-col items-center bg-soft-marine'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
             <div>
-                <h1>{newsPost.title}</h1>
+                <h1>{reviewPost.title}</h1>
+                           
             </div>
             <SidebarContainer data={[]} widgets={true}/>
             </div>
@@ -36,13 +41,13 @@ const NewsPost: React.FC<INewsPostContainer> = ({ newsPost }) => {
     );
 }
 
-export default NewsPost;
+export default ReviewPost;
 
 export async function getStaticPaths() {
-    const news = await getAllNewsSlugs();
+    const reviews = await getAllReviewSlugs();
 
-    const paths = news.map((newsPost: any) => ({
-        params: { slug: newsPost.slug },
+    const paths = reviews.map((reviewPost: any) => ({
+        params: { slug: reviewPost.slug },
     }));
 
     return {
@@ -53,9 +58,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
     const { slug } = context.params;
-    const newsPost = await getNewsPostBySlug(slug);
+    const reviewPost = await getReviewPostBySlug(slug);
 
     return {
-        props: { newsPost: newsPost }
+        props: { reviewPost: reviewPost }
     }
 }

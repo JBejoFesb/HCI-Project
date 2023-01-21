@@ -12,19 +12,24 @@ export interface IImage {
     url: string,
 }
 
+export interface IType {
+    type: string,
+}
+
 export interface INewsCard {
     slug: string,
     title: string,
+    type: IType,
     author: string,
     mainImage: IImage,
     creation: string,
     description: string,
 }
 
-const NewsCard: React.FC<INewsCard> = ({ slug, title, author, mainImage, creation, description }) => {
+const NewsCard: React.FC<INewsCard> = ({ slug, title, author, mainImage, creation, description, type }) => {
     return (
         <div className={style.grid_item}>
-            <Link href={`/news/${slug}`} className={style.link_container}></Link>
+            <Link href={`/${type.type == "news" || type.type == "video" ? type.type : type.type + 's'}/${slug}`} className={style.link_container}></Link>
             <div className={style.container}
             style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(${mainImage.url})`,
             backgroundSize: 'cover', backgroundPosition: 'center'}}
