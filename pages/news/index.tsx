@@ -1,6 +1,6 @@
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import Head from 'next/head'
+import Head from 'next/head';
 import NewsCardContainer from '../../components/cards/news-card-container/news-card-container';
 import SidebarContainer from '../../components/sidebar/sidebar-container/sidebar-container';
 import PopularNewsCardContainer from '../../components/cards/popular-news-card-container/popular-news-card-container';
@@ -36,10 +36,12 @@ export default News;
 
 export async function getStaticProps() {
   const newsPosts = await getAllNewsPosts();
-  
-  console.log(newsPosts);
+
+  if (newsPosts) return {
+    props: { newsPosts: newsPosts },
+  }
 
   return {
-    props: { newsPosts: newsPosts },
+    notFound: true,
   };
 }
