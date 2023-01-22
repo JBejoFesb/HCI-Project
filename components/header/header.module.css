@@ -4,19 +4,28 @@
 
 
 .header_container{
-    @apply h-20 fixed top-0 left-0 right-0 z-50
-    flex flex-row justify-between
+    @apply fixed top-0 left-0 right-0 z-50
+    flex flex-col lg:flex-row
     border-b border-slate-300/10
-    bg-slate-900/75 hover:bg-slate-900 transition-colors duration-300
-    backdrop-blur
+    bg-slate-900
+    lg:bg-slate-900/75 lg:hover:bg-slate-900 transition-colors duration-300
+    lg:backdrop-blur
+    justify-between
+
 }
 
 .header_left{
-    @apply flex flex-row items-center space-x-16 justify-self-start px-10
+    @apply flex flex-row items-center justify-self-start px-10 h-20
+    justify-between
 }
 
 .header_right{
-    @apply flex flex-row items-center space-x-4 justify-self-end px-10
+    @apply flex flex-col lg:flex-row
+    w-full lg:w-auto
+    lg:justify-between lg:flex-grow lg:items-center 
+    lg:space-x-4 lg:space-y-0
+    space-y-4 
+    lg:justify-self-end px-10
 }
 
 .logo{
@@ -24,25 +33,32 @@
 }
 
 .nav_links{
-    @apply flex flex-row space-x-6
-    text-2xl
+    @apply flex flex-col lg:flex-row 
+    lg:space-x-6
+    space-y-6 lg:space-y-0
+    lg:text-2xl
     font-medium
+    text-3xl
 }
 
 .nav_links > li{
     @apply
-    transition-all duration-300 hover:text-dirty-white transform-gpu hover:scale-110
-    hover:font-bold
+    transition-all duration-300
+    lg:hover:text-dirty-white transform-gpu lg:hover:scale-110
+    lg:hover:font-bold
 }
 
 .search{
     @apply
     bg-slate-700 
-    w-96 
+    max-w-md min-w-fit
     px-3 py-2 
     rounded-xl
     flex flex-row
+    items-center
+    my-2
     focus-within:outline-none
+    focus-within:border-spacing-1
     focus-within:border-2
     focus-within:border-orange-300
 }
@@ -56,5 +72,9 @@
 
 .user{
     @apply flex flex-row
+}
+
+.nav_link{
+    @apply text-orange-500 font-bold lg:border-b-2 border-orange-500
 }
 
