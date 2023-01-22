@@ -121,9 +121,9 @@ function extractAllPostEntries(fetchResponse) {
 
   allPosts.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 
-  allPosts.splice(0,9);
+  const splicedPosts = allPosts.splice(0,9);
 
-  return allPosts;
+  return splicedPosts;
 }
 
 // get all news
