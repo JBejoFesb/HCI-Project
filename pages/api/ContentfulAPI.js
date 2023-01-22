@@ -121,6 +121,8 @@ function extractAllPostEntries(fetchResponse) {
 
   allPosts.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 
+  allPosts.splice(0,9);
+
   return allPosts;
 }
 
@@ -128,7 +130,7 @@ function extractAllPostEntries(fetchResponse) {
 export async function getAllNewsPosts() {
   const entries = await fetchGraphQL(
     `query {
-      newsPostCollection {
+      newsPostCollection (limit: 9) {
         items {
           ${PARTIAL_POST_FIELDS}
         }
@@ -147,7 +149,7 @@ export async function getAllNewsPosts() {
 export async function getAllReviewPosts() {
   const entries = await fetchGraphQL(
     `query {
-      reviewPostCollection {
+      reviewPostCollection (limit: 9) {
         items {
           ${PARTIAL_POST_FIELDS}
         }
@@ -166,7 +168,7 @@ export async function getAllReviewPosts() {
 export async function getAllSpecialPosts() {
   const entries = await fetchGraphQL(
     `query {
-      specialPostCollection {
+      specialPostCollection (limit: 9) {
         items {
           ${PARTIAL_POST_FIELDS}
         }
@@ -185,7 +187,7 @@ export async function getAllSpecialPosts() {
 export async function getAllVideoPosts() {
   const entries = await fetchGraphQL(
     `query {
-      videoPostCollection {
+      videoPostCollection (limit: 9) {
         items {
           ${PARTIAL_POST_FIELDS}
         }
