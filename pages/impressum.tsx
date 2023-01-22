@@ -3,7 +3,6 @@ import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import Head from "next/head";
 import SidebarContainer from "../components/sidebar/sidebar-container/sidebar-container";
-import sidebarCards from "../static-data/sidebar-cards.json";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -73,7 +72,7 @@ const Impressum: React.FC<IImpressum> = ({}) => {
                         </div>
                     </div>
                 </div>
-                <SidebarContainer data={sidebarCards.cards} widgets={false}/>
+                <SidebarContainer data={[]} widgets={true}/>
             </div>
         </div>
         <Footer />

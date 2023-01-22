@@ -3,7 +3,6 @@ import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import Head from "next/head";
 import SidebarContainer from "../components/sidebar/sidebar-container/sidebar-container";
-import sidebarCards from "../static-data/sidebar-cards.json";
 import Link from "next/link";
 
 export interface IAdvertising {
@@ -44,7 +43,7 @@ const Advertising: React.FC<IAdvertising> = ({}) => {
                         Detaljnije statistike posjećenosti HCL portala možete zatražiti na e-mail <Link href="mailto:marketing@hcl.hr" className=" text-main-orange hover:underline font-semibold">marketing@hcl.hr</Link>, a upravo tamo očekujemo da ćete uputiti i vaše upite za oglašavanje.
                     </p>
                 </div>
-                <SidebarContainer data={sidebarCards.cards} widgets={false}/>
+                <SidebarContainer data={[]} widgets={true}/>
             </div>
         </div>
         <Footer />
