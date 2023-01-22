@@ -17,7 +17,7 @@
 }
 
 .header_right{
-    @apply flex flex-row items-center space-x-16 justify-self-end px-10
+    @apply flex flex-row items-center space-x-4 justify-self-end px-10
 }
 
 .logo{
@@ -25,7 +25,7 @@
 }
 
 .nav_links{
-    @apply flex flex-row space-x-8
+    @apply flex flex-row space-x-6
     text-2xl
     font-medium
 }
@@ -33,14 +33,29 @@
 .nav_links > li{
     @apply
     transition-all duration-300 hover:text-dirty-white transform-gpu hover:scale-110
+    hover:font-bold
 }
 
-.searchbar{
+.search{
     @apply
     bg-slate-700 
     w-96 
     px-3 py-2 
-    outline-offset-4 outline-1
     rounded-xl
+    flex flex-row
+    focus-within:outline-none
+    focus-within:border-2
+    focus-within:border-orange-300
+}
+
+.searchbar{
+    @apply
+    flex-grow
+    bg-slate-700
+    focus:outline-none
+}
+
+.user{
+    @apply flex flex-row
 }
 
