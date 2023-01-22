@@ -21,11 +21,11 @@ const Footer = () => {
                     <Link href="https://twitter.com/hclhr/"><img className={style.fsvg} src={Twitter.src} alt="twitter" /></Link>
                 </div>
                 <ul className={style.finfo}>
-                    <li><Link href="https://www.hcl.hr/kontakt/">Kontakt</Link></li>
-                    <li><Link href="https://www.hcl.hr/impressum/">Impressum</Link></li>
-                    <li><Link href="https://www.hcl.hr/oglasavanje/">Oglašavanje</Link></li>
-                    <li><Link href="https://www.hcl.hr/organizacija-esport-natjecanja-gaming-eventi/">Esport i eventi</Link></li>
-                    <li><Link href="https://www.hcl.hr/uvjeti-koristenja/">Uvjeti korištenja</Link></li>
+                    <li><Link href="/kontakt">Kontakt</Link></li>
+                    <li><Link href="/impressum/">Impressum</Link></li>
+                    <li><Link href="/oglasavanje/">Oglašavanje</Link></li>
+                    <li><Link href="/under-construction/">Esport i eventi</Link></li>
+                    <li><Link href="/uvjeti-koristenja/">Uvjeti korištenja</Link></li>
                 </ul>
             </div>
             <div className={style.p}>Hvala što koristite kolačiće za bolje iskustvo na HCL-u. Koje kolačiće HCL koristi i kako ih ugasiti?</div>

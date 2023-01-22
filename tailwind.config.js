@@ -12,6 +12,7 @@ module.exports = {
         'dirty-white' : '#ECECEC',
         'bright-text' : '#484848',
         'dark-text' : '#1A1A1A',
+        'main-orange' : '#FF7A00',
       },
     },
   },

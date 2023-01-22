@@ -1,6 +1,7 @@
 .container {
     margin: 0 auto;
     max-width: 1080px;
+    padding: 20px;
 }
 
 .grid_row {
@@ -9,9 +10,4 @@
     flex-flow: row wrap;
     justify-content: flex-start;
     padding: 20px;
-}
-
-.mapper {
-    padding: 20px;
-    color: black;
 }

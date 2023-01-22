@@ -99,19 +99,19 @@ function extractVideoPost(fetchResponse) {
 
 // extraction of all returned posts
 function extractNewsPostEntries(fetchResponse) {
-  return fetchResponse?.data?.newsPostCollection?.items
+  return fetchResponse?.data?.newsPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 }
 
 function extractReviewPostEntries(fetchResponse) {
-  return fetchResponse?.data?.reviewPostCollection?.items
+  return fetchResponse?.data?.reviewPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 }
 
 function extractSpecialPostEntries(fetchResponse) {
-  return fetchResponse?.data?.specialPostCollection?.items
+  return fetchResponse?.data?.specialPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 }
 
 function extractVideoPostEntries(fetchResponse) {
-  return fetchResponse?.data?.videoPostCollection?.items
+  return fetchResponse?.data?.videoPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 }
 
 // extraction of all posts for homepage
