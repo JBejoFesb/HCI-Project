@@ -4,7 +4,6 @@ import Head from 'next/head';
 import NewsCardContainer from '../../components/cards/news-card-container/news-card-container';
 import SidebarContainer from '../../components/sidebar/sidebar-container/sidebar-container';
 import PopularNewsCardContainer from '../../components/cards/popular-news-card-container/popular-news-card-container';
-import news_cards from "../../static-data/news-cards.json";
 import popular_news_cards from "../../static-data/popular-news-cards.json";
 import { getAllNewsPosts } from "../api/ContentfulAPI";
 import { INewsCard } from '../../components/cards/news-card/news-card';

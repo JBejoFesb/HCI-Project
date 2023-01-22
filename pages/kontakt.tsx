@@ -3,7 +3,6 @@ import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import Head from "next/head";
 import SidebarContainer from "../components/sidebar/sidebar-container/sidebar-container";
-import sidebarCards from "../static-data/sidebar-cards.json";
 import Link from "next/link";
 
 export interface IContact {
@@ -33,7 +32,7 @@ const Contact: React.FC<IContact> = ({}) => {
                         kontaktirajte nas putem adrese marketing@hcl.hr.
                     </p>
                 </div>
-                <SidebarContainer data={sidebarCards.cards} widgets={false}/>
+                <SidebarContainer data={[]} widgets={true}/>
             </div>
         </div>
         <Footer />

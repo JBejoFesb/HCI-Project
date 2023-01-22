@@ -3,18 +3,20 @@ import Footer from '../components/footer/footer';
 import Head from 'next/head'
 import PopularNewsCardContainer from '../components/cards/popular-news-card-container/popular-news-card-container';
 import NewsCardContainer from '../components/cards/news-card-container/news-card-container';
-import SidebarContainer from '../components/sidebar/sidebar-container/sidebar-container';
+import SidebarContainer, { ISidebarItem } from '../components/sidebar/sidebar-container/sidebar-container';
 import popular_news_cards from "../static-data/popular-news-cards.json";
 import sidebarCards from "../static-data/sidebar-cards.json";
 import Slider from '../components/slider/slider';
-import { getAllPosts } from './api/ContentfulAPI';
+import { getAllPosts, getNewVideoPosts, getPopularPosts } from './api/ContentfulAPI';
 import { INewsCard } from '../components/cards/news-card/news-card';
 
 export interface IHome {
   newsPosts: INewsCard[],
+  videoPosts: ISidebarItem,
+  popularPosts: ISidebarItem,
 }
 
-const Home: React.FC<IHome> = ({ newsPosts }) => {
+const Home: React.FC<IHome> = ({ newsPosts, videoPosts, popularPosts }) => {
   return (
     <>
       <Head>
@@ -25,7 +27,7 @@ const Home: React.FC<IHome> = ({ newsPosts }) => {
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
           <NewsCardContainer data={newsPosts} showType={false} type={""} />
-          <SidebarContainer data={sidebarCards.cards} widgets={true}/>
+          <SidebarContainer data={[videoPosts, popularPosts]} widgets={true}/>
         </div>
       </div>
       <Footer/>
@@ -37,8 +39,10 @@ export default Home;
 
 export async function getStaticProps() {
   const newsPosts = await getAllPosts();
+  const videoPosts = await getNewVideoPosts();
+  const popularPosts = await getPopularPosts();
 
   return {
-    props: { newsPosts: newsPosts },
+    props: { newsPosts: newsPosts, videoPosts: videoPosts, popularPosts: popularPosts },
   };
 }

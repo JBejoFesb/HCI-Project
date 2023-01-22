@@ -3,28 +3,29 @@ import Image from "next/image";
 import style from "./current-news.module.css";
 import Link from "next/link";
 import play from "../../../../public/images/icons/play.png";
+import { IImage, IType } from "../../../cards/news-card/news-card";
 
 export interface ICurrentNews {
     title: string,
-    image: string,
-    suffix: string,
-    video: boolean
+    slug: string,
+    mainImage: IImage,
+    type: IType,
 }
 
-const CurrentNews: React.FC<ICurrentNews> = ({ title, image, suffix, video }) => {
+const CurrentNews: React.FC<ICurrentNews> = ({ title, slug, mainImage, type}) => {
     return (
         <div className={style.item}>
-            <Link href="/news" className=" rounded-[30px]">
+            <Link href={`/${type.type == "news" || type.type == "video" ? type.type : type.type + 's'}/${slug}`} className=" rounded-[30px]">
                 <div className={style.container}>
                     <div className={style.image_container}>
-                        <Image src={`/images/currentNews/${image}.${suffix}`}
-                        alt={image}
+                        <Image src={mainImage.url}
+                        alt={slug}
                         fill
                         style={{
                             objectFit: "cover",
                         }}
                         />
-                        {video && <Image src={play}
+                        {(type.type == "video") && <Image src={play}
                         alt="play"
                         fill
                         style={{

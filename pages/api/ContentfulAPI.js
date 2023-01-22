@@ -63,6 +63,17 @@ type {
 }
 `;
 
+const SIDEBAR_POST_FIELDS = `
+slug
+type {
+  type
+}
+mainImage {
+  url
+}
+title
+`;
+
 async function fetchGraphQL(query) {
   const res = await axios
   .post(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -115,10 +126,17 @@ function extractVideoPostEntries(fetchResponse) {
 }
 
 // extraction of all posts for homepage
-function extractAllPostEntries(fetchResponse) {
+function extractAllPostEntries(fetchResponse, hasVideo) {
   const temp = fetchResponse?.data;
-  const allPosts = [...temp?.newsPostCollection?.items, ...temp?.reviewPostCollection?.items, ...temp?.videoPostCollection?.items, ...temp?.specialPostCollection?.items];
+  let allPosts = [];
 
+  if (hasVideo) {
+    allPosts = [...temp?.newsPostCollection?.items, ...temp?.reviewPostCollection?.items, ...temp?.videoPostCollection?.items, ...temp?.specialPostCollection?.items];
+  }
+  else {
+    allPosts = [...temp?.newsPostCollection?.items, ...temp?.reviewPostCollection?.items, ...temp?.specialPostCollection?.items];
+  }
+    
   allPosts.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 
   const splicedPosts = allPosts.splice(0,9);
@@ -386,5 +404,51 @@ export async function getAllPosts() {
     return {};
   }
 
-  return extractAllPostEntries(entries);
+  return extractAllPostEntries(entries, true);
+}
+
+export async function getPopularPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      newsPostCollection (limit: 3) {
+        items {
+          ${SIDEBAR_POST_FIELDS}
+        }
+      },
+      reviewPostCollection (limit: 3) {
+        items {
+          ${SIDEBAR_POST_FIELDS}
+        }
+      },
+      specialPostCollection (limit: 3) {
+        items {
+          ${SIDEBAR_POST_FIELDS}
+        }
+      }
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractAllPostEntries(entries, false).splice(0,3);
+}
+
+export async function getNewVideoPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      videoPostCollection {
+        items {
+          ${SIDEBAR_POST_FIELDS}
+        }
+      }
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractVideoPostEntries(entries).splice(0,3);
 }

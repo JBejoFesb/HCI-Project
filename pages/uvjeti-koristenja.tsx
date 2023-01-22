@@ -3,7 +3,6 @@ import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import Head from "next/head";
 import SidebarContainer from "../components/sidebar/sidebar-container/sidebar-container";
-import sidebarCards from "../static-data/sidebar-cards.json";
 import Link from "next/link";
 
 export interface ITermsOfUse {
@@ -130,7 +129,7 @@ const TermsOfUse: React.FC<ITermsOfUse> = ({}) => {
                         </p>
                     </div>
                 </div>
-                <SidebarContainer data={sidebarCards.cards} widgets={false}/>
+                <SidebarContainer data={[]} widgets={true}/>
             </div>
         </div>
         <Footer />
