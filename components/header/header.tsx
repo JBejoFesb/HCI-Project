@@ -5,10 +5,19 @@ import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
 import {BellAlertIcon} from '@heroicons/react/24/outline'
 import {UserIcon} from '@heroicons/react/24/solid'
 import {XMarkIcon} from '@heroicons/react/24/solid'
+import {Bars3Icon} from '@heroicons/react/24/solid'
 import Link from 'next/link';
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Header = () => {
+
+    const [navbarOpen, setNavbarOpen] = useState(false);
+
+    const handleToggle = () => {
+        setNavbarOpen(prev => !prev);
+        setNavbarOpen(!navbarOpen);
+    }
 
     const router = useRouter();
 
@@ -17,9 +26,15 @@ const Header = () => {
             <div className={style.header_container}>
                 <div className={style.header_left}>
                     <Link href="/"><img className={style.logo} src={HCLlogo.src} alt="HCL logo" /></Link>
-                    <button className="group p-4 lg:hidden"><XMarkIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110"/></button>
+                    <div>
+                        <button className="group p-4 lg:hidden" onClick={handleToggle}>
+                            {navbarOpen 
+                                ? <XMarkIcon className="h-10 w-10 group-hover:text-orange-500 group-hover:scale-110"/> 
+                                : <Bars3Icon className="h-10 w-10 group-hover:text-orange-500 group-hover:scale-110"/>
+                            }</button>
+                    </div>
                 </div>
-                <div className={style.header_right}>
+                <div className={`${style.header_right} ${navbarOpen ? "flex" : "hidden"}`}>
                     <ul className={style.nav_links}>
                         <li className={router.pathname == "/news" ? `${style.nav_link}` : "text-slate-400"}>
                             <Link className="py-4 px-2" href="/news">Vijesti</Link>

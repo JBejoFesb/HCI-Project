@@ -7,7 +7,7 @@
     @apply fixed top-0 left-0 right-0 z-50
     flex flex-col lg:flex-row
     border-b border-slate-300/10
-    bg-slate-900
+    bg-gradient-to-r from-slate-900 to-slate-900/90
     lg:bg-slate-900/75 lg:hover:bg-slate-900 transition-colors duration-300
     lg:backdrop-blur
     justify-between
@@ -20,22 +20,23 @@
 }
 
 .header_right{
-    @apply flex flex-col lg:flex-row
+    @apply flex-col lg:flex-row
     w-full lg:w-auto
     lg:justify-between lg:flex-grow lg:items-center 
-    lg:space-x-4 lg:space-y-0
+    lg:space-x-4 lg:space-y-0 
     space-y-4 
     lg:justify-self-end px-10
 }
 
 .logo{
-    @apply w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
+    @apply w-8 sm:w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
 }
 
 .nav_links{
     @apply flex flex-col lg:flex-row 
-    lg:space-x-6
+    lg:space-x-4
     space-y-6 lg:space-y-0
+    xl:space-x-6
     lg:text-2xl
     font-medium
     text-3xl
