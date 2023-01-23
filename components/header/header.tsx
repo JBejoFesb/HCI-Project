@@ -1,11 +1,11 @@
 import React from "react";
 import style from "./header.module.css";
 import HCLlogo from "../../public/images/icons/HCLtransparent.png";
-import {MagnifyingGlassIcon} from '@heroicons/react/24/outline'
-import {BellAlertIcon} from '@heroicons/react/24/outline'
-import {UserIcon} from '@heroicons/react/24/solid'
-import {XMarkIcon} from '@heroicons/react/24/solid'
-import {Bars3Icon} from '@heroicons/react/24/solid'
+import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
+import {BellAlertIcon} from '@heroicons/react/24/outline';
+import {UserIcon} from '@heroicons/react/24/solid';
+import {XMarkIcon} from '@heroicons/react/24/solid';
+import {Bars3Icon} from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -14,7 +14,15 @@ const Header = () => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
 
-    const handleToggle = () => {
+    let mobileDictionary: { [name: string]:string}={
+        '/' : 'HCL.hr',
+        "/news" : "Vijesti",
+        "/reviews" : "Recenzije",
+        "/specials" : "Specijali",
+        "/video" : "Video",
+    };
+
+    function handleToggle() {
         setNavbarOpen(prev => !prev);
         setNavbarOpen(!navbarOpen);
     }
@@ -26,11 +34,12 @@ const Header = () => {
             <div className={style.header_container}>
                 <div className={style.header_left}>
                     <Link href="/"><img className={style.logo} src={HCLlogo.src} alt="HCL logo" /></Link>
+                    <div className="font-medium text-xl sm:text-2xl flex lg:hidden text-slate-400">{mobileDictionary[router.pathname]}</div>
                     <div>
-                        <button className="group p-4 lg:hidden" onClick={handleToggle}>
+                        <button className="group py-4 lg:hidden" onClick={handleToggle}>
                             {navbarOpen 
-                                ? <XMarkIcon className="h-10 w-10 group-hover:text-orange-500 group-hover:scale-110"/> 
-                                : <Bars3Icon className="h-10 w-10 group-hover:text-orange-500 group-hover:scale-110"/>
+                                ? <XMarkIcon className="w-10 sm:w-12 group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/> 
+                                : <Bars3Icon className="w-10 sm:w-12 group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/>
                             }</button>
                     </div>
                 </div>
