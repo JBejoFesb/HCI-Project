@@ -13,15 +13,17 @@ export interface ISidebarContainer {
 
 export interface ISidebarItem {
     data: ICurrentNews[],
+    key: string,
 }
 
 const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
+    
     return (
         <div className=" flex flex-col mx-auto w-96 h-fit gap-5">
             {
                 data.map((dataPart: ISidebarItem) => {
                     return (
-                        <CurrentNewsContainer data={dataPart.data} key={`${dataPart.data[0].type.type}-card`} />
+                        <CurrentNewsContainer data={dataPart.data} key={`${dataPart.key}-card`} />
                     )   
                 })
             }
@@ -53,5 +55,3 @@ const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
 }
 
 export default SidebarContainer;
-
-[[{}, {}, {}],[{}, {}, {}]]
