@@ -11,7 +11,7 @@ module.exports = {
         'dark-marine' : '#1B1D2A',
         'dirty-white' : '#ECECEC',
         'bright-text' : '#484848',
-        'dark-text' : '#1A1A1A',
+        'dark-text' : '#212121',
         'main-orange' : '#FF7A00',
       },
     },

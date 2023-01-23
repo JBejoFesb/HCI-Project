@@ -3,32 +3,26 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import { getNewsPostBySlug, getAllNewsSlugs } from "../api/ContentfulAPI";
 import SidebarContainer from "../../components/sidebar/sidebar-container/sidebar-container";
+import PostContent, { INewsPostContent } from "../../components/post-content/post-content";
+import Head from "next/head";
 
 export interface INewsPostContainer {
-    newsPost: INewsPostContents,
-}
-
-export interface INewsPostContents {
-    title: string,
-    type: string,
-    slug: string,
-    author: string,
-    mainImage: string,
-    description: string,
-    content: string,
+    newsPost: INewsPostContent,
 }
 
 const NewsPost: React.FC<INewsPostContainer> = ({ newsPost }) => {
-
     return (
         <>
+        <Head>
+            <title>{newsPost.title}</title>
+        </Head>
         <Header />
-        <div className=' pt-20 pb-20 flex flex-col items-center bg-soft-marine'>
-            <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-            <div>
-                <h1>{newsPost.title}</h1>
-            </div>
-            <SidebarContainer data={[]} widgets={true}/>
+        <div className="pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
+            <div className=' pt-20 pb-20 flex flex-col items-center'>
+                <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
+                    <PostContent data={newsPost} />
+                    <SidebarContainer data={[]} widgets={true}/>
+                </div>
             </div>
         </div>
         <Footer />

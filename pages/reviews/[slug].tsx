@@ -27,7 +27,7 @@ const ReviewPost: React.FC<IReviewPostContainer> = ({ reviewPost }) => {
     return (
         <>
         <Header />
-        <div className=' pt-20 pb-20 flex flex-col items-center bg-soft-marine'>
+        <div className=' pt-20 pb-20 flex flex-col items-center'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
             <div>
                 <h1>{reviewPost.title}</h1>

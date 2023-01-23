@@ -78,7 +78,7 @@ const TermsOfUse: React.FC<ITermsOfUse> = ({}) => {
                             mogu sami urediti i ukloniti određene podatke s vlastitog profila, a u slučaju da žele izbrisati ili značajnije promijeniti svoj korisnički račun mogu 
                             kontaktirati administratora na <Link href="mailto:info@hcl.hr" className=" text-main-orange hover:underline font-semibold">info@hcl.hr</Link>.
                         </p>
-                        <h3 className=" font-bold text-xl">KORIŠTENJE HCL FORUMA I KOMENTARA NA PORTALU</h3>
+                        <h3 className=" font-bold text-xl text-dark-text">KORIŠTENJE HCL FORUMA I KOMENTARA NA PORTALU</h3>
                         <p className=" text-xl text-dark-text leading-7">
                             HCL Forum te mogućnost komentiranja članaka na HCL portalu je besplatna usluga koja omogućuje komunikaciju između 
                             registriranih korisnika HCL-a i regulirana je <b>ovim Uvjetima korištenja</b>, našom Politikom privatnosti te Pravilima ponašanja korisnika. 

@@ -20,5 +20,30 @@ body {
 
 ::selection{
   @apply bg-orange-500
-  text-black
+  text-dark-text
+}
+
+h1 {
+  @apply
+  font-bold text-3xl leading-6
+}
+
+h2 {
+  @apply
+  font-bold text-2xl pl-2 border-l-4 border-main-orange
+}
+
+h3 {
+  @apply
+  font-bold text-xl text-dark-text
+}
+
+hr {
+  @apply
+  border-[1px] border-black
+}
+
+p {
+  @apply
+  text-xl text-dark-text leading-7
 }
