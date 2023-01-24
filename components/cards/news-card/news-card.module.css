@@ -2,22 +2,18 @@
 @tailwind utilities;
 
 .grid_item {
-    @apply h-[32rem] 2xl:basis-[33%] 2xl:last:flex w-[128px] relative box-border py-4
-    lg:basis-[50%] lg:hover:scale-105 lg:p-4
-    basis-[100%] last:hidden
-}
-
-.grid_item {
-    -ms-flex: auto;
+    @apply h-[32rem] 2xl:basis-[33%] 2xl:last:flex  relative box-border py-4
+    lg:basis-[50%] lg:hover:scale-105 lg:p-4 lg:w-[128px] lg:mx-0
+    basis-[100%] max-w-fit
 }
 
 .link_container {
-    @apply absolute my-4 lg:my-0 top-0 left-0 bottom-0 right-0 z-10 
+    @apply absolute top-0 left-0 bottom-0 right-0 z-10 my-4 lg:my-0
 }
 
 .container {
-    @apply h-[30rem] w-full flex flex-col justify-end lg:rounded-xl border-y-2 border-gray-600/90 shadow-black/25 shadow-md transition-all
-    lg:border-2 lg:border-main-orange 
+    @apply h-[30rem] min-w-full sm:mx-auto sm:min-w-0 sm:w-full flex flex-col justify-end border-y-2 border-gray-600/90 shadow-black/25 shadow-md transition-all
+    lg:border-2 lg:border-main-orange lg:rounded-xl
 }
 
 .title {

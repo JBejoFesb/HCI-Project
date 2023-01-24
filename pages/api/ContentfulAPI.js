@@ -97,7 +97,7 @@ type {
 }
 `;
 
-const SIDEBAR_POST_FIELDS = `
+const SIDEBAR_AND_FEATURED_FIELDS = `
 slug
 type {
   type
@@ -453,17 +453,17 @@ export async function getPopularPosts() {
     `query {
       newsPostCollection (limit: 3) {
         items {
-          ${SIDEBAR_POST_FIELDS}
+          ${SIDEBAR_AND_FEATURED_FIELDS}
         }
       },
       reviewPostCollection (limit: 3) {
         items {
-          ${SIDEBAR_POST_FIELDS}
+          ${SIDEBAR_AND_FEATURED_FIELDS}
         }
       },
       specialPostCollection (limit: 3) {
         items {
-          ${SIDEBAR_POST_FIELDS}
+          ${SIDEBAR_AND_FEATURED_FIELDS}
         }
       }
     }`
@@ -481,7 +481,7 @@ export async function getNewVideoPosts() {
     `query {
       videoPostCollection {
         items {
-          ${SIDEBAR_POST_FIELDS}
+          ${SIDEBAR_AND_FEATURED_FIELDS}
         }
       }
     }`
@@ -499,12 +499,12 @@ export async function getFeaturedPosts() {
     `query {
       specialPostCollection {
         items {
-          ${SIDEBAR_POST_FIELDS}
+          ${SIDEBAR_AND_FEATURED_FIELDS}
         }
       },
       reviewPostCollection {
         items {
-          ${SIDEBAR_POST_FIELDS}
+          ${SIDEBAR_AND_FEATURED_FIELDS}
         }
       }
     }`
@@ -515,4 +515,58 @@ export async function getFeaturedPosts() {
   }
 
   return extractSpecialAndReviewPostEntries(entries);
+}
+
+export async function getFeaturedReviewPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      reviewPostCollection {
+        items {
+          ${SIDEBAR_AND_FEATURED_FIELDS}
+        }
+      },
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractReviewPostEntries(entries).splice(0,2);
+}
+
+export async function getFeaturedSpecialPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      specialPostCollection {
+        items {
+          ${SIDEBAR_AND_FEATURED_FIELDS}
+        }
+      },
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractSpecialPostEntries(entries).splice(0,2);
+}
+
+export async function getFeaturedVideoPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      videoPostCollection {
+        items {
+          ${SIDEBAR_AND_FEATURED_FIELDS}
+        }
+      },
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractVideoPostEntries(entries).splice(0,2);
 }

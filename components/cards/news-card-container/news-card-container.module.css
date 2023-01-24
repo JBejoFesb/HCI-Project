@@ -7,10 +7,10 @@
 }
 
 .container {
-    @apply max-w-5xl w-[40rem] 
-    lg:p-5 lg:w-[45rem] 2xl:w-[80rem]
+    @apply w-full max-w-full flex 
+    lg:p-5 lg:w-[45rem] lg:max-w-[68rem] 2xl:w-[80rem]
 }
 
 .grid_row {
-    @apply w-full flex flex-row flex-wrap justify-start lg:p-5
+    @apply w-full flex flex-row justify-center flex-wrap lg:p-5 lg:justify-start
 }
