@@ -20,7 +20,7 @@
 }
 
 .title {
-    @apply font-extrabold text-2xl leading-7 flex items-end text-dirty-white p-2 drop-shadow-md shadow-black/50
+    @apply font-extrabold text-2xl leading-7 flex items-end text-dirty-white p-2 shadow-lg shadow-black/25
 }
 
 .extra_text {

@@ -39,6 +39,7 @@
     lg:text-2xl
     font-medium
     text-3xl
+    list-none
 }
 
 .nav_links > li{
