@@ -3,18 +3,11 @@ import style from "./news-card.module.css";
 import Link from "next/link";
 import dayjs from 'dayjs'; 
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { IType, IImage } from "../../../constants/constants";
 import 'dayjs/locale/hr';
 
 dayjs.extend(relativeTime);
 dayjs.locale('hr');
-
-export interface IImage {
-    url: string,
-}
-
-export interface IType {
-    type: string,
-}
 
 export interface INewsCard {
     slug: string,

@@ -3,37 +3,19 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import SidebarContainer from "../../components/sidebar/sidebar-container/sidebar-container";
 import { getAllReviewSlugs, getReviewPostBySlug } from "../api/ContentfulAPI";
-
-
-export interface IReviewPostContainer {
-    reviewPost: IReviewPostContents,
-}
-
-export interface IReviewPostContents {
-    title: string,
-    slug: string,
-    type: string,
-    headline: string,
-    creation: string,
-    author: string,
-    mainImage: string,
-    description: string,
-    score: number,
-    content: string,
-}
+import ReviewPostContent, { IReviewPostContainer } from "../../components/post-content/review-post-content/review-post-content";
 
 const ReviewPost: React.FC<IReviewPostContainer> = ({ reviewPost }) => {
 
     return (
         <>
         <Header />
-        <div className=' pt-20 pb-20 flex flex-col items-center'>
-            <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-            <div>
-                <h1>{reviewPost.title}</h1>
-                           
-            </div>
-            <SidebarContainer data={[]} widgets={true}/>
+        <div className="pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
+            <div className=' pt-20 pb-20 flex flex-col items-center'>
+                <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
+                    <ReviewPostContent reviewPost={reviewPost} />
+                    <SidebarContainer data={[]} widgets={true}/>
+                </div>
             </div>
         </div>
         <Footer />

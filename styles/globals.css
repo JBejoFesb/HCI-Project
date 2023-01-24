@@ -16,6 +16,7 @@ body {
     color: #ECECEC;
     font-family: 'Inter';
     font-style: normal;
+    
 }
 
 ::selection{
@@ -25,12 +26,12 @@ body {
 
 h1 {
   @apply
-  font-bold text-3xl leading-6
+  font-bold text-3xl leading-8 text-dark-text
 }
 
 h2 {
   @apply
-  font-bold text-2xl pl-2 border-l-4 border-main-orange
+  font-bold text-2xl pl-2 border-l-4 border-main-orange text-dark-text
 }
 
 h3 {
@@ -46,4 +47,9 @@ hr {
 p {
   @apply
   text-xl text-dark-text leading-7
+}
+
+blockquote {
+  @apply
+  text-xl italic font-semibold text-dark-text
 }

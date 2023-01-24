@@ -22,7 +22,7 @@ const Videos: React.FC<IVideoPosts> = ({ videoPosts }) => {
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
         <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-          <NewsCardContainer data={videoPosts} showType={true} type={"VIDEO"}/>
+          <NewsCardContainer data={videoPosts} />
           <SidebarContainer data={[]} widgets={true}/>
         </div>
       </div>

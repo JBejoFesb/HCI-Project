@@ -1,6 +1,36 @@
 import axios from "axios";
 
 // product fields to fetch
+const CONTENT_FIELDS = `
+json
+links {
+  entries {
+    block {
+      sys {
+        id
+      }
+      __typename
+      ... on VideoEmbed {
+        title
+        embedId
+      }
+    }
+  },
+  assets {
+    block {
+      sys {
+        id
+      }
+      url
+      title
+      width
+      height
+      description
+    }
+  }
+}
+`;
+
 const NEWS_POST_GRAPHQL_FIELDS = `
 slug  
 title
@@ -14,7 +44,7 @@ mainImage {
 description 
 creation
 content {
-  json
+  ${CONTENT_FIELDS}
 }
 `;
 
@@ -32,7 +62,7 @@ mainImage {
 description 
 creation
 content {
-  json
+  ${CONTENT_FIELDS}
 }
 `;
 
@@ -47,6 +77,10 @@ type {
 author
 description
 creation
+mainImage {
+  url
+}
+url
 `;
 
 const PARTIAL_POST_FIELDS = `
@@ -225,7 +259,7 @@ export async function getNewsPostBySlug(slug) {
   
   const entries = await fetchGraphQL(
     `query {
-      newsPostCollection (where: {slug:"${slug}"}) {
+      newsPostCollection (where: {slug:"${slug}"}, limit: 1) {
         items {
           ${NEWS_POST_GRAPHQL_FIELDS}
         }
@@ -244,7 +278,7 @@ export async function getNewsPostBySlug(slug) {
 export async function getReviewPostBySlug(slug) {
   const entries = await fetchGraphQL(
     `query {
-      reviewPostCollection (where: {slug: "${slug}"}) {
+      reviewPostCollection (where: {slug: "${slug}"}, limit: 1) {
         items {
           ${REVIEW_POST_GRAPHQL_FIELDS}
         }
@@ -263,7 +297,7 @@ export async function getReviewPostBySlug(slug) {
 export async function getSpecialPostBySlug(slug) {
   const entries = await fetchGraphQL(
     `query {
-      specialPostCollection (where: {slug: "${slug}"}) {
+      specialPostCollection (where: {slug: "${slug}"}, limit: 1) {
         items {
           ${SPECIAL_POST_GRAPHQL_FIELDS}
         }
@@ -282,7 +316,7 @@ export async function getSpecialPostBySlug(slug) {
 export async function getVideoPostBySlug(slug) {
   const entries = await fetchGraphQL(
     `query {
-      videoPostCollection (where: {slug: "${slug}"}) {
+      videoPostCollection (where: {slug: "${slug}"}, limit: 1) {
         items {
           ${VIDEO_POST_GRAPHQL_FIELDS}
         }

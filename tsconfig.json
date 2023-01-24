@@ -16,6 +16,6 @@
     "allowSyntheticDefaultImports": true,
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/ContentfulAPI.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/ContentfulAPI.js", "components/youtube-embed"],
   "exclude": ["node_modules"]
 }
