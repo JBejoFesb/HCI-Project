@@ -53,3 +53,8 @@ blockquote {
   @apply
   text-xl italic font-semibold text-dark-text
 }
+
+ul {
+  @apply
+  list-disc list-inside
+}
