@@ -3,7 +3,7 @@ import Image from "next/image";
 import style from "./current-news.module.css";
 import Link from "next/link";
 import play from "../../../../public/images/icons/play.png";
-import { IImage, IType } from "../../../cards/news-card/news-card";
+import { IImage, IType } from "../../../../constants/constants";
 
 export interface ICurrentNews {
     title: string,
