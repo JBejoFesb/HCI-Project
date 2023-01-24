@@ -2,13 +2,15 @@
 @tailwind utilities;
 
 .holder {
-    @apply flex flex-col bg-dirty-white rounded-[30px] min-w-fit
+    @apply flex flex-col bg-dirty-white min-w-full
+    lg:rounded-[30px] lg:min-w-fit
 }
 
 .container {
-    @apply max-w-5xl p-5 w-[45rem] 2xl:w-[80rem]
+    @apply max-w-5xl w-[40rem] 
+    lg:p-5 lg:w-[45rem] 2xl:w-[80rem]
 }
 
 .grid_row {
-    @apply w-full flex flex-row flex-wrap justify-start p-5
+    @apply w-full flex flex-row flex-wrap justify-start lg:p-5
 }

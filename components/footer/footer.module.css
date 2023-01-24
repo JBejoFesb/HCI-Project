@@ -13,7 +13,7 @@
 }
 
 .footer_links{
-    @apply flex flex-col justify-between md:flex-row
+    @apply flex flex-col justify-between lg:flex-row
     px-20
     pt-9
     w-full

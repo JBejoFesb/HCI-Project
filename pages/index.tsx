@@ -25,7 +25,7 @@ const Home: React.FC<IHome> = ({ newsPosts, videoPosts, popularPosts, featuredPo
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
         <PopularNewsCardContainer featuredPosts={featuredPosts}/>
-        <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
+        <div className=' flex flex-row w-max lg:w-fit justify-between gap-10 lg:px-5'>
           <NewsCardContainer data={newsPosts} />
           <SidebarContainer data={[{data: videoPosts, key: 'video'}, {data: popularPosts, key: 'aktualno'}]} widgets={true}/>
         </div>

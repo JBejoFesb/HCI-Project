@@ -2,5 +2,6 @@
 @tailwind utilities;
 
 .button {
-    @apply w-full text-center p-6 rounded-xl transition-all drop-shadow-md hover:scale-[100.5%]
+    @apply text-center drop-shadow-md py-6
+    lg:w-full lg:p-6 lg:rounded-xl lg:transition-all lg:hover:scale-[100.5%]
 }

@@ -29,7 +29,7 @@ const NewsCardContainer: React.FC<INewsCardContainer> = ({ data }) => {
                     }
                 </div>
             </div>
-            <div className=" px-5 py-5">
+            <div className=" lg:px-5 py-5">
                 <MoreNewsButton />
             </div>
             

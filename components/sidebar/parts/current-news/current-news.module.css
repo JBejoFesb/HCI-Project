@@ -14,11 +14,5 @@
 }
 
 .title {
-    @apply p-2 h-fit leading-7 text-ellipsis overflow-hidden 
-}
-
-.title {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    @apply p-2 h-fit leading-7 text-ellipsis overflow-hidden line-clamp-3
 }

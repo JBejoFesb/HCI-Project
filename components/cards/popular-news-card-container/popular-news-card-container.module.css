@@ -2,5 +2,5 @@
 @tailwind utilities;
 
 .container {
-    @apply flex flex-row gap-8 mx-auto h-fit w-fit p-10
+    @apply flex flex-row gap-8 mx-auto h-fit w-fit p-10 
 }
