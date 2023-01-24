@@ -15,7 +15,7 @@
 }
 
 .header_left{
-    @apply flex flex-row items-center justify-self-start px-10 h-20
+    @apply flex flex-row items-center justify-self-start px-[3vw] h-auto lg:h-20
     justify-between
 }
 
@@ -29,7 +29,7 @@
 }
 
 .logo{
-    @apply w-8 sm:w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
+    @apply w-10 sm:w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
 }
 
 .nav_links{
