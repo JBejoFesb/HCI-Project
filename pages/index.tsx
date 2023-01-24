@@ -4,7 +4,6 @@ import Head from 'next/head'
 import PopularNewsCardContainer from '../components/cards/popular-news-card-container/popular-news-card-container';
 import NewsCardContainer from '../components/cards/news-card-container/news-card-container';
 import SidebarContainer, { ISidebarItem } from '../components/sidebar/sidebar-container/sidebar-container';
-import Slider from '../components/slider/slider';
 import { getAllPosts, getNewVideoPosts, getPopularPosts, getFeaturedPosts } from './api/ContentfulAPI';
 import { INewsCard } from '../components/cards/news-card/news-card';
 import { ICurrentNews } from '../components/sidebar/parts/current-news/current-news';
