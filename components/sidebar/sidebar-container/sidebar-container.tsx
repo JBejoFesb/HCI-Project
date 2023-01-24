@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentNewsContainer, { ICurrentNewsContainer } from "../parts/current-news-container/current-news-container";
+import style from "./sidebar-container.module.css";
 import { ICurrentNews } from "../parts/current-news/current-news";
 import discord from "../../../public/images/sidebar/discord-widget.png";
 import merch from "../../../public/images/sidebar/merch-widget.png";
@@ -19,7 +20,7 @@ export interface ISidebarItem {
 const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
     
     return (
-        <div className=" flex flex-col mx-auto w-96 h-fit gap-5">
+        <div className={style.container}>
             {
                 data.map((dataPart: ISidebarItem) => {
                     return (
@@ -28,7 +29,7 @@ const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
                 })
             }
             { widgets && 
-                <div className=" rounded-[30px]">
+                <div className={style.widget}>
                     <Link href="https://www.discord.gg/gkajsxu">
                         <Image src={discord} 
                         alt="Discord"
@@ -40,7 +41,7 @@ const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
             }
             {
                 widgets &&
-                <div className=" rounded-[30px]">
+                <div className={style.widget}>
                     <Link href="https://shop.hcl.hr/">
                         <Image src={merch} 
                         alt="Merch"

@@ -1,86 +1,45 @@
+@tailwind components;
+@tailwind utilities;
+
 .grid_item {
-    height: 34em;
-    flex-basis: 33%;
-    -ms-flex: auto;
-    width: 18em;
-    position: relative;
-    box-sizing: border-box;
-    padding: 1em;
+    @apply h-[32rem] 2xl:basis-[33%] 2xl:last:flex w-[128px] relative box-border p-4
+    basis-[50%] hover:scale-105 last:hidden
+    
 }
 
-@media(max-width: 1256px) {
-    .grid_item {
-     flex-basis: 50%;
-   }
-}@media(max-width: 880px) {
-    .grid_item {
-     flex-basis: 100%;
-   }
+.grid_item {
+    -ms-flex: auto;
 }
 
 .link_container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
+    @apply absolute top-0 left-0 bottom-0 right-0 z-10
 }
 
 .container {
-    height: 32em;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border-radius: 10px;
-    border: 0.2em solid rgb(255, 122, 0);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    transition: transform 0.25s;
+    @apply h-[30rem] w-full flex flex-col justify-end rounded-xl border-2 border-main-orange shadow-md shadow-black/25 transition-all
 }
 
 .title {
-    font-weight: 800;
-    font-size: 1.5em;
-    line-height: 1.2em;
-    display: flex;
-    align-items: flex-end;
-    color: #ECECEC;
-    text-shadow: 0px 0.2em 0.2em rgba(0, 0, 0, 0.8);
-    padding: 0.5em;
+    @apply font-extrabold text-2xl leading-7 flex items-end text-dirty-white p-2 drop-shadow-md shadow-black/50
 }
 
 .extra_text {
-    color: #FF7A00;
-    font-size: 0.9em;
-    line-height: 1.75em;
+    @apply text-main-orange text-[0.9em] leading-7
 }
 
 .desc_container {
-    padding: 0.5em 1em 1em 1em;
-    color:  #1A1A1A;
-    font-size: 0.95em;
-    font-weight: 300;
-    line-height: 1.25em;
-    background: rgba(255, 255, 255, 0.92);
-    mix-blend-mode: normal;
-    border-top: 0.3em solid #FF7A00;
+    @apply p-4 pt-2 text-dark-text text-base font-light leading-5 bg-white/90 mix-blend-normal border-t-2 border-t-main-orange
     
 }
 
 .desc {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @apply overflow-hidden text-ellipsis leading-5 max-h-[1.25rem*3] transition-all ease-in-out
+}
+
+.desc {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; /* number of lines to show */
-    line-height: 1.25em;        /* fallback */
-    max-height: 1.25*3;       /* fallback */
-    transition: all 0.25s ease-in-out;
-}
-
-.grid_item:hover {
-    transform: scale(1.05);
 }
 
 .grid_item:hover > .container > .desc_container > .desc {

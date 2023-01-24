@@ -1,13 +1,14 @@
+@tailwind components;
+@tailwind utilities;
+
+.holder {
+    @apply flex flex-col bg-dirty-white rounded-[30px] min-w-fit
+}
+
 .container {
-    margin: 0 auto;
-    max-width: 1080px;
-    padding: 20px;
+    @apply max-w-5xl p-5 w-[45rem] 2xl:w-[80rem]
 }
 
 .grid_row {
-    width: fit-content;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    padding: 20px;
+    @apply w-full flex flex-row flex-wrap justify-start p-5
 }

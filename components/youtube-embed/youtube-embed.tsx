@@ -10,10 +10,9 @@ const YoutubeEmbed: React.FC<IYoutubeEmbed> = ({ embedId }) => {
         {
             (embedId != null) && <div className="video-responsive">
                 <iframe
-                width="853"
-                height="480"
                 src={`https://www.youtube.com/embed/${embedId}`}
-                frameBorder="0"
+                width='100%'
+                height='440px'
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="Embedded youtube"

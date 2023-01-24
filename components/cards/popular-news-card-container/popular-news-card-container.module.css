@@ -1,9 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 .container {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    margin: auto;
-    height: fit-content;
-    padding: 40px;
-    width: fit-content;
+    @apply flex flex-row gap-8 mx-auto h-fit w-fit p-10
 }

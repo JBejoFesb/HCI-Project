@@ -1,12 +1,6 @@
-.button {
-    width: 100%;
-    text-align: center;
-    padding: 1.5em;
-    border-radius: 10px;
-    transition: transform 0.25s;
-    filter: drop-shadow(0px 0.25em 0.25em rgba(0, 0, 0, 0.5));
-}
+@tailwind components;
+@tailwind utilities;
 
-.button:hover {
-    transform: scale(1.005);
+.button {
+    @apply w-full text-center p-6 rounded-xl transition-all drop-shadow-md hover:scale-[100.5%]
 }

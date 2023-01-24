@@ -1,6 +1,7 @@
 import React from "react";
 import CurrentNews from "../current-news/current-news";
 import { ICurrentNews } from "../current-news/current-news";
+import style from "./current-news-container.module.css";
 
 export interface ICurrentNewsContainer {
     data: ICurrentNews[];
@@ -8,8 +9,8 @@ export interface ICurrentNewsContainer {
 
 const CurrentNewsContainer: React.FC<ICurrentNewsContainer> = ({ data }) => {
     return (
-        <div className=" flex flex-col gap-5 bg-dirty-white rounded-[30px] pt-5 pr-5 pl-5 pb-5 relative">
-            <div className=" text-2xl font-bold text-bright-text text-center pt-1 pb-1">
+        <div className={style.container}>
+            <div className={style.title_holder}>
                 {data[0].type.type == "video" ? "Video" : "Aktualno" }
             </div>
                 {

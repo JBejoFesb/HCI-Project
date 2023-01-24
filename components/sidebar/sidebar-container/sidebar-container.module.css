@@ -1,0 +1,13 @@
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply
+    flex-col mx-auto w-96 h-fit gap-5 hidden
+    lg:flex
+}
+
+.widget {
+    @apply
+    rounded-[30px]
+}

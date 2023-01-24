@@ -10,7 +10,7 @@ export interface INewsCardContainer {
 
 const NewsCardContainer: React.FC<INewsCardContainer> = ({ data }) => {
     return (
-        <div className=" flex flex-col bg-dirty-white rounded-[30px] min-w-[800px]">
+        <div className={style.holder}>
             <div className={style.container}>
                 <div className={`${style.grid_row}`}>
                     {

@@ -1,34 +1,23 @@
-.item {
-    border-radius: 10px;
-    box-shadow: 0px 0.25em 0.25em rgba(0, 0, 0, 0.1);
-    transition: all 0.25s ease-in-out;
-}
+@tailwind components;
+@tailwind utilities;
 
-.item:hover {
-    transform: scale(1.05);
+.item {
+    @apply rounded-xl shadow-sm transition-all ease-in-out hover:scale-105
 }
 
 .container {
-    position: relative;
-    height: 105px;
-    max-height: fit-content;
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    @apply relative h-28 max-h-fit flex flex-row rounded-xl border-[1px] border-black/25
 }
 
 .image_container {
-    position: relative;
-    min-width: 8rem;
+    @apply relative min-w-[8rem]
 }
 
 .title {
-    padding: 0.5em;
-    height: fit-content;
-    line-height: 1.78em;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @apply p-2 h-fit leading-6 text-ellipsis overflow-hidden 
+}
+
+.title {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
