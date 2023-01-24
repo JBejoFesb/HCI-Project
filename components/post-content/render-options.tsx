@@ -18,6 +18,9 @@ const renderOptions: any = (links: any) => {
     return {
         renderNode: {
             // clear empty p at the end of text
+            [BLOCKS.LIST_ITEM]: (node: any, children: any) => {
+                return <li>{children[0].props.children}</li>;
+            },
             [BLOCKS.PARAGRAPH]: (node: any, children: any) => (children != '') ? <p>{children}</p> : '',
 
             [INLINES.HYPERLINK]: ( node: any , children: string ) => {
