@@ -125,6 +125,10 @@ async function fetchGraphQL(query) {
   return res.data;
 }
 
+function sortDate(array) {
+  return array.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
+}
+
 // extraction of singular post
 function extractNewsPost(fetchResponse) {
   return fetchResponse?.data?.newsPostCollection?.items?.[0]
@@ -144,19 +148,19 @@ function extractVideoPost(fetchResponse) {
 
 // extraction of all returned posts
 function extractNewsPostEntries(fetchResponse) {
-  return fetchResponse?.data?.newsPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
+  return sortDate(fetchResponse?.data?.newsPostCollection?.items);
 }
 
 function extractReviewPostEntries(fetchResponse) {
-  return fetchResponse?.data?.reviewPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
+  return sortDate(fetchResponse?.data?.reviewPostCollection?.items);
 }
 
 function extractSpecialPostEntries(fetchResponse) {
-  return fetchResponse?.data?.specialPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
+  return sortDate(fetchResponse?.data?.specialPostCollection?.items);
 }
 
 function extractVideoPostEntries(fetchResponse) {
-  return fetchResponse?.data?.videoPostCollection?.items.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
+  return sortDate(fetchResponse?.data?.videoPostCollection?.items);
 }
 
 // extraction of all posts for homepage
@@ -170,12 +174,15 @@ function extractAllPostEntries(fetchResponse, hasVideo) {
   else {
     allPosts = [...temp?.newsPostCollection?.items, ...temp?.reviewPostCollection?.items, ...temp?.specialPostCollection?.items];
   }
-    
-  allPosts.sort((a, b) => Date.parse(new Date(b.creation)) - Date.parse(new Date(a.creation)));
 
-  const splicedPosts = allPosts.splice(0,9);
+  return sortDate(allPosts).splice(0,9);
+}
 
-  return splicedPosts;
+function extractSpecialAndReviewPostEntries(fetchResponse) {
+  const temp = fetchResponse?.data;
+  const allPosts = [...temp?.specialPostCollection?.items, ...temp?.reviewPostCollection?.items];
+
+  return sortDate(allPosts).splice(0,7);
 }
 
 // get all news
@@ -485,4 +492,27 @@ export async function getNewVideoPosts() {
   }
 
   return extractVideoPostEntries(entries).splice(0,3);
+}
+
+export async function getFeaturedPosts() {
+  const entries = await fetchGraphQL(
+    `query {
+      specialPostCollection {
+        items {
+          ${SIDEBAR_POST_FIELDS}
+        }
+      },
+      reviewPostCollection {
+        items {
+          ${SIDEBAR_POST_FIELDS}
+        }
+      }
+    }`
+  );
+
+  if (!entries) {
+    return {};
+  }
+
+  return extractSpecialAndReviewPostEntries(entries);
 }

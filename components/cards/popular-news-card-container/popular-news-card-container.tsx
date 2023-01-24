@@ -4,16 +4,16 @@ import { IPopularNewsCard } from "../popular-news-card/popular-news-card";
 import PopularNewsCard from "../popular-news-card/popular-news-card";
 
 export interface IPopularNewsCardContainer {
-    data: IPopularNewsCard[],
+    featuredPosts: IPopularNewsCard[],
 }
 
-const PopularNewsCardContainer: React.FC<IPopularNewsCardContainer> = ({ data }) => {
+const PopularNewsCardContainer: React.FC<IPopularNewsCardContainer> = ({ featuredPosts }) => {
     return (
         <div className={style.container}>
             {
-                data.map((card: IPopularNewsCard, i: number) => {
+                featuredPosts.map((post: IPopularNewsCard) => {
                     return (
-                        <PopularNewsCard tag={card.tag} title={card.title} image={card.image} suffix={card.suffix} key={`${card.title}-popularcard-${i}`}/>
+                        <PopularNewsCard slug={post.slug} title={post.title} type={post.type} mainImage={post.mainImage} key={`${post.title}-popularcard`}/>
                     )
                 })
             }

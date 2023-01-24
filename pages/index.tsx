@@ -4,20 +4,20 @@ import Head from 'next/head'
 import PopularNewsCardContainer from '../components/cards/popular-news-card-container/popular-news-card-container';
 import NewsCardContainer from '../components/cards/news-card-container/news-card-container';
 import SidebarContainer, { ISidebarItem } from '../components/sidebar/sidebar-container/sidebar-container';
-import popular_news_cards from "../static-data/popular-news-cards.json";
-import sidebarCards from "../static-data/sidebar-cards.json";
 import Slider from '../components/slider/slider';
-import { getAllPosts, getNewVideoPosts, getPopularPosts } from './api/ContentfulAPI';
+import { getAllPosts, getNewVideoPosts, getPopularPosts, getFeaturedPosts } from './api/ContentfulAPI';
 import { INewsCard } from '../components/cards/news-card/news-card';
 import { ICurrentNews } from '../components/sidebar/parts/current-news/current-news';
+import { IPopularNewsCard } from '../components/cards/popular-news-card/popular-news-card';
 
 export interface IHome {
   newsPosts: INewsCard[],
   videoPosts: ICurrentNews[],
   popularPosts: ICurrentNews[],
+  featuredPosts: IPopularNewsCard[],
 }
 
-const Home: React.FC<IHome> = ({ newsPosts, videoPosts, popularPosts }) => {
+const Home: React.FC<IHome> = ({ newsPosts, videoPosts, popularPosts, featuredPosts }) => {
   return (
     <>
       <Head>
@@ -25,7 +25,7 @@ const Home: React.FC<IHome> = ({ newsPosts, videoPosts, popularPosts }) => {
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
-        <PopularNewsCardContainer data={popular_news_cards.popularNewsCards}/>
+        <PopularNewsCardContainer featuredPosts={featuredPosts}/>
         <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
           <NewsCardContainer data={newsPosts} />
           <SidebarContainer data={[{data: videoPosts, key: 'video'}, {data: popularPosts, key: 'aktualno'}]} widgets={true}/>
@@ -42,8 +42,9 @@ export async function getStaticProps() {
   const newsPosts = await getAllPosts();
   const videoPosts = await getNewVideoPosts();
   const popularPosts = await getPopularPosts();
+  const featuredPosts = await getFeaturedPosts();
 
   return {
-    props: { newsPosts: newsPosts, videoPosts: videoPosts, popularPosts: popularPosts },
+    props: { newsPosts: newsPosts, videoPosts: videoPosts, popularPosts: popularPosts, featuredPosts: featuredPosts },
   };
 }

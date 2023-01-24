@@ -2,7 +2,7 @@
 @tailwind utilities;
 
 
-.header_container{
+.header_container {
     @apply fixed top-0 left-0 right-0 z-50
     flex flex-col lg:flex-row
     border-b border-slate-300/10
@@ -13,12 +13,12 @@
     justify-between
 }
 
-.header_left{
+.header_left {
     @apply flex flex-row items-center justify-self-start px-[3vw] h-auto lg:h-20
     justify-between
 }
 
-.header_right{
+.header_right {
     @apply lg:flex flex-col lg:flex-row
     w-full lg:w-auto
     lg:justify-between lg:flex-grow lg:items-center 
@@ -27,11 +27,11 @@
     lg:justify-self-end px-10
 }
 
-.logo{
+.logo {
     @apply w-10 sm:w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
 }
 
-.nav_links{
+.nav_links {
     @apply flex flex-col lg:flex-row 
     lg:space-x-4
     space-y-6 lg:space-y-0
@@ -41,14 +41,14 @@
     text-3xl
 }
 
-.nav_links > li{
+.nav_links > li {
     @apply
     transition-all duration-300
     lg:hover:text-dirty-white transform-gpu lg:hover:scale-110
     lg:hover:font-bold
 }
 
-.search{
+.search {
     @apply
     bg-slate-700 
     max-w-md min-w-fit
@@ -63,18 +63,18 @@
     focus-within:border-orange-300
 }
 
-.searchbar{
+.searchbar {
     @apply
     flex-grow
     bg-slate-700
     focus:outline-none
 }
 
-.user{
+.user {
     @apply flex flex-row
 }
 
-.nav_link{
+.nav_link {
     @apply text-orange-500 font-bold lg:border-b-2 border-orange-500
 }
 
