@@ -16,8 +16,12 @@
 }
 
 .button {
-    @apply text-center drop-shadow-md py-6
-    lg:w-full lg:p-6 lg:rounded-xl lg:transition-all lg:hover:scale-[100.5%]
+    @apply text-center drop-shadow-md py-6 w-full px-4 text-dirty-white text-xl font-semibold bg-slate-900
+    lg:p-6 lg:rounded-xl lg:transition-all lg:hover:scale-[100.5%]
+}
+
+.button {
+    filter: drop-shadow(0 4px 0.25em rgba(0, 0, 0, 50%));
 }
 
 .button_off {
