@@ -24,11 +24,15 @@
     lg:justify-between lg:flex-grow lg:items-center 
     lg:space-x-2 xl:space-x-4 lg:space-y-0 
     space-y-4 
-    lg:justify-self-end pl-8 pr-[3vw]
+    lg:justify-self-end pl-4 pr-[3vw]
 }
 
 .logo {
-    @apply w-10 sm:w-12 max-w-none transition-all duration-300 transform-gpu hover:scale-110
+    @apply w-10 h-10
+    sm:w-12 sm:h-12 
+    hover:scale-110
+    lg:mr-4
+    transition-all duration-300 transform-gpu
 }
 
 .nav_links {

@@ -47,15 +47,16 @@
 }
 
 .flogo{
-    @apply w-20 max-w-none
-    transition-all duration-300 transform-gpu 
+    @apply w-20 h-20
     hover:scale-125
+    lg:mr-4
+    transition-all duration-300 transform-gpu
 }
 
 .fsvg{
-    @apply w-12 max-w-none
-    transition-all duration-300 transform-gpu 
+    @apply w-12 h-12
     hover:scale-125
+    transition-all duration-300 transform-gpu 
 }
 
 .finfo{

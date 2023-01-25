@@ -7,6 +7,7 @@ import {UserIcon} from '@heroicons/react/24/solid';
 import {XMarkIcon} from '@heroicons/react/24/solid';
 import {Bars3Icon} from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -33,7 +34,7 @@ const Header = () => {
         <>
             <div className={style.header_container}>
                 <div className={style.header_left}>
-                    <Link href="/"><img className={style.logo} src={HCLlogo.src} alt="HCL logo" /></Link>
+                    <Link className={style.logo} href="/"><Image src={HCLlogo.src} alt="HCL logo" fill /></Link>
                     <div className="font-medium text-xl sm:text-2xl flex lg:hidden text-slate-400">{mobileDictionary[router.pathname]}</div>
                     <div>
                         <button className="group py-4 lg:hidden" onClick={handleToggle}>
