@@ -175,7 +175,7 @@ function extractAllPostEntries(fetchResponse, hasVideo) {
     allPosts = [...temp?.newsPostCollection?.items, ...temp?.reviewPostCollection?.items, ...temp?.specialPostCollection?.items];
   }
 
-  return sortDate(allPosts).splice(0,9);
+  return sortDate(allPosts);
 }
 
 function extractSpecialAndReviewPostEntries(fetchResponse) {

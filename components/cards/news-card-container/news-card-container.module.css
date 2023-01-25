@@ -19,3 +19,7 @@
     @apply text-center drop-shadow-md py-6
     lg:w-full lg:p-6 lg:rounded-xl lg:transition-all lg:hover:scale-[100.5%]
 }
+
+.button_off {
+    @apply pointer-events-none bg-gray-300 text-gray-600 lg:hover:scale-100
+}
