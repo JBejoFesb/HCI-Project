@@ -16,7 +16,7 @@ const Advertising: React.FC<IAdvertising> = ({}) => {
             <title>HCL Oglašavanje</title>
         </Head>
         <Header />
-        <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
+        <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900 min-h-[77vh]'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
                 <div className=' flex flex-col bg-dirty-white rounded-[30px] max-w-[800px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
                     <h1 className=" font-bold text-3xl leading-6">OGLAŠAVANJE</h1>
