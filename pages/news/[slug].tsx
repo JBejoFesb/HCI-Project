@@ -12,10 +12,10 @@ const NewsPost: React.FC<INewsPostContainer> = ({ newsPost }) => {
         <Head>
             <title>{newsPost.title}</title>
         </Head>
-        <Header />
-        <div className="pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
-            <div className=' pt-20 pb-20 flex flex-col items-center'>
-                <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
+        <Header/>
+        <div className="pt-[72px] sm:pt-20 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
+            <div className=' sm:pt-20 sm:pb-20 flex flex-col items-center'>
+                <div className=' flex flex-row justify-between gap-10 sm:pl-5 sm:pr-5'>
                     <NewsPostContent newsPost={newsPost} />
                     <SidebarContainer data={[]} widgets={true}/>
                 </div>

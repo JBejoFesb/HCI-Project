@@ -2,17 +2,17 @@
 @tailwind utilities;
 
 .container {
-    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm relative border-opacity-0 border-4 lg:hover:border-opacity-100 border-main-orange 
+    @apply h-96 sm:h-[400px] lg:h-[460px] xl:h-[520px] w-[70vw] min-w-[240px] max-w-sm relative border-opacity-0 border-4 lg:hover:border-opacity-100 border-main-orange 
     rounded-2xl drop-shadow-lg items-center justify-between transition-all duration-300 ease-in-out
     lg:hover:shadow-slate-50 lg:hover:scale-105 
-    lg:min-w-full lg:max-w-md lg:h-[40vh] 
+    lg:min-w-full lg:max-w-md 
     overflow-hidden
 }
 
 .main {
-    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm relative border-opacity-0 border-4 lg:hover:border-opacity-100 border-main-orange rounded-2xl drop-shadow-lg mx-auto items-center justify-between transition-all duration-300
+    @apply h-96 sm:h-[400px] lg:h-[460px] xl:h-[520px] w-[70vw] min-w-[240px] max-w-sm relative border-opacity-0 border-4 lg:hover:border-opacity-100 border-main-orange rounded-2xl drop-shadow-lg mx-auto items-center justify-between transition-all duration-300
     lg:hover:shadow-slate-50 lg:hover:scale-105
-    lg:min-w-full lg:max-w-md lg:h-[40vh]
+    lg:min-w-full lg:max-w-md 
 }
 
 .tag_container {

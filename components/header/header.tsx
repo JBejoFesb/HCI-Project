@@ -39,8 +39,8 @@ const Header = () => {
                     <div>
                         <button className="group py-4 lg:hidden" onClick={handleToggle}>
                             {navbarOpen 
-                                ? <XMarkIcon className="w-10 sm:w-12 group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/> 
-                                : <Bars3Icon className="w-10 sm:w-12 group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/>
+                                ? <XMarkIcon className="w-10 sm:w-12 font-bold group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/> 
+                                : <Bars3Icon className="w-10 sm:w-12 font-bold group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/>
                             }</button>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import { documentToReactComponents, Options } from '@contentful/rich-text-react-
 import renderOptions from "../render-options";
 import { IType, IImage, translateTypes } from "../../../constants/constants";
 import TimeSince from "../../time-since/time-since";
+import Link from "next/link";
 
 export interface INewsPostContainer {
     newsPost: INewsPostContent,
@@ -21,10 +22,10 @@ export interface INewsPostContent {
 
 const NewsPostContent: React.FC<INewsPostContainer> = ({ newsPost }) => {
     return (
-        <div className=" flex flex-col bg-dirty-white rounded-[30px] max-w-[800px]">
+        <div className=" flex flex-col bg-dirty-white rounded-3xl max-w-[800px]">
             <div className=" flex flex-col text-black pt-5 pr-5 pl-5 pb-5 gap-8">
                 <h1>{newsPost.title}</h1>
-                <p>{newsPost.author} <TimeSince creation={newsPost.creation} /> | {translateTypes[newsPost.type.type]}</p>
+                <p><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{newsPost.author}</Link><span className="text-black"><TimeSince creation={newsPost.creation} /> | </span><Link href='/news' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[newsPost.type.type]}</Link></p>
                 <img className=" w-full max-w-none rounded-xl" src={newsPost.mainImage.url} alt={newsPost.title}/>
                 {documentToReactComponents(newsPost.content.json, renderOptions(newsPost.content.links, newsPost.title) as Options)}
             </div>
