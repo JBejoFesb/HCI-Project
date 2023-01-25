@@ -182,7 +182,7 @@ function extractSpecialAndReviewPostEntries(fetchResponse) {
   const temp = fetchResponse?.data;
   const allPosts = [...temp?.specialPostCollection?.items, ...temp?.reviewPostCollection?.items];
 
-  return sortDate(allPosts).splice(0,7);
+  return sortDate(allPosts);
 }
 
 // get all news
@@ -514,7 +514,7 @@ export async function getFeaturedPosts() {
     return {};
   }
 
-  return extractSpecialAndReviewPostEntries(entries);
+  return extractSpecialAndReviewPostEntries(entries).splice(0,5);
 }
 
 export async function getFeaturedReviewPosts() {
