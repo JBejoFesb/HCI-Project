@@ -3,7 +3,7 @@
 
 .holder {
     @apply flex flex-col bg-dirty-white min-w-full
-    lg:rounded-[30px] lg:min-w-fit
+    lg:rounded-[30px] lg:min-w-fit lg:h-fit
 }
 
 .container {
@@ -13,4 +13,9 @@
 
 .grid_row {
     @apply w-full flex flex-row justify-center flex-wrap lg:p-5 lg:justify-start
+}
+
+.button {
+    @apply text-center drop-shadow-md py-6
+    lg:w-full lg:p-6 lg:rounded-xl lg:transition-all lg:hover:scale-[100.5%]
 }

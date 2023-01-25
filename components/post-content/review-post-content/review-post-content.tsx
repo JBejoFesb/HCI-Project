@@ -27,7 +27,7 @@ const ReviewPostContent: React.FC<IReviewPostContainer> = ({ reviewPost }) => {
                 <h1>{reviewPost.title}</h1>
                 <p>{reviewPost.author} <TimeSince creation={reviewPost.creation} /> | {translateTypes[reviewPost.type.type]}</p>
                 <img className=" w-full max-w-none rounded-xl" src={reviewPost.mainImage.url} alt={reviewPost.title}/>
-                {documentToReactComponents(reviewPost.content.json, renderOptions(reviewPost.content.links) as Options)}
+                {documentToReactComponents(reviewPost.content.json, renderOptions(reviewPost.content.links, reviewPost.title) as Options)}
             </div>
         </div>
     );

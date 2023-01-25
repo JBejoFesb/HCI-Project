@@ -189,7 +189,7 @@ function extractSpecialAndReviewPostEntries(fetchResponse) {
 export async function getAllNewsPosts() {
   const entries = await fetchGraphQL(
     `query {
-      newsPostCollection (limit: 9) {
+      newsPostCollection {
         items {
           ${PARTIAL_POST_FIELDS}
         }
@@ -208,7 +208,7 @@ export async function getAllNewsPosts() {
 export async function getAllReviewPosts() {
   const entries = await fetchGraphQL(
     `query {
-      reviewPostCollection (limit: 9) {
+      reviewPostCollection {
         items {
           ${PARTIAL_POST_FIELDS}
         }
@@ -227,7 +227,7 @@ export async function getAllReviewPosts() {
 export async function getAllSpecialPosts() {
   const entries = await fetchGraphQL(
     `query {
-      specialPostCollection (limit: 9) {
+      specialPostCollection {
         items {
           ${PARTIAL_POST_FIELDS}
         }
@@ -246,7 +246,7 @@ export async function getAllSpecialPosts() {
 export async function getAllVideoPosts() {
   const entries = await fetchGraphQL(
     `query {
-      videoPostCollection (limit: 9) {
+      videoPostCollection {
         items {
           ${PARTIAL_POST_FIELDS}
         }

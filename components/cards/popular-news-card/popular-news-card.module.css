@@ -2,7 +2,7 @@
 @tailwind utilities;
 
 .container {
-    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm flex flex-col border-4 border-gray-900 lg:hover:border-main-orange 
+    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm flex flex-col border-4 border-dirty-white lg:hover:border-main-orange 
     rounded-2xl drop-shadow-lg items-center justify-between transition-all duration-200
     lg:hover:shadow-slate-50 lg:hover:scale-105 
     lg:min-w-full lg:max-w-md lg:h-[40vh] 
