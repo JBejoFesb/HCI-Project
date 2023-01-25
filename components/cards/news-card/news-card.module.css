@@ -8,7 +8,7 @@
 }
 
 .link_container {
-    @apply absolute top-0 left-0 bottom-0 right-0 z-10 my-4 lg:my-0
+    @apply absolute top-0 left-0 bottom-0 right-0 z-20 my-4 lg:my-0
 }
 
 .container {
@@ -17,7 +17,7 @@
 }
 
 .title {
-    text-shadow: 5px 5px 5px #000000;
+    text-shadow: 0 5px 5px rgb(0, 0, 0);
     @apply 
     font-extrabold text-2xl leading-7 flex items-end text-dark-text text-center p-6 justify-around
     bg-dirty-white/75 lg:text-left
