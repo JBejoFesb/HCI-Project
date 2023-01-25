@@ -39,7 +39,7 @@ const NewsCardContainer: React.FC<INewsCardContainer> = ({ data }) => {
             </div>
             <div className=" lg:px-5 py-5">
                 <button onClick={handleButtonClick} className={`${style.button} ${hasMoreToLoad ? "" : style.button_off} bg-dark-marine`}>
-                     Više vijesti...
+                     PRIKAŽI VIŠE
                 </button>
             </div>
             

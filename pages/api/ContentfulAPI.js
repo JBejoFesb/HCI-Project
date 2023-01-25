@@ -514,7 +514,7 @@ export async function getFeaturedPosts() {
     return {};
   }
 
-  return extractSpecialAndReviewPostEntries(entries).splice(0,5);
+  return extractSpecialAndReviewPostEntries(entries).splice(0,7);
 }
 
 export async function getFeaturedReviewPosts() {
