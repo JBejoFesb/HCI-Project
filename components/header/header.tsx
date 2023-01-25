@@ -61,7 +61,7 @@ const Header = () => {
                             <Link className="py-4 px-2" href="/">Forum</Link>
                         </li>
                     </ul>
-                    <div className="flex flex-col lg:flex-row justify-center">
+                    <div className="flex flex-col lg:flex-row justify-center space-x-2 xl:space-x-4">
                         <form className={style.search}>
                             <input 
                                 type="text" 
