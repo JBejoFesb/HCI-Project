@@ -7,18 +7,19 @@ import Discord from "../../public/images/icons/discord-icon-svgrepo-com.svg";
 import Steam from "../../public/images/icons/steam-svgrepo-com.svg";
 import Facebook from "../../public/images/icons/facebook-svgrepo-com.svg";
 import Twitter from "../../public/images/icons/twitter-svgrepo-com.svg";
+import Image from "next/image";
 
 const Footer = () => {
     return(
         <div className={style.footer}>
             <div className={style.footer_links}>
-                <Link href="/"><img className={style.flogo} src={HCLlogo.src} alt="HCL logo" /></Link>
+                <Link className={style.flogo} href="/"><Image src={HCLlogo.src} alt="HCL logo" fill/></Link>
                 <div className={style.socials}>
-                    <Link href="https://www.youtube.com/user/HCLGamingPortal"><img className={style.fsvg} src={Youtube.src} alt="youtube" /></Link>
-                    <Link href="https://discord.gg/Pgxr7urhWb"><img className={style.fsvg} src={Discord.src} alt="discord" /></Link>
-                    <Link href="https://steamcommunity.com/groups/hcl"><img className={style.fsvg} src={Steam.src} alt="steam" /></Link>
-                    <Link href="https://www.facebook.com/HCLgaming"><img className={style.fsvg} src={Facebook.src} alt="facebook" /></Link>
-                    <Link href="https://twitter.com/hclhr/"><img className={style.fsvg} src={Twitter.src} alt="twitter" /></Link>
+                    <Link className={style.fsvg} href="https://www.youtube.com/user/HCLGamingPortal"><Image  src={Youtube.src} alt="youtube" fill/></Link>
+                    <Link className={style.fsvg} href="https://discord.gg/Pgxr7urhWb"><Image src={Discord.src} alt="discord" fill/></Link>
+                    <Link className={style.fsvg} href="https://steamcommunity.com/groups/hcl"><Image src={Steam.src} alt="steam" fill/></Link>
+                    <Link className={style.fsvg} href="https://www.facebook.com/HCLgaming"><Image src={Facebook.src} alt="facebook" fill/></Link>
+                    <Link className={style.fsvg} href="https://twitter.com/hclhr/"><Image  src={Twitter.src} alt="twitter" fill/></Link>
                 </div>
                 <ul className={style.finfo}>
                     <li><Link href="/kontakt">Kontakt</Link></li>
