@@ -1,7 +1,8 @@
 import { BLOCKS, MARKS, INLINES, Document } from '@contentful/rich-text-types';
-import YoutubeEmbed from "../youtube-embed/youtube-embed";
+import { render } from 'react-dom';
+import LiteYoutubeEmbed from 'react-lite-youtube-embed';
 
-const renderOptions: any = (links: any) => {
+const renderOptions: any = (links: any, postTitle: string) => {
 
     // asset map
     const assetMap = new Map();
@@ -31,7 +32,8 @@ const renderOptions: any = (links: any) => {
                 const entry = entryMap.get(node.data.target.sys.id);
 
                 if (entry.__typename === "VideoEmbed") {
-                    return <YoutubeEmbed embedId={entry.embedId} />;
+                    return <LiteYoutubeEmbed id={entry.embedId} title={postTitle} />
+                    ;
                 }
                 
             },

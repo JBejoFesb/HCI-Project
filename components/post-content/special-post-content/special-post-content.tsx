@@ -26,7 +26,7 @@ const SpecialPostContent: React.FC<ISpecialPostContainer> = ({ specialPost }) =>
                 <h1>{specialPost.title}</h1>
                 <p>{specialPost.author} <TimeSince creation={specialPost.creation} /> | {translateTypes[specialPost.type.type]}</p>
                 <img className=" w-full max-w-none rounded-xl" src={specialPost.mainImage.url} alt={specialPost.title}/>
-                {documentToReactComponents(specialPost.content.json, renderOptions(specialPost.content.links) as Options)}
+                {documentToReactComponents(specialPost.content.json, renderOptions(specialPost.content.links, specialPost.title) as Options)}
             </div>
         </div>
     );

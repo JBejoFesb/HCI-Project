@@ -1,5 +1,5 @@
 import React from "react";
-import YoutubeEmbed from "../../youtube-embed/youtube-embed";
+import LiteYoutubeEmbed from 'react-lite-youtube-embed';
 import { IType, IImage, translateTypes } from "../../../constants/constants";
 import TimeSince from "../../time-since/time-since";
 
@@ -26,7 +26,7 @@ const SpecialPostContent: React.FC<IVideoPostContainer> = ({ videoPost }) => {
                 <p>{videoPost.author} <TimeSince creation={videoPost.creation} /> | {translateTypes[videoPost.type.type]}</p>
                 <h2>{videoPost.description}</h2>
                 <hr />
-                <YoutubeEmbed embedId={videoPost.url} />
+                <LiteYoutubeEmbed id={videoPost.url} title={videoPost.title} />
             </div>
         </div>
     );

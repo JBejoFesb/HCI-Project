@@ -26,7 +26,7 @@ const NewsPostContent: React.FC<INewsPostContainer> = ({ newsPost }) => {
                 <h1>{newsPost.title}</h1>
                 <p>{newsPost.author} <TimeSince creation={newsPost.creation} /> | {translateTypes[newsPost.type.type]}</p>
                 <img className=" w-full max-w-none rounded-xl" src={newsPost.mainImage.url} alt={newsPost.title}/>
-                {documentToReactComponents(newsPost.content.json, renderOptions(newsPost.content.links) as Options)}
+                {documentToReactComponents(newsPost.content.json, renderOptions(newsPost.content.links, newsPost.title) as Options)}
             </div>
         </div>
     );

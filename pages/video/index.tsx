@@ -16,6 +16,7 @@ const Videos: React.FC<IVideoPosts> = ({ videoPosts }) => {
     <>
       <Head>
         <title>HCL Video</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
