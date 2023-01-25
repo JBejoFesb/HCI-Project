@@ -19,9 +19,9 @@
 .title {
     text-shadow: 0 5px 5px rgb(0, 0, 0);
     @apply 
-    font-extrabold text-2xl leading-7 flex items-end text-dark-text text-center p-6 justify-around
-    bg-dirty-white/75 lg:text-left
-    lg:text-dirty-white lg:bg-transparent lg:p-2
+    font-extrabold text-2xl leading-7 text-start text-dark-text p-6 justify-around
+    bg-dirty-white/75 lg:left-auto
+    lg:text-dirty-white lg:bg-transparent lg:px-4 lg:py-2
 }
 
 .extra_text {
@@ -30,9 +30,8 @@
 }
 
 .desc_container {
-    @apply px-4 py-6 text-dark-text text-base font-light leading-5 bg-white/90 mix-blend-normal border-t-2
+    @apply p-6 text-dark-text text-base font-light leading-5 bg-white/90 mix-blend-normal border-t-2
     lg:border-t-main-orange lg:px-4 lg:pt-2
-    
 }
 
 .desc {
