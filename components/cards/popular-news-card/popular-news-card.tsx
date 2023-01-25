@@ -8,13 +8,14 @@ export interface IPopularNewsCard {
     type: IType,
     title: string,
     mainImage: IImage,
+    isMain: boolean,
 }
 
-const PopularNewsCard: React.FC<IPopularNewsCard> = ({ slug, type, title, mainImage }) => {
+const PopularNewsCard: React.FC<IPopularNewsCard> = ({ slug, type, title, mainImage, isMain }) => {
     return (
         <Link href={`/${type.type == 'video' || type.type == 'news' ? type.type : type.type + 's'}/${slug}`}>
-            <div className={style.container}
-            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0)), url(${mainImage.url})`,
+            <div className={isMain ? style.main : style.container}
+            style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(${mainImage.url})`,
                     backgroundSize: 'cover', backgroundPosition: 'center'}}
             >
                 <div className={style.tag_container}>

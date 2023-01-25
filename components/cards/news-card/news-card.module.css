@@ -12,8 +12,12 @@
 }
 
 .container {
+<<<<<<< Updated upstream
     @apply h-[30rem] min-w-full sm:mx-auto sm:min-w-0 sm:w-full flex flex-col justify-end border-y-2 border-gray-600/90 shadow-black/25 shadow-md transition-all
     lg:border-2 lg:border-main-orange lg:rounded-xl
+=======
+    @apply h-[30rem] w-full flex flex-col justify-end rounded-xl shadow-md shadow-black/50 transition-all
+>>>>>>> Stashed changes
 }
 
 .title {

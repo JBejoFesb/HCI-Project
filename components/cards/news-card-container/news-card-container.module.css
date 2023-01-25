@@ -2,8 +2,12 @@
 @tailwind utilities;
 
 .holder {
+<<<<<<< Updated upstream
     @apply flex flex-col bg-dirty-white min-w-full
     lg:rounded-[30px] lg:min-w-fit
+=======
+    @apply flex flex-col bg-gray-300 rounded-[30px] min-w-fit
+>>>>>>> Stashed changes
 }
 
 .container {

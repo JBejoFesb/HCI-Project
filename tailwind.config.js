@@ -17,9 +17,14 @@ module.exports = {
     },
   },
   plugins: [
+<<<<<<< Updated upstream
     require('@neojp/tailwindcss-line-clamp-utilities')
   ],
   variants: {
     lineClamp: ['responsive'],
   },
+=======
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
+>>>>>>> Stashed changes
 }

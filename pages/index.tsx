@@ -8,6 +8,7 @@ import { getAllPosts, getNewVideoPosts, getPopularPosts, getFeaturedPosts } from
 import { INewsCard } from '../components/cards/news-card/news-card';
 import { ICurrentNews } from '../components/sidebar/parts/current-news/current-news';
 import { IPopularNewsCard } from '../components/cards/popular-news-card/popular-news-card';
+import Slider from '../components/slider/slider';
 
 export interface IHome {
   newsPosts: INewsCard[],
@@ -23,9 +24,16 @@ const Home: React.FC<IHome> = ({ newsPosts, videoPosts, popularPosts, featuredPo
         <title>HCL Gaming Portal</title>
       </Head>
       <Header/>
+<<<<<<< Updated upstream
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
         <PopularNewsCardContainer featuredPosts={featuredPosts}/>
         <div className=' flex flex-row w-full sm:w-fit justify-between lg:gap-10 lg:px-5'>
+=======
+      <div className="pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
+        <Slider featuredPosts={featuredPosts}/>
+        {/* <PopularNewsCardContainer featuredPosts={featuredPosts}/> */}
+        <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
+>>>>>>> Stashed changes
           <NewsCardContainer data={newsPosts} />
           <SidebarContainer data={[{data: videoPosts, key: 'video'}, {data: popularPosts, key: 'aktualno'}]} widgets={true}/>
         </div>
