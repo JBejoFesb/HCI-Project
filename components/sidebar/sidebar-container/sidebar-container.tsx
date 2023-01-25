@@ -36,6 +36,7 @@ const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
                         style={{
                             objectFit: "cover",
                         }}/>
+                        
                     </Link>
                 </div>
             }

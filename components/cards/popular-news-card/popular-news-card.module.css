@@ -2,27 +2,33 @@
 @tailwind utilities;
 
 .container {
-    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm flex flex-col border-4 border-gray-900 lg:hover:border-main-orange 
-    rounded-2xl drop-shadow-lg items-center justify-between transition-all duration-200
+    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm relative border-4 border-gray-900 lg:hover:border-main-orange 
+    rounded-2xl drop-shadow-lg items-center justify-between transition-all duration-300 ease-in-out
     lg:hover:shadow-slate-50 lg:hover:scale-105 
     lg:min-w-full lg:max-w-md lg:h-[40vh] 
+    overflow-hidden
     
 }
 
 .main {
-    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm flex flex-col border-4 border-gray-900 lg:hover:border-main-orange rounded-2xl drop-shadow-lg mx-auto items-center justify-between transition-all duration-200
-    lg:hover:shadow-slate-50 lg:hover:scale-105 
+    @apply h-[50vh] w-[70vw] min-w-[240px] max-w-sm relative border-4 border-gray-900 lg:hover:border-main-orange rounded-2xl drop-shadow-lg mx-auto items-center justify-between transition-all duration-300
+    lg:hover:shadow-slate-50 lg:hover:scale-105
     lg:min-w-full lg:max-w-md lg:h-[40vh]
 }
 
 .tag_container {
-    @apply w-full m-4
+    @apply w-full absolute top-0 right-0
 }
 
 .tag {
-    @apply w-fit ml-auto mr-4 py-2 px-5 bg-black/50 shadow-md rounded-xl font-semibold text-base opacity-90 text-white
+    @apply w-fit ml-auto mr-4 mt-4 py-2 px-5 bg-black/50 shadow-md rounded-xl font-semibold text-base opacity-90 text-white
 }
 
 .title{
-    @apply  text-white text-center font-extrabold text-xl px-3 py-4
+    text-shadow: 5px 5px 5px #000000;
+    @apply  text-white text-center font-extrabold lg:text-3xl px-3 py-6 absolute bottom-0
+}
+
+.container:hover .img {
+    @apply scale-125 transition-all ease-in-out duration-300
 }

@@ -31,10 +31,10 @@ const Slider: React.FC<ISlider> = ({ featuredPosts }) => {
         setCurrentIndex(newIndex);
     };
 
-    const goToSlide = (slideIndex:number) =>{
-        setCurrentIndex(slideIndex);
-        
-    };
+    // const goToSlide = (slideIndex: number) => {
+    //     setCurrentIndex(slideIndex);
+
+    // };
 
     return (
         <> 
@@ -55,11 +55,11 @@ const Slider: React.FC<ISlider> = ({ featuredPosts }) => {
                     <div className={style.slider_button}  onClick={nextSlide}><ChevronRightIcon className="h-8 w-8"/></div>
                 </div>
 
-                <div className="hidden justify-center py-2 space-x-4 ">
-                        {featuredPosts.map((post: IPopularNewsCard, slideIndex:number) => (
-                            <div key={slideIndex} onClick={() => goToSlide(slideIndex)}  className={currentIndex == slideIndex ? "w-20 h-3 rounded-full bg-main-orange cursor-pointer" : "w-10 h-3 rounded-full bg-slate-900/50 cursor-pointer"}></div>
-                        ))}
-                </div>
+                {/* <div className="hidden justify-center py-2 space-x-4 ">
+                    {featuredPosts.map((post: IPopularNewsCard, slideIndex: number) => (
+                        <div key={slideIndex} onClick={() => goToSlide(slideIndex)} className={currentIndex == slideIndex ? "w-20 h-3 rounded-full bg-main-orange cursor-pointer" : "w-10 h-3 rounded-full bg-slate-900/50 cursor-pointer"}></div>
+                    ))}
+                </div> */}
 
             </div>
 
