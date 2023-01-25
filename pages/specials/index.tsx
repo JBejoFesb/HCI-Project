@@ -19,7 +19,7 @@ const Specials: React.FC<ISpecialPosts> = ({ specialPosts }) => {
       </Head>
       <Header/>
       <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
-        <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
+        <div className=' flex flex-row w-full sm:w-fit justify-between lg:gap-10 lg:px-5'>
           <NewsCardContainer data={specialPosts} />
           <SidebarContainer data={[]} widgets={true}/>
         </div>
