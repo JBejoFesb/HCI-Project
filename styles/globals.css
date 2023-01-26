@@ -25,17 +25,17 @@ body {
 
 h1 {
   @apply
-  font-bold text-3xl md:text-4xl leading-10 lg:text-dark-text text-white
+  font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-10 text-white
 }
 
 h2 {
   @apply
-  font-extrabold text-2xl pl-2 border-l-4 border-main-orange lg:text-dark-text text-slate-300
+  font-extrabold text-2xl pl-2 border-l-4 border-main-orange  text-slate-300
 }
 
 h3 {
   @apply
-  font-bold text-base lg:text-dark-text text-slate-400
+  font-bold text-base  text-slate-400
 }
 
 b{
@@ -49,12 +49,12 @@ hr {
 
 p {
   @apply
-  text-base lg:text-xl leading-7 lg:text-dark-text text-white
+  text-base lg:text-xl leading-7  text-white
 }
 
 blockquote {
   @apply
-  text-xl italic font-semibold lg:text-dark-text text-white
+  text-xl italic font-semibold  text-white
 }
 
 ul {
