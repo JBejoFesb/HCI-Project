@@ -6,8 +6,9 @@
     h-auto
     lg:max-w-[1184px] 2xl:max-w-[1552px]
     px-[3vw] xl:px-5
-    pt-7
-    pb-10 lg:pb-7
+    pt-3 lg:pt-7
+    pb-7 lg:pb-7
+    
 }
 
 .slider{
@@ -15,11 +16,11 @@
     w-full h-full 
     flex flex-row
     lg:px-5
-    py-14 lg:py-5
+    py-7 lg:py-5
     gap-4
     overflow-x-scroll
     overflow-y-hidden
-    scrollbar scrollbar-thumb-main-orange scrollbar-thumb-rounded-xl
+    scrollbar-thin scrollbar-thumb-main-orange scrollbar-thumb-rounded-xl
     lg:scrollbar-none
     scroll-smooth
 }

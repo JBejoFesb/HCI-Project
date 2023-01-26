@@ -25,10 +25,10 @@ const Contact: React.FC<IContact> = ({}) => {
                         jednostavno čovjek s idejom za suradnju s našim krasnim gaming portalom, očekujemo sve vaše e-poruke s veseljem.
                     </p>
                     <p>Želite vidjeti svoje članke na HCL-u? Za sve takve i slične upite kontaktirajte 
-                        našeg glavnog urednika, Igora Belana, na e-mail adresu igor@hcl.hr.
+                        našeg glavnog urednika, Igora Belana, na e-mail adresu <Link href='mailto:igor@hcl.hr' className=" text-main-orange hover:underline font-semibold">igor@hcl.hr</Link>.
                     </p>
-                    <p>PR objave i dojave novinarskoj ekipi HCL-a šaljite na info@hcl.hr, a za upite o 
-                        oglašavanju na HCL-u pročitajte osnovne informacije <Link href='/oglasavanje'>ovdje</Link> i 
+                    <p>PR objave i dojave novinarskoj ekipi HCL-a šaljite na <Link href='mailto:info@hcl.hr' className=" text-main-orange hover:underline font-semibold">info@hcl.hr</Link>, a za upite o 
+                        oglašavanju na HCL-u pročitajte osnovne informacije <Link href='/oglasavanje' className=" text-main-orange hover:underline font-semibold">ovdje</Link> i 
                         kontaktirajte nas putem adrese marketing@hcl.hr.
                     </p>
                 </div>

@@ -10,6 +10,8 @@ const SpecialPost: React.FC<IVideoPostContainer> = ({ videoPost , videoPosts, po
         <>
         <Head>
             <title>{videoPost.title}</title>
+            <meta name="author" content={videoPost.author} />
+            
         </Head>
         <Header />
         <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">

@@ -57,7 +57,7 @@ const Impressum: React.FC<IImpressum> = ({}) => {
                         <p>Matija Čukelj</p>
                         <p>Dona Šeruga</p>
                         <p>Za više informacija o našim uslugama organizacija esport i 
-                                 gaming evenata posjetite našu <Link href="/organizacija-esport-natjecanja-gaming-eventi/">esport & event stranicu</Link>.
+                                 gaming evenata posjetite našu <Link href="/organizacija-esport-natjecanja-gaming-eventi/" className=" text-main-orange hover:underline font-semibold">esport & event stranicu</Link>.
                         </p>
                     </div>
                     <div className=" flex flex-col gap-2">
