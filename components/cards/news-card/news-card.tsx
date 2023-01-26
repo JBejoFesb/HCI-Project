@@ -23,7 +23,7 @@ export interface INewsCard {
 const NewsCard: React.FC<INewsCard> = ({ slug, title, author, mainImage, creation, description, type }) => {
     return (
         <div className={style.grid_item}>
-            <Link href={`/${type.type == "news" || type.type == "video" ? type.type : type.type + 's'}/${slug}`} className={style.link_container}></Link>
+            <Link href={`/${type.type == "news" || type.type == "video" ? type.type : type.type + 's'}/${slug}`} className={style.link_container} aria-label={`Pročitajte više o ${title}`}></Link>
             <div className={style.container}>
                 <Image src={mainImage.url} alt="popular background" fill style={{ objectFit: 'cover'  }} />
                 <div className="relative z-10 h-full bg-gradient-to-t from-black/50 flex flex-col justify-end">

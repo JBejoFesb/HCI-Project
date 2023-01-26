@@ -30,7 +30,7 @@ const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
             }
             { widgets && 
                 <div className={style.widget}>
-                    <Link href="https://www.discord.gg/gkajsxu">
+                    <Link href="https://www.discord.gg/gkajsxu" aria-label="Pridružite se našem Discord serveru na ovom linku">
                         <Image src={discord} 
                         alt="Discord"
                         style={{
@@ -43,7 +43,7 @@ const SidebarContainer: React.FC<ISidebarContainer> = ({ data, widgets }) => {
             {
                 widgets &&
                 <div className={style.widget}>
-                    <Link href="https://shop.hcl.hr/">
+                    <Link href="https://shop.hcl.hr/" aria-label="Kupite naš merch na ovom linku">
                         <Image src={merch} 
                         alt="Merch"
                         style={{

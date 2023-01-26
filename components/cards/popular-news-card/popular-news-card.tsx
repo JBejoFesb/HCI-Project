@@ -14,7 +14,7 @@ export interface IPopularNewsCard {
 
 const PopularNewsCard: React.FC<IPopularNewsCard> = ({ slug, type, title, mainImage, isMain }) => {
     return (
-        <Link href={`/${type.type == 'video' || type.type == 'news' ? type.type : type.type + 's'}/${slug}`}>
+        <Link href={`/${type.type == 'video' || type.type == 'news' ? type.type : type.type + 's'}/${slug}` } aria-label={`Pročitajte više o ${title}`}>
             <div className={isMain ? style.main : style.container}>
                 <Image className={style.img} src={mainImage.url} alt="popular background" fill priority style={{ objectFit: 'cover'  }} />
                 <div className="relative z-10 h-full bg-gradient-to-t from-black/50" >
