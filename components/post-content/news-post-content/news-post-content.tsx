@@ -22,10 +22,10 @@ export interface INewsPostContent {
 
 const NewsPostContent: React.FC<INewsPostContainer> = ({ newsPost }) => {
     return (
-        <div className=" flex flex-col bg-dirty-white rounded-3xl max-w-[800px]">
-            <div className=" flex flex-col text-black pt-5 pr-5 pl-5 pb-5 gap-8">
+        <div className=" flex flex-col bg-slate-800 md:rounded-3xl max-w-[800px]">
+            <div className=" flex flex-col pt-5 pr-5 pl-5 pb-5 gap-6 lg:gap-8">
                 <h1>{newsPost.title}</h1>
-                <p><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{newsPost.author}</Link><span className="text-black"><TimeSince creation={newsPost.creation} /> | </span><Link href='/news' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[newsPost.type.type]}</Link></p>
+                <h3><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{newsPost.author}</Link> | <span><TimeSince creation={newsPost.creation} /> | </span><Link href='/news' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[newsPost.type.type]}</Link></h3>
                 <img className=" w-full max-w-none rounded-xl" src={newsPost.mainImage.url} alt={newsPost.title}/>
                 {documentToReactComponents(newsPost.content.json, renderOptions(newsPost.content.links, newsPost.title) as Options)}
             </div>

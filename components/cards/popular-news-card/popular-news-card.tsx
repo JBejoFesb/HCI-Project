@@ -16,7 +16,7 @@ const PopularNewsCard: React.FC<IPopularNewsCard> = ({ slug, type, title, mainIm
     return (
         <Link href={`/${type.type == 'video' || type.type == 'news' ? type.type : type.type + 's'}/${slug}`}>
             <div className={isMain ? style.main : style.container}>
-                <Image className={style.img} src={mainImage.url} alt="popular background" fill style={{ objectFit: 'cover'  }} />
+                <Image className={style.img} src={mainImage.url} alt="popular background" fill priority style={{ objectFit: 'cover'  }} />
                 <div className="relative z-10 h-full bg-gradient-to-t from-black/50" >
                     <div className={style.tag_container}>
                         <div className={style.tag}>{translateTypes[type.type]}</div>
