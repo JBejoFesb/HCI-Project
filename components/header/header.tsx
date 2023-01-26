@@ -69,7 +69,7 @@ const Header = () => {
                                 placeholder="Pretraži portal..."
                                 className={style.searchbar}
                             />
-                            <button><MagnifyingGlassIcon className="h-6 w-6 hover:text-orange-500 hover:scale-110"/></button>
+                            <button aria-label="Pretraži"><MagnifyingGlassIcon className="h-6 w-6 hover:text-orange-500 hover:scale-110"/></button>
                         </form>
                         <div className={style.user}>
                             <button className="group px-2 py-4" aria-label="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
