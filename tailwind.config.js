@@ -5,6 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+
+    textShadow: {
+      'xl': '5px 5px 5px #000000',
+    },
+
     extend: {
       colors: {
         'soft-marine' : '#222B3A',
@@ -19,6 +24,7 @@ module.exports = {
   plugins: [
     require('@neojp/tailwindcss-line-clamp-utilities'),
     require('tailwind-scrollbar')({ nocompatible: true }),
+    require('tailwindcss-textshadow'),
   ],
   variants: {
     lineClamp: ['responsive'],

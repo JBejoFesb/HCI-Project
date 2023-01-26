@@ -9,13 +9,14 @@ export interface IPopularNewsCard {
     title: string,
     mainImage: IImage,
     isMain: boolean,
+    isSlider: boolean,
 }
 
 
-const PopularNewsCard: React.FC<IPopularNewsCard> = ({ slug, type, title, mainImage, isMain }) => {
+const PopularNewsCard: React.FC<IPopularNewsCard> = ({ slug, type, title, mainImage, isMain, isSlider }) => {
     return (
         <Link href={`/${type.type == 'video' || type.type == 'news' ? type.type : type.type + 's'}/${slug}` } aria-label={`Pročitajte više o ${title}`}>
-            <div className={`${style.container} ${isMain ? style.main : style.not_main}`}>
+            <div className={`${style.container} ${isSlider ? "" : (isMain ? style.main : style.not_main)}`}>
                 <Image className={style.img} src={mainImage.url} alt="popular background" fill priority style={{ objectFit: 'cover'  }} />
                 <div className="relative z-10 h-full bg-gradient-to-t from-black/50" >
                     <div className={style.tag_container}>

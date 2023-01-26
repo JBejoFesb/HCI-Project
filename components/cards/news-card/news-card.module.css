@@ -17,11 +17,11 @@
 }
 
 .title {
-    text-shadow: 0 5px 5px rgb(0, 0, 0);
     @apply 
     font-extrabold text-2xl leading-7 text-start text-dark-text p-6 justify-around
     bg-dirty-white/75 lg:left-auto
     lg:text-dirty-white lg:bg-transparent lg:px-4 lg:py-2
+    lg:text-shadow-xl
 }
 
 .extra_text {
