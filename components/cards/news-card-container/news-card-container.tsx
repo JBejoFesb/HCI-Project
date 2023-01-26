@@ -38,7 +38,7 @@ const NewsCardContainer: React.FC<INewsCardContainer> = ({ data }) => {
                 </div>
             </div>
             <div className=" lg:px-5 py-5">
-                <button onClick={handleButtonClick} className={`${style.button} ${hasMoreToLoad ? "" : style.button_off} bg-dark-marine`} name="Prikaži više" >
+                <button onClick={handleButtonClick} className={`${style.button} ${hasMoreToLoad ? "" : style.button_off} bg-dark-marine`} aria-label="Prikaži više" >
                      PRIKAŽI VIŠE
                 </button>
             </div>
