@@ -40,19 +40,19 @@ const Slider: React.FC<ISlider> = ({ featuredPosts }) => {
         <> 
             <div className={style.slider_container}>
 
-                <div className="flex flex-row items-center space-x-4">
-                    <div className={style.slider_button} onClick={prevSlide}><ChevronLeftIcon className="h-8 w-8"/></div>
+                <div className="flex flex-row items-center justify-between gap-4">
+                    <div className={style.slider_button} onClick={prevSlide}><ChevronLeftIcon className="h-10 w-10"/></div>
                     <div id="slider" className={style.slider}>
                         {
                         featuredPosts.map((post: IPopularNewsCard, i:number) => {
                             return (
                                 <>  
-                                    <PopularNewsCard slug={post.slug} title={post.title} type={post.type} mainImage={post.mainImage} isMain={false} isSlider={true} key={`${post.slug}-popularcard`}/>
+                                    <PopularNewsCard slug={post.slug} title={post.title} type={post.type} mainImage={post.mainImage} isMain={currentIndex==i} isSlider={true} key={`${post.slug}-popularcard`}/>
                                 </>
                             )
                         })}
                     </div>
-                    <div className={style.slider_button}  onClick={nextSlide}><ChevronRightIcon className="h-8 w-8"/></div>
+                    <div className={style.slider_button}  onClick={nextSlide}><ChevronRightIcon className="h-10 w-10"/></div>
                 </div>
 
                 {/* <div className="hidden justify-center py-2 space-x-4 ">

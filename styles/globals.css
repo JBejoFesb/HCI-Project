@@ -10,6 +10,7 @@ body, div {
   overflow-x: hidden;
   font-family: 'Inter';
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 body {

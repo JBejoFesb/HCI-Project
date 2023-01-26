@@ -2,9 +2,9 @@
 @tailwind utilities;
 
 .container {
-    @apply flex flex-col gap-5 bg-dirty-white rounded-[32px] pt-5 pr-5 pl-5 pb-5 relative
+    @apply flex flex-col gap-5 bg-slate-900/50 rounded-[32px] pt-5 pr-5 pl-5 pb-5 relative
 }
 
 .title_holder {
-    @apply text-2xl font-bold text-bright-text text-center pt-1 pb-1
+    @apply text-2xl font-bold text-dirty-white/75 text-center pt-1 pb-1
 }

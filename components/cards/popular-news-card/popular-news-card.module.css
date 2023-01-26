@@ -26,7 +26,7 @@
 }
 
 .title{
-    @apply text-white text-center font-extrabold lg:text-3xl px-3 py-6 absolute bottom-0 w-full lg:text-shadow-xl
+    @apply text-white text-center font-extrabold text-2xl lg:text-3xl px-3 py-6 absolute bottom-0 w-full lg:text-shadow-xl
 }
 
 .img{

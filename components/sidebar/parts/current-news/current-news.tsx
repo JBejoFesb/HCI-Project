@@ -34,7 +34,7 @@ const CurrentNews: React.FC<ICurrentNews> = ({ title, slug, mainImage, type}) =>
                         />}
                         
                     </div>
-                    <div className={`${style.title} pt-1 pb-2 text-bright-text`}>
+                    <div className={`${style.title} pt-1 pb-2 text-dirty-white/75`}>
                         {title}
                     </div>
                 </div>
