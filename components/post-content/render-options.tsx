@@ -24,6 +24,9 @@ const renderOptions: any = (links: any, postTitle: string) => {
             },
             [BLOCKS.PARAGRAPH]: (node: any, children: any) => (children != '') ? <p>{children}</p> : '',
 
+            [BLOCKS.QUOTE]: (node: any, children: any) => (children != '') ? <p className='text-6xl font-bold italic flex flex-row gap-4'>&rdquo;<p className='font-normal text-base'>{children}</p></p> : '',
+            
+
             [INLINES.HYPERLINK]: ( node: any , children: string ) => {
                 return <a href={node.data.uri} className=" text-main-orange hover:underline font-semibold">{children}</a>;
             },
