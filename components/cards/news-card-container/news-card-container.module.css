@@ -3,7 +3,7 @@
 
 .holder {
     @apply flex flex-col bg-dirty-white min-w-full
-    lg:rounded-[30px] lg:min-w-fit lg:h-fit
+    lg:rounded-[32px] lg:min-w-fit lg:h-fit
 }
 
 .container {

@@ -9,8 +9,8 @@
 
 .widget {
     @apply
-    w-96
+    max-w-sm
     h-fit
-    rounded-[30px]
-    hover:border-2 hover:border-main-orange
+    rounded-[32px] border-4 border-transparent
+     hover:border-main-orange
 }

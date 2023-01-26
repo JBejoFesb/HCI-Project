@@ -18,7 +18,7 @@ const TermsOfUse: React.FC<ITermsOfUse> = ({}) => {
         <Header />
         <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
-                <div className=' flex flex-col bg-dirty-white rounded-[30px] max-w-[800px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
+                <div className=' flex flex-col bg-dirty-white rounded-[32px] max-w-[800px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
                     <h1 className=" font-bold text-3xl leading-6">UVJETI KORIŠTENJA</h1>
                     <hr className=" border-[1px] border-black"></hr>
                     <p className=" text-xl text-dark-text leading-7">

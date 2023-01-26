@@ -15,7 +15,7 @@ export interface ICurrentNews {
 const CurrentNews: React.FC<ICurrentNews> = ({ title, slug, mainImage, type}) => {
     return (
         <div className={style.item}>
-            <Link href={`/${type.type == "news" || type.type == "video" ? type.type : type.type + 's'}/${slug}`} className=" rounded-[30px]" aria-label={`Pročitajte više o ${title}`}>
+            <Link href={`/${type.type == "news" || type.type == "video" ? type.type : type.type + 's'}/${slug}`} className=" rounded-[32px]" aria-label={`Pročitajte više o ${title}`}>
                 <div className={style.container}>
                     <div className={style.image_container}>
                         <Image src={mainImage.url}

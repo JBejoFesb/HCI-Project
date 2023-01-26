@@ -21,7 +21,7 @@ export interface ISpecialPostContent {
 
 const SpecialPostContent: React.FC<ISpecialPostContainer> = ({ specialPost }) => {
     return (
-        <div className=" flex flex-col bg-dirty-white rounded-[30px] max-w-[800px]">
+        <div className=" flex flex-col bg-dirty-white rounded-[32px] max-w-[800px]">
             <div className=" flex flex-col text-black pt-5 pr-5 pl-5 pb-5 gap-8">
                 <h1>{specialPost.title}</h1>
                 <p>{specialPost.author} <TimeSince creation={specialPost.creation} /> | {translateTypes[specialPost.type.type]}</p>

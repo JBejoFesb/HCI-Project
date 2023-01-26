@@ -22,7 +22,7 @@ export interface IReviewPostContent {
 
 const ReviewPostContent: React.FC<IReviewPostContainer> = ({ reviewPost }) => {
     return (
-        <div className=" flex flex-col bg-dirty-white rounded-[30px] max-w-[800px]">
+        <div className=" flex flex-col bg-dirty-white rounded-[32px] max-w-[800px]">
             <div className=" flex flex-col text-black pt-5 pr-5 pl-5 pb-5 gap-8">
                 <h1>{reviewPost.title}</h1>
                 <p>{reviewPost.author} <TimeSince creation={reviewPost.creation} /> | {translateTypes[reviewPost.type.type]}</p>

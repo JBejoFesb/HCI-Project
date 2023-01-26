@@ -19,7 +19,7 @@ const Impressum: React.FC<IImpressum> = ({}) => {
         <Header />
         <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
-                <div className=' flex flex-col bg-dirty-white rounded-[30px] max-w-[800px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
+                <div className=' flex flex-col bg-dirty-white rounded-[32px] max-w-[800px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
                     <h1 className=" font-bold text-3xl leading-6">IMPRESSUM</h1>
                     <hr className=" border-[1px] border-dark-text"></hr>
                     <p className=" text-xl text-dark-text leading-7"><b>HCL.hr gaming portal</b> najveći je, najvažniji i najrelevantniji gaming portal u regiji. Naši autori svakodnevno 
@@ -36,18 +36,18 @@ const Impressum: React.FC<IImpressum> = ({}) => {
                         <p className=" text-xl text-dark-text"><b>Glavni urednik:</b> Igor Belan{'\n'}</p>
                         <p className=" text-xl text-dark-text"><b>Izvršni urednik:</b> Zoran Žalac</p>
                     </div>
-                    <div className=" flex flex-col gap-2">
-                        <h2 className=" font-bold text-2xl pl-2 border-l-4 border-main-orange">SURADNICI</h2>
-                        <p className=" text-lg text-dark-text">Stjepan Fikter</p>
-                        <p className=" text-lg text-dark-text">Žarko Ćurić</p>
-                        <p className=" text-lg text-dark-text">Hrvoje Smoljić</p>
-                        <p className=" text-lg text-dark-text">Ivan Brekalo</p>
-                        <p className=" text-lg text-dark-text">Filip Zorić</p>
-                        <p className=" text-lg text-dark-text">Lovro Maroševac</p>
-                        <p className=" text-lg text-dark-text">Iva Osrečak</p>
-                        <p className=" text-lg text-dark-text">Dominik Vadas</p>
-                        <p className=" text-lg text-dark-text">Matej Brus</p>
-                        <p className=" text-lg text-dark-text">Josip Klanfar</p>
+                    <div>
+                        <h2>SURADNICI</h2>
+                        <p>Stjepan Fikter</p>
+                        <p>Žarko Ćurić</p>
+                        <p>Hrvoje Smoljić</p>
+                        <p>Ivan Brekalo</p>
+                        <p>Filip Zorić</p>
+                        <p>Lovro Maroševac</p>
+                        <p>Iva Osrečak</p>
+                        <p>Dominik Vadas</p>
+                        <p>Matej Brus</p>
+                        <p>Josip Klanfar</p>
                     </div>
                     <div className=" flex flex-col gap-2">
                         <h2 className=" font-bold text-2xl pl-2 border-l-4 border-main-orange">ESPORT I EVENTI</h2>

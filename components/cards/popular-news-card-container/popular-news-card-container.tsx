@@ -13,7 +13,7 @@ const PopularNewsCardContainer: React.FC<IPopularNewsCardContainer> = ({ feature
             {
                 featuredPosts.map((post: IPopularNewsCard, i:number) => {
                     return (
-                        <PopularNewsCard slug={post.slug} title={post.title} type={post.type} mainImage={post.mainImage} isMain={false} key={`${post.slug}-popularcard`}/>
+                        <PopularNewsCard slug={post.slug} title={post.title} type={post.type} mainImage={post.mainImage} isMain={i == 0 ? true : false} key={`${post.slug}-popular-card`}/>
                     )
                 })
             }

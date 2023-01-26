@@ -20,7 +20,7 @@ export interface IVideoPostContent {
 
 const SpecialPostContent: React.FC<IVideoPostContainer> = ({ videoPost }) => {
     return (
-        <div className=" flex flex-col bg-dirty-white rounded-[30px] max-w-[800px]">
+        <div className=" flex flex-col bg-dirty-white rounded-[32px] max-w-[800px]">
             <div className=" flex flex-col text-black pt-5 pr-5 pl-5 pb-5 gap-8">
                 <h1>{videoPost.title}</h1>
                 <p>{videoPost.author} <TimeSince creation={videoPost.creation} /> | {translateTypes[videoPost.type.type]}</p>

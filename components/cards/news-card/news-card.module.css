@@ -13,7 +13,7 @@
 
 .container {
     @apply h-[30rem] min-w-full sm:mx-auto sm:min-w-0 sm:w-full relative justify-end border-y-2 border-gray-600/90 shadow-black/25 shadow-lg 
-    lg:border-2 lg:border-main-orange lg:rounded-xl
+    lg:border-2 lg:border-main-orange/50 lg:rounded-xl
 }
 
 .title {

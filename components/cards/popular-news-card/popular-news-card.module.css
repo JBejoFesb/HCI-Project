@@ -10,9 +10,11 @@
 }
 
 .main {
-    @apply h-96 sm:h-[400px] lg:h-[460px] xl:h-[520px] w-[70vw] min-w-[240px] max-w-sm relative border-opacity-0 border-4 lg:hover:border-opacity-100 border-main-orange rounded-2xl drop-shadow-lg mx-auto items-center justify-between transition-all duration-300
-    lg:hover:shadow-slate-50 lg:hover:scale-105
-    lg:min-w-full lg:max-w-md 
+    @apply w-[90vw] max-w-4xl md:max-w-md lg:max-w-xl
+}
+
+.not_main {
+    @apply max-w-xs lg:max-w-sm hidden md:block
 }
 
 .tag_container {
@@ -25,7 +27,7 @@
 
 .title{
     text-shadow: 5px 5px 5px #000000;
-    @apply  text-white text-center font-extrabold lg:text-3xl px-3 py-6 absolute bottom-0
+    @apply  text-white text-center font-extrabold lg:text-3xl px-3 py-6 absolute bottom-0 w-full
 }
 
 

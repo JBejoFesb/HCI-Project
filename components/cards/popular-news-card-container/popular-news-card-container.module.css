@@ -2,5 +2,7 @@
 @tailwind utilities;
 
 .container {
-    @apply flex flex-row gap-8 mx-auto h-fit w-fit p-10 
+    @apply flex flex-row p-10 justify-center overflow-visible
+    md:gap-8 md:min-w-full md:gap-12
+    lg:min-w-0 lg:w-fit lg:mx-auto
 }

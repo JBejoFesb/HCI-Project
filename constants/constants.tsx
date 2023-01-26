@@ -1,8 +1,8 @@
 export const translateTypes: {[type: string]: string} = {
-    'news' : "Vijest",
-    'review' : "Recenzija",
-    'special' : "Specijal",
-    'video' : "Video",
+    'news' : "VIJEST",
+    'review' : "RECENZIJA",
+    'special' : "SPECIJAL",
+    'video' : "VIDEO",
 }
 
 export interface IImage {
