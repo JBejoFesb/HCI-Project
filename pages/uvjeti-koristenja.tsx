@@ -16,7 +16,7 @@ const TermsOfUse: React.FC<ITermsOfUse> = ({}) => {
             <title>HCL Uvjeti korištenja</title>
         </Head>
         <Header />
-        <div className=' pt-16 pb-20 flex flex-col items-center bg-slate-800'>
+        <div className=' pt-16 pb-20 flex flex-col items-center bg-slate-900'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
                 <div className=' flex flex-col max-w-[750px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
                     <h1>UVJETI KORIŠTENJA</h1>

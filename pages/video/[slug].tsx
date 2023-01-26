@@ -12,7 +12,7 @@ const SpecialPost: React.FC<IVideoPostContainer> = ({ videoPost , videoPosts, po
             <title>{videoPost.title}</title>
         </Head>
         <Header />
-        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-800">
+        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">
             <div className=' flex flex-col items-center'>
                 <VideoPostContent videoPost={videoPost} videoPosts={videoPosts} popularPosts={popularPosts} />
             </div>

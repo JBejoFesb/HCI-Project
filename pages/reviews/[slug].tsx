@@ -13,7 +13,7 @@ const ReviewPost: React.FC<IReviewPostContainer> = ({ reviewPost, videoPosts, po
             <title>{reviewPost.title}</title>
         </Head>
         <Header />
-        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-800">
+        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">
             <div className=' flex flex-col items-center'>
                     <ReviewPostContent reviewPost={reviewPost} videoPosts={videoPosts} popularPosts={popularPosts} />
             </div>

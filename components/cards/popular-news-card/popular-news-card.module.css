@@ -10,7 +10,7 @@
 }
 
 .main {
-    @apply w-[90vw] max-w-4xl md:max-w-md lg:max-w-xl
+    @apply w-[90vw] max-w-4xl md:max-w-md lg:max-w-2xl 2xl:max-w-4xl
 }
 
 .not_main {

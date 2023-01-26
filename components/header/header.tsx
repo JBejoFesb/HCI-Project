@@ -47,19 +47,19 @@ const Header = () => {
                 <div className={`${style.header_right} ${navbarOpen ? "flex" : "hidden"}`}>
                     <ul className={style.nav_links}>
                         <li className={router.pathname == "/news" ? `${style.nav_link}` : "text-slate-400"}>
-                            <Link className="py-4 px-2" href="/news">Vijesti</Link>
+                            <Link className="py-4 lg:px-2" href="/news">Vijesti</Link>
                         </li>
                         <li  className={router.pathname == "/reviews" ? `${style.nav_link}`  : "text-slate-400 "}>
-                            <Link className="py-4 px-2" href="/reviews">Recenzije</Link>
+                            <Link className="py-4 lg:px-2" href="/reviews">Recenzije</Link>
                         </li>
                         <li  className={router.pathname == "/specials" ? `${style.nav_link}`  : "text-slate-400 "}>
-                            <Link className="py-4 px-2" href="/specials">Specijali</Link>
+                            <Link className="py-4 lg:px-2" href="/specials">Specijali</Link>
                         </li>
                         <li  className={router.pathname == "/video" ? `${style.nav_link}`  : "text-slate-400 "}>
-                            <Link className="py-4 px-2" href="/video">Video</Link>
+                            <Link className="py-4 lg:px-2" href="/video">Video</Link>
                         </li>
                         <li  className={router.pathname == "/forum" ? `${style.nav_link}`  : "text-slate-400 "}>
-                            <Link className="py-4 px-2" href="/">Forum</Link>
+                            <Link className="py-4 lg:px-2" href="/">Forum</Link>
                         </li>
                     </ul>
                     <div className="flex flex-col lg:flex-row justify-center space-x-2 xl:space-x-4">

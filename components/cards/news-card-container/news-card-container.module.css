@@ -2,7 +2,7 @@
 @tailwind utilities;
 
 .holder {
-    @apply flex flex-col bg-dirty-white min-w-full
+    @apply flex flex-col bg-slate-900 lg:bg-slate-800/75 min-w-full
     lg:rounded-[32px] lg:min-w-fit lg:h-fit
 }
 
@@ -16,7 +16,7 @@
 }
 
 .button {
-    @apply text-center drop-shadow-md py-6 w-full px-4 text-dirty-white text-xl font-semibold bg-slate-900
+    @apply text-center drop-shadow-md py-6 w-full px-4 text-dirty-white text-xl font-semibold bg-blue-700/90
     lg:p-6 lg:rounded-xl lg:transition-all lg:hover:scale-[100.5%]
 }
 
@@ -25,5 +25,5 @@
 }
 
 .button_off {
-    @apply pointer-events-none bg-gray-300 text-gray-600 lg:hover:scale-100
+    @apply pointer-events-none bg-slate-400/20 text-gray-600 lg:hover:scale-100
 }

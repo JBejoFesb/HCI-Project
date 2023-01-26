@@ -12,7 +12,7 @@ const NewsPost: React.FC<INewsPostContainer> = ({ newsPost, videoPosts, popularP
             <title>{newsPost.title}</title>
         </Head>
         <Header/>
-        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-800">
+        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">
             <div className=' flex flex-col items-center'>
                     <NewsPostContent newsPost={newsPost} videoPosts={videoPosts} popularPosts={popularPosts} />
             </div>

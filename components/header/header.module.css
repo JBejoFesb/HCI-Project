@@ -24,7 +24,9 @@
     lg:justify-between lg:flex-grow lg:items-center 
     lg:space-x-2 xl:space-x-4 lg:space-y-0 
     space-y-4 
-    lg:justify-self-end pl-4 pr-[3vw]
+    lg:justify-self-end lg:pl-4 pr-[3vw] pl-[3vw]
+    lg:py-0
+    pb-20
 }
 
 .logo {
@@ -37,7 +39,7 @@
 
 .nav_links {
     @apply flex flex-col lg:flex-row 
-    lg:space-x-2 xl:space-x-4
+    lg:space-x-1 xl:space-x-4
     space-y-6 lg:space-y-0
     lg:text-2xl
     font-medium

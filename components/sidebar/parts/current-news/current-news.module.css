@@ -7,7 +7,7 @@
 
 .container {
     @apply relative h-28 max-h-fit flex flex-row rounded-xl border-[1px] border-black/25
-    bg-slate-800/50
+    bg-slate-700/50
 }
 
 .image_container {
