@@ -1,20 +1,20 @@
 import React from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import SidebarContainer from "../../components/sidebar/sidebar-container/sidebar-container";
-import { getAllSpecialSlugs, getSpecialPostBySlug } from "../api/ContentfulAPI";
 import SpecialPostContent, { ISpecialPostContainer } from "../../components/post-content/special-post-content/special-post-content";
+import { getSpecialPostBySlug, getAllSpecialSlugs, getNewVideoPosts, getPopularPosts } from "../api/ContentfulAPI";
+import Head from "next/head";
 
-const SpecialPost: React.FC<ISpecialPostContainer> = ({ specialPost }) => {
+const SpecialPost: React.FC<ISpecialPostContainer> = ({ specialPost, videoPosts, popularPosts }) => {
     return (
         <>
+        <Head>
+            <title>{specialPost.title}</title>
+        </Head>
         <Header />
-        <div className="pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
-            <div className=' pt-20 pb-20 flex flex-col items-center'>
-                <div className=' flex flex-row justify-between gap-10 pl-5 pr-5'>
-                    <SpecialPostContent specialPost={specialPost} />
-                    <SidebarContainer data={[]} widgets={true}/>
-                </div>
+        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-800">
+            <div className=' flex flex-col items-center'>
+                <SpecialPostContent specialPost={specialPost} videoPosts={videoPosts} popularPosts={popularPosts} />
             </div>
         </div>
         <Footer />
@@ -40,8 +40,10 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
     const { slug } = context.params;
     const specialPost = await getSpecialPostBySlug(slug);
+    const videoPosts = await getNewVideoPosts();
+    const popularPosts = await getPopularPosts();
 
     return {
-        props: { specialPost: specialPost }
+        props: { specialPost: specialPost , videoPosts: videoPosts, popularPosts: popularPosts }
     }
 }
