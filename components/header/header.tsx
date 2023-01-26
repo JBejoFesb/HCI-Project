@@ -37,7 +37,7 @@ const Header = () => {
                     <Link className={style.logo} href="/"><Image src={HCLlogo.src} alt="HCL logo" fill /></Link>
                     <div className="font-medium text-xl sm:text-2xl flex lg:hidden text-slate-400">{mobileDictionary[router.pathname]}</div>
                     <div>
-                        <button className="group py-4 lg:hidden" onClick={handleToggle}>
+                        <button className="group py-4 lg:hidden" onClick={handleToggle} name="Burger menu">
                             {navbarOpen 
                                 ? <XMarkIcon className="w-10 sm:w-12 font-bold group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/> 
                                 : <Bars3Icon className="w-10 sm:w-12 font-bold group-hover:text-orange-500 group-hover:scale-110 transition-all duration-300 transform-gpu"/>
@@ -72,8 +72,8 @@ const Header = () => {
                             <button><MagnifyingGlassIcon className="h-6 w-6 hover:text-orange-500 hover:scale-110"/></button>
                         </form>
                         <div className={style.user}>
-                            <button className="group px-2 py-4"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
-                            <button className="group px-2 py-4"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button>
+                            <button className="group px-2 py-4" name="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
+                            <button className="group px-2 py-4" name="Korisnik"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button>
                         </div>
                     </div>
                 </div>
