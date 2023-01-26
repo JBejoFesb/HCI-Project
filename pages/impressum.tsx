@@ -17,24 +17,24 @@ const Impressum: React.FC<IImpressum> = ({}) => {
             <title>HCL Impressum</title>
         </Head>
         <Header />
-        <div className=' pt-16 pb-20 flex flex-col items-center bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900'>
+        <div className=' pt-16 pb-20 flex flex-col items-center bg-slate-800'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
-                <div className=' flex flex-col bg-dirty-white rounded-[32px] max-w-[800px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
-                    <h1 className=" font-bold text-3xl leading-6">IMPRESSUM</h1>
-                    <hr className=" border-[1px] border-dark-text"></hr>
-                    <p className=" text-xl text-dark-text leading-7"><b>HCL.hr gaming portal</b> najveći je, najvažniji i najrelevantniji gaming portal u regiji. Naši autori svakodnevno 
+                <div className=' flex flex-col max-w-[750px] pt-5 pr-5 pl-5 pb-5 gap-8'>
+                    <h1>IMPRESSUM</h1>
+                    <hr></hr>
+                    <p><b>HCL.hr gaming portal</b> najveći je, najvažniji i najrelevantniji gaming portal u regiji. Naši autori svakodnevno 
                         vam donose svježe sadržaje iz industrije videoigara, tehnologije i svijeta zabave. Informiramo vas kroz 
                         originalne recenzije, iznosimo stavove u kolumnama i educiramo mlađe naraštaje igrača o povijesti videoigara.
                     </p>
-                    <p className=" text-xl text-dark-text leading-7">Cilj je naše gamerske misije slaviti videoigre i prenositi svoju ljubav prema igranju na sve generacije 
+                    <p >Cilj je naše gamerske misije slaviti videoigre i prenositi svoju ljubav prema igranju na sve generacije 
                         igrača i onih koji će to tek postati, neovisno o platformama i žanrovskim preferencijama. Nastojimo to činiti uz 
                         kvalitetne i unikatne sadržaje u pisanom i video obliku, ostvarujući pritom dvosmjernu komunikaciju sa svojim posjetiteljima, 
                         čitateljima i gledateljima kako bi HCL.hr ostao najveće okupljalište ljubitelja videoigara i popularne kulture.
                     </p>
                     <div className=" flex flex-col gap-2">
-                        <h2 className=" font-bold text-2xl pl-2 border-l-4 border-main-orange">UREDNIŠTVO</h2>
-                        <p className=" text-xl text-dark-text"><b>Glavni urednik:</b> Igor Belan{'\n'}</p>
-                        <p className=" text-xl text-dark-text"><b>Izvršni urednik:</b> Zoran Žalac</p>
+                        <h2>UREDNIŠTVO</h2>
+                            <p ><b>Glavni urednik:</b> Igor Belan{'\n'}</p>
+                            <p ><b>Izvršni urednik:</b> Zoran Žalac</p>
                     </div>
                     <div>
                         <h2>SURADNICI</h2>
@@ -50,24 +50,24 @@ const Impressum: React.FC<IImpressum> = ({}) => {
                         <p>Josip Klanfar</p>
                     </div>
                     <div className=" flex flex-col gap-2">
-                        <h2 className=" font-bold text-2xl pl-2 border-l-4 border-main-orange">ESPORT I EVENTI</h2>
-                        <p className=" text-lg text-dark-text">Miroslav Pervan</p>
-                        <p className=" text-lg text-dark-text">Ivor Ivošević</p>
-                        <p className=" text-lg text-dark-text">Filip Marić</p>
-                        <p className=" text-lg text-dark-text">Matija Čukelj</p>
-                        <p className=" text-lg text-dark-text">Dona Šeruga</p>
-                        <p className=" text-lg text-dark-text">Za više informacija o našim uslugama organizacija esport i 
+                        <h2>ESPORT I EVENTI</h2>
+                        <p>Miroslav Pervan</p>
+                        <p>Ivor Ivošević</p>
+                        <p>Filip Marić</p>
+                        <p>Matija Čukelj</p>
+                        <p>Dona Šeruga</p>
+                        <p>Za više informacija o našim uslugama organizacija esport i 
                                  gaming evenata posjetite našu <Link href="/organizacija-esport-natjecanja-gaming-eventi/">esport & event stranicu</Link>.
                         </p>
                     </div>
                     <div className=" flex flex-col gap-2">
-                        <h2 className=" font-bold text-2xl pl-2 border-l-4 border-main-orange">MARKETING I OGLAŠAVANJE</h2>
-                        <p className=" text-lg text-dark-text">Za više informacija o mogućnostima oglašavanja na HCL portalu provjerite <Link href="/oglasavanje" className=" text-main-orange hover:underline font-semibold">stranicu za oglašavanje</Link>.</p>
+                        <h2 >MARKETING I OGLAŠAVANJE</h2>
+                        <p >Za više informacija o mogućnostima oglašavanja na HCL portalu provjerite <Link href="/oglasavanje" className=" text-main-orange hover:underline font-semibold">stranicu za oglašavanje</Link>.</p>
                     </div>
                     <div className=" flex flex-col gap-2">
-                        <h2 className=" font-bold text-2xl pl-2 border-l-4 border-main-orange">MASKOTA PORTALA</h2>
-                        <div className=" mx-auto">
-                            <p className=" text-center font-semibold text-lg text-dark-text pb-2">Legendarni dabar Đuka</p>
+                        <h2 >MASKOTA PORTALA</h2>
+                        <div className=" mx-auto text-center">
+                            <p>Legendarni dabar Đuka</p>
                             <Image src="/images/dabar-front-total-final-merged-mali2.png" alt="dabar" width="400" height="400" />
                         </div>
                     </div>
