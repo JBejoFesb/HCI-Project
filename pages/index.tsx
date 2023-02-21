@@ -1,7 +1,6 @@
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 import Head from 'next/head'
-import PopularNewsCardContainer from '../components/cards/popular-news-card-container/popular-news-card-container';
 import NewsCardContainer from '../components/cards/news-card-container/news-card-container';
 import SidebarContainer, { ISidebarItem } from '../components/sidebar/sidebar-container/sidebar-container';
 import { getAllPosts, getNewVideoPosts, getPopularPosts, getFeaturedPosts } from './api/ContentfulAPI';
