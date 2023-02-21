@@ -1,7 +1,5 @@
 import React from "react";
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
-import Head from "next/head";
+import Layout from "../layouts/Layout";
 import SidebarContainer from "../components/sidebar/sidebar-container/sidebar-container";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,11 +10,7 @@ export interface IImpressum {
 
 const Impressum: React.FC<IImpressum> = ({}) => {
     return (
-        <>
-        <Head>
-            <title>HCL Impressum</title>
-        </Head>
-        <Header />
+        <Layout title='HCL Impressum'>
         <div className=' pt-16 pb-20 flex flex-col items-center bg-slate-900'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
                 <div className=' flex flex-col max-w-[750px] pt-5 pr-5 pl-5 pb-5 gap-8'>
@@ -75,8 +69,7 @@ const Impressum: React.FC<IImpressum> = ({}) => {
                 <SidebarContainer data={[]} widgets={true}/>
             </div>
         </div>
-        <Footer />
-        </>
+        </Layout>
     );
 }
 

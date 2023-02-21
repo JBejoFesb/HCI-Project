@@ -1,21 +1,20 @@
 import React from "react";
 import style from "./header.module.css";
 import HCLlogo from "../../public/images/icons/HCLtransparent.png";
-import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
-import {BellAlertIcon} from '@heroicons/react/24/outline';
-import {UserIcon} from '@heroicons/react/24/solid';
-import {XMarkIcon} from '@heroicons/react/24/solid';
-import {Bars3Icon} from '@heroicons/react/24/solid';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { BellAlertIcon } from '@heroicons/react/24/outline';
+import { UserIcon } from '@heroicons/react/24/solid';
+import { XMarkIcon } from '@heroicons/react/24/solid';
+import { Bars3Icon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
 const Header = () => {
-
     const [navbarOpen, setNavbarOpen] = useState(false);
 
-    let mobileDictionary: { [name: string]:string}={
+    let mobileDictionary: { [name: string]: string}={
         '/' : 'HCL.hr',
         "/news" : "Vijesti",
         "/reviews" : "Recenzije",

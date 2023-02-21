@@ -4,23 +4,17 @@ import Footer from "../../components/footer/footer";
 import VideoPostContent, { IVideoPostContainer } from "../../components/post-content/video-post-content/video-post-content";
 import { getVideoPostBySlug, getAllVideoSlugs, getNewVideoPosts, getPopularPosts } from "../api/ContentfulAPI";
 import Head from "next/head";
+import Layout from "../../layouts/Layout";
 
 const SpecialPost: React.FC<IVideoPostContainer> = ({ videoPost , videoPosts, popularPosts}) => {
     return (
-        <>
-        <Head>
-            <title>{videoPost.title}</title>
-            <meta name="author" content={videoPost.author} />
-            
-        </Head>
-        <Header />
-        <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">
-            <div className=' flex flex-col items-center'>
-                <VideoPostContent videoPost={videoPost} videoPosts={videoPosts} popularPosts={popularPosts} />
+        <Layout title={videoPost.title}>
+            <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">
+                <div className=' flex flex-col items-center'>
+                    <VideoPostContent videoPost={videoPost} videoPosts={videoPosts} popularPosts={popularPosts} />
+                </div>
             </div>
-        </div>
-        <Footer />
-        </>
+        </Layout>
     );
 }
 
