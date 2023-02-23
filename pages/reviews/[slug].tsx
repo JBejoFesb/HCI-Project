@@ -1,25 +1,18 @@
 import React from "react";
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer";
 import { getAllReviewSlugs, getNewVideoPosts, getPopularPosts, getReviewPostBySlug } from "../api/ContentfulAPI";
 import ReviewPostContent, { IReviewPostContainer } from "../../components/post-content/review-post-content/review-post-content";
-import Head from "next/head";
+import Layout from "../../layouts/Layout";
 
 const ReviewPost: React.FC<IReviewPostContainer> = ({ reviewPost, videoPosts, popularPosts  }) => {
 
     return (
-        <>
-        <Head>
-            <title>{reviewPost.title}</title>
-        </Head>
-        <Header />
+        <Layout title={reviewPost.title}>
         <div className="pt-[72px] md:pt-24 md:pb-4 flex flex-col items-center bg-slate-900">
             <div className=' flex flex-col items-center'>
                     <ReviewPostContent reviewPost={reviewPost} videoPosts={videoPosts} popularPosts={popularPosts} />
             </div>
         </div>
-        <Footer />
-        </>
+        </Layout>
     );
 }
 

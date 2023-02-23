@@ -30,7 +30,7 @@ const SpecialPostContent: React.FC<ISpecialPostContainer> = ({ specialPost, vide
         <div className=' flex flex-row xl:flex-col gap-5 lg:pl-5 lg:pr-5 2xl:pl-10 2xl:pr-10'>
             <div className="max-xl:hidden flex flex-col gap-6 xl:max-w-[1150px]">
                 <h1>{specialPost.title}</h1>
-                <h3><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{specialPost.author}</Link> | <span><TimeSince creation={specialPost.creation} /> | </span><Link href='/news' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[specialPost.type.type]}</Link></h3>
+                <h3><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{specialPost.author}</Link> | <span><TimeSince creation={specialPost.creation} /> | </span><Link href='/specials' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[specialPost.type.type]}</Link></h3>
                 <img className=" w-full max-w-none rounded-xl" src={specialPost.mainImage.url} alt={specialPost.title}/>
             </div>
             <div className=" flex flex-col xl:flex-row gap-5 xl:max-w-[1150px]">

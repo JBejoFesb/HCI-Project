@@ -1,9 +1,7 @@
 import React from "react";
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
-import Head from "next/head";
 import SidebarContainer from "../components/sidebar/sidebar-container/sidebar-container";
 import Link from "next/link";
+import Layout from "../layouts/Layout";
 
 export interface ITermsOfUse {
 
@@ -11,11 +9,7 @@ export interface ITermsOfUse {
 
 const TermsOfUse: React.FC<ITermsOfUse> = ({}) => {
     return (
-        <>
-        <Head>
-            <title>HCL Uvjeti korištenja</title>
-        </Head>
-        <Header />
+        <Layout title='HCL Uvjeti korištenja'>
         <div className=' pt-16 pb-20 flex flex-col items-center bg-slate-900'>
             <div className=' flex flex-row justify-between gap-10 pl-5 pr-5 pt-10'>
                 <div className=' flex flex-col max-w-[750px] text-dark-text pt-5 pr-5 pl-5 pb-5 gap-8'>
@@ -132,8 +126,7 @@ const TermsOfUse: React.FC<ITermsOfUse> = ({}) => {
                 <SidebarContainer data={[]} widgets={true}/>
             </div>
         </div>
-        <Footer />
-        </>
+        </Layout>
     );
 }
 

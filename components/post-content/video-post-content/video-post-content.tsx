@@ -28,7 +28,7 @@ const SpecialPostContent: React.FC<IVideoPostContainer> = ({ videoPost, videoPos
         <div className=' flex flex-row xl:flex-col gap-5 lg:pl-5 lg:pr-5 2xl:pl-10 2xl:pr-10'>
             <div className="max-xl:hidden flex flex-col gap-6 xl:max-w-[1150px]">
                 <h1>{videoPost.title}</h1>
-                <h3><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{videoPost.author}</Link> | <span><TimeSince creation={videoPost.creation} /> | </span><Link href='/news' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[videoPost.type.type]}</Link></h3>
+                <h3><Link href='/impressum' className="text-main-orange hover:underline font-semibold cursor-pointer">{videoPost.author}</Link> | <span><TimeSince creation={videoPost.creation} /> | </span><Link href='/video' className=" text-main-orange cursor-pointer hover:underline font-semibold">{translateTypes[videoPost.type.type]}</Link></h3>
                 <LiteYoutubeEmbed id={videoPost.url} title={videoPost.title} />
             </div>
             <div className=" flex flex-col xl:flex-row gap-5 xl:max-w-[1150px]">
