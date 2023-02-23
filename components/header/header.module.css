@@ -57,30 +57,39 @@
 .search {
     @apply
     bg-slate-700 
-    max-w-md min-w-fit
     px-3 py-2 
     rounded-xl
     flex flex-row
     items-center
-    my-2
     focus-within:outline-none
     focus-within:border-spacing-1
     focus-within:border-2
     focus-within:border-orange-300
+    h-10
+    xl:h-12
+    overflow-hidden
 }
 
 .searchbar {
-    @apply
-    flex-grow
+    @apply  
     bg-slate-700
     focus:outline-none
+    
 }
 
 .user {
     @apply flex flex-row space-x-2 xl:space-x-4
+    p-2
 }
 
 .nav_link {
     @apply text-orange-500 font-bold lg:border-b-2 border-orange-500
+}
+
+.login{
+    @apply
+    bg-blue-700/75 hover:bg-orange-500 active:bg-blue-400
+    text-white px-6 py-2 h-10 xl:h-12 rounded-xl text-center xl:text-xl  
+    hover:scale-110 transition-all duration-300 
 }
 

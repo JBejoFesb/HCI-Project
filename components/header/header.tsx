@@ -10,10 +10,12 @@ import Link from 'next/link';
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Login from "../login-form/login";
 
 const Header = () => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
+    const [loginOpen, setLoginOpen] = useState(false);
 
     let mobileDictionary: { [name: string]:string}={
         '/' : 'HCL.hr',
@@ -27,6 +29,11 @@ const Header = () => {
         setNavbarOpen(prev => !prev);
         setNavbarOpen(!navbarOpen);
     }
+
+    function handleLoginForm() {
+        setLoginOpen(prev => !prev);
+        console.log("nice");
+    };
 
     const router = useRouter();
 
@@ -62,7 +69,7 @@ const Header = () => {
                             <Link className="py-4 lg:px-2" href="/">Forum</Link>
                         </li>
                     </ul>
-                    <div className="flex flex-col lg:flex-row justify-center space-x-2 xl:space-x-4">
+                    <div className="flex flex-col lg:flex-row justify-center space-x-2 xl:space-x-4 lg:items-center">
                         <form className={style.search}>
                             <input 
                                 type="text" 
@@ -72,12 +79,15 @@ const Header = () => {
                             <button aria-label="Pretraži"><MagnifyingGlassIcon className="h-6 w-6 hover:text-orange-500 hover:scale-110"/></button>
                         </form>
                         <div className={style.user}>
-                            <button className="group px-2 py-4" aria-label="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
-                            <button className="group px-2 py-4" aria-label="Korisnik"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button>
+                            <button aria-label="Prijavi se" onClick={handleLoginForm} className={style.login}>Prijavi se</button>
+
+                            {/* <button className="group px-2 py-4" aria-label="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
+                            <button className="group px-2 py-4" aria-label="Korisnik"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button> */}
                         </div>
                     </div>
                 </div>
             </div>
+            {loginOpen && <Login onClose={handleLoginForm} />}
         </>
     );
 }
