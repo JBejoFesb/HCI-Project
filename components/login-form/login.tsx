@@ -1,12 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import logBoxSlice, { change, selectActive } from "../../slices/logBoxSlice";
 import axios from "axios";
 import { SHA256 } from "crypto-js";
 import Link from "next/link";
 
-const Login = () => {
+export interface IResponseData {
+    message: string,
+    success: boolean
+}
+
+export interface ILogin {
+
+}
+
+const Login: React.FC<ILogin> = () => {
 
     const dispatch = useDispatch();
 
@@ -22,7 +31,11 @@ const Login = () => {
                 passwordHash: SHA256(password).toString()
             }
         ).then(response => {
-            console.log(response)
+            const data: IResponseData = response.data;
+            if (data.success) {
+                localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("username", username);
+            }
         }).catch(error => console.log(error))
         // kad uspjesno zavrsi poslat onClose opet
     }
