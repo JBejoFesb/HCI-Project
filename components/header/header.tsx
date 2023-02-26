@@ -17,7 +17,6 @@ import logBoxSlice, { change, selectActive } from "../../slices/logBoxSlice";
 import { selectActiveReg } from "../../slices/regBoxSlice";
 
 const Header = () => {
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [navbarOpen, setNavbarOpen] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
@@ -28,6 +27,15 @@ const Header = () => {
     const regOpen = useSelector(selectActiveReg);
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (localStorage.getItem("isLoggedIn") == "true") 
+            setIsLoggedIn(true);
+        
+        const tempUser = localStorage.getItem("username");     
+        if (tempUser)
+            setUsername(tempUser);
+    }, [])
 
     let mobileDictionary: { [name: string]: string}={
         '/' : 'HCL.hr',
@@ -122,7 +130,7 @@ const Header = () => {
                                             </div>
                                         }
                                     </div>
-                                </div>:
+                                </div> :
                                 <div className={style.user}>
                                     <button aria-label="Prijavi se" onClick={() => dispatch(change())} className={style.login}>Prijavi se</button>
                                 </div>
