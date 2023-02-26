@@ -9,7 +9,7 @@ import { Bars3Icon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import Login from "../login-form/login";
 import Register from "../login-form/register";
 import { useSelector, useDispatch } from 'react-redux'
@@ -17,6 +17,11 @@ import logBoxSlice, { change, selectActive } from "../../slices/logBoxSlice";
 import { selectActiveReg } from "../../slices/regBoxSlice";
 
 const Header = () => {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [navbarOpen, setNavbarOpen] = useState(false);
+    const [profileOpen, setProfileOpen] = useState(false);
+    const [username, setUsername] = useState("");
 
     const loginOpen = useSelector(selectActive);
 
@@ -32,14 +37,35 @@ const Header = () => {
         "/video" : "Video",
     };
 
-    const [navbarOpen, setNavbarOpen] = useState(false);
-
     function handleToggle() {
         setNavbarOpen(prev => !prev);
         setNavbarOpen(!navbarOpen);
     }
 
+    function handleLogOff(){
+        localStorage.setItem("isLoggedIn", "false");
+        localStorage.setItem("username", "");
+        window.dispatchEvent(new Event("storage"));
+    }
+
     const router = useRouter();
+
+    useEffect(() => {
+        const handleStorage = () => {
+            const value:any = localStorage.getItem("isLoggedIn");
+            const username:any = localStorage.getItem("username");
+            if(value=="true"){
+                setUsername(username);
+                setIsLoggedIn(true);
+            }
+            else
+                setIsLoggedIn(false);
+        }
+        window.addEventListener('storage', handleStorage)
+        return () => window.removeEventListener('storage', handleStorage)
+    }, [])
+
+    console.log(isLoggedIn);
 
     return(
         <>
@@ -82,11 +108,26 @@ const Header = () => {
                             />
                             <button aria-label="Pretraži"><MagnifyingGlassIcon className="h-6 w-6 hover:text-orange-500 hover:scale-110"/></button>
                         </form>
-                        <div className={style.user}>
-                            <button aria-label="Prijavi se" onClick={() => dispatch(change())} className={style.login}>Prijavi se</button>
-
-                            {/* <button className="group px-2 py-4" aria-label="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
-                            <button className="group px-2 py-4" aria-label="Korisnik"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button> */}
+                        <div>
+                            { 
+                                isLoggedIn ?
+                                <div className={style.user}>
+                                    <button className="group px-2 py-4" aria-label="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
+                                    <div className="flex flex-col h-fit w-full max-w-xs">
+                                        <button onMouseEnter={()=>setProfileOpen(true)} onMouseLeave={()=>setProfileOpen(false)} className="group px-2 py-4" aria-label="Korisnik"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button>
+                                        {profileOpen&& 
+                                            <div className="h-fit w-fit z-20" onMouseEnter={()=>setProfileOpen(true)} onMouseLeave={()=>setProfileOpen(false)}>
+                                                <p>{username}</p>
+                                                <button aria-label="Odjavi se" onClick={handleLogOff} className={style.login}>Odjavi se</button>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>:
+                                <div className={style.user}>
+                                    <button aria-label="Prijavi se" onClick={() => dispatch(change())} className={style.login}>Prijavi se</button>
+                                </div>
+                                
+                            }
                         </div>
                     </div>
                 </div>

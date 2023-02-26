@@ -21,6 +21,9 @@ const Login: React.FC<ILogin> = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loginDone, setLoginDone] = useState(false);
+    const [loginMsg, setLoginMsg] = useState('');
+    
 
     const handleSubmit = () => {
         event?.preventDefault();
@@ -32,12 +35,21 @@ const Login: React.FC<ILogin> = () => {
             }
         ).then(response => {
             const data: IResponseData = response.data;
+            setLoginMsg(data.message);
             if (data.success) {
+                setLoginDone(true);
                 localStorage.setItem("isLoggedIn", "true");
                 localStorage.setItem("username", username);
+                window.dispatchEvent(new Event("storage"));
+                setTimeout(()=>{
+                    dispatch(change());
+                },1000);
             }
+            else{
+                setLoginDone(true);
+            }
+
         }).catch(error => console.log(error))
-        // kad uspjesno zavrsi poslat onClose opet
     }
 
     const handleRegister = () => {
@@ -51,11 +63,12 @@ const Login: React.FC<ILogin> = () => {
                 <p className="text-2xl font-bold">Prijavite se u svoj racun</p>
                 <form onSubmit={handleSubmit} className="flex flex-col text-lg">
                     <label className="block mb-1 font-medium text-white">Korisnicko ime:</label>
-                    <input className="mb-4 border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
+                    <input className="mb-4 border sm:text-sm rounded-lg block w-full p-3 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
                         type="text" placeholder="Ime" value={username} onChange={(e) => setUsername(e.target.value)} />
                     <label className="block mb-1 font-medium text-white">Lozinka:</label>
-                    <input className="mb-6 border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
+                    <input className="mb-4 border sm:text-sm rounded-lg block w-full p-3 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
                         type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <p className="text-main-orange font-medium mb-4">{loginDone? loginMsg : ""}</p>
                     <button type="submit" className="bg-blue-700/75 px-6 py-3 rounded-lg text-lg font-semibold text-white mb-2 hover:bg-main-orange transition-colors duration-300">Prijavi se</button>
                     <p className="text-md font-light text-gray-400">
                       Nemas racun? <span onClick={handleRegister} className="font-medium hover:underline hover:cursor-pointer text-main-orange"> Izradi ga</span>

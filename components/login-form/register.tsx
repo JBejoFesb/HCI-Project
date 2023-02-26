@@ -47,10 +47,9 @@ const Register = () => {
                     <label className="block mb-1 font-medium text-white">Lozinka:</label>
                     <input className="mb-4 border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
                         type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <label className="block mb-1 font-medium text-white">Ponovi lozinku:</label>
+                    <label className="block mb-1 font-medium text-white">Ponovi lozinku: {(password != password2) ? " Lozinke nisu jednake!" : " "}</label>
                     <input className="mb-6 border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
                         type="password" placeholder="••••••••" value={password2} onChange={(e) => setPassword2(e.target.value)}/>
-                    {(password != password2)&&<label className="block mb-6 font-medium text-white">Lozinke nisu jednake!</label> }
                     <button type="submit" className="bg-blue-700/75 px-6 py-3 rounded-lg text-lg font-semibold text-white mb-2 hover:bg-main-orange transition-colors duration-500">Registriraj se</button>
                     <p className="text-md font-light text-gray-400">
                       Vec imas racun? <span onClick={handleRegister} className="font-medium hover:cursor-pointer hover:underline text-main-orange"> Prijavi se</span>
