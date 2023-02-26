@@ -78,8 +78,8 @@
 }
 
 .user {
-    @apply flex flex-row space-x-2 xl:space-x-4
-    p-2
+    @apply flex flex-row lg:space-x-2 xl:space-x-4
+    lg:px-2 py-2
 }
 
 .nav_link {
@@ -88,8 +88,9 @@
 
 .login{
     @apply
-    bg-blue-700/75 hover:bg-orange-500 active:bg-blue-400
+    my-2
+    bg-blue-700/75 hover:bg-main-orange
     text-white px-6 py-2 h-10 xl:h-12 rounded-xl text-center xl:text-xl  
-    hover:scale-110 transition-all duration-300 
+    hover:scale-110 transition-all duration-300 w-full lg:w-auto
 }
 

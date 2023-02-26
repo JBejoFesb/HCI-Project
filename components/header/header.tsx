@@ -20,8 +20,6 @@ const Header = () => {
 
     const dispatch = useDispatch();
 
-    const [navbarOpen, setNavbarOpen] = useState(false);
-
     let mobileDictionary: { [name: string]: string}={
         '/' : 'HCL.hr',
         "/news" : "Vijesti",
@@ -29,6 +27,8 @@ const Header = () => {
         "/specials" : "Specijali",
         "/video" : "Video",
     };
+
+    const [navbarOpen, setNavbarOpen] = useState(false);
 
     function handleToggle() {
         setNavbarOpen(prev => !prev);
@@ -69,7 +69,7 @@ const Header = () => {
                             <Link className="py-4 lg:px-2" href="/">Forum</Link>
                         </li>
                     </ul>
-                    <div className="flex flex-col lg:flex-row justify-center space-x-2 xl:space-x-4 lg:items-center">
+                    <div className="flex flex-col lg:flex-row justify-center lg:space-x-2 xl:space-x-4 lg:items-center">
                         <form className={style.search}>
                             <input 
                                 type="text" 
