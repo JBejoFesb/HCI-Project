@@ -1,17 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { IComment } from "../comment/comment";
+import Comment from "../comment/comment";
 
 export interface ICommentBox {
     slug: string
 }
 
-const CommentBox: React.FC<ICommentBox> = (slug) => {
-    useEffect(() => {
+export interface ICommentResponse {
+    data: ICommentResponseArray
+}
 
-    }, [])
+export interface ICommentResponseArray {
+    array: IComment[]
+}
+
+const CommentBox: React.FC<ICommentBox> = ({ slug }) => {
+    const [commentArray, setCommentArray] = useState<ICommentResponseArray>({array: []});
+
+    useEffect(() => {
+        axios.get(
+            `http://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com:3000/comments/load/?slug=${slug}`
+        ).then(response => {
+            setCommentArray({array: response.data.data});
+        }).catch(error => console.log(error))
+    }, [slug]);
 
     return (
         <div className="bg-slate-800/75 h-[500px] rounded-[32px]">
-            <Comment slug={slug} />
+            <div>
+                {
+                    !commentArray.array.length && 
+                    <div>
+                        Nema komentara? Budite prvi koji ce ostaviti komentar!
+                    </div>
+                }
+                {
+                    commentArray.array.map((comment) => { 
+                        return (
+                        <Comment username={comment.username} content={comment.content} key={`${comment.username}-comment-${slug}`} />
+                        )}
+                    )
+                }
+            </div>
             <div>
                 <form className="p-5">
                 <div className="mb-6">
