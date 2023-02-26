@@ -11,12 +11,16 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Login from "../login-form/login";
+import Register from "../login-form/register";
 import { useSelector, useDispatch } from 'react-redux'
 import logBoxSlice, { change, selectActive } from "../../slices/logBoxSlice";
+import { selectActiveReg } from "../../slices/regBoxSlice";
 
 const Header = () => {
 
     const loginOpen = useSelector(selectActive);
+
+    const regOpen = useSelector(selectActiveReg);
 
     const dispatch = useDispatch();
 
@@ -88,6 +92,7 @@ const Header = () => {
                 </div>
             </div>
             {loginOpen && <Login/>}
+            {regOpen && <Register/>}
         </>
     );
 }
