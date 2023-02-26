@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import logBoxSlice from './slices/logBoxSlice'
+import regBoxSlice from './slices/regBoxSlice'
 
 export const store = configureStore({
   reducer: {
     logBox: logBoxSlice,
+    regBox: regBoxSlice,
   },
 })
 
