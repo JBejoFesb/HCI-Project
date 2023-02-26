@@ -15,11 +15,13 @@ const Login = () => {
 
     const handleSubmit = () => {
         event?.preventDefault();
-        console.log("TEST");
-        axios
-        .get(
-            `https://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com/comments/load`
-        ).then( response => {
+        axios.post(
+            `http://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com:3000/users/login`,
+            {
+                username: username,
+                passwordHash: SHA256(password).toString()
+            }
+        ).then(response => {
             console.log(response)
         }).catch(error => console.log(error))
         // kad uspjesno zavrsi poslat onClose opet
