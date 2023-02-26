@@ -73,8 +73,6 @@ const Header = () => {
         return () => window.removeEventListener('storage', handleStorage)
     }, [])
 
-    console.log(isLoggedIn);
-
     return(
         <>
             <div className={style.header_container}>
