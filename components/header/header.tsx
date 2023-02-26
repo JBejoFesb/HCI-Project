@@ -11,10 +11,16 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Login from "../login-form/login";
+import { useSelector, useDispatch } from 'react-redux'
+import logBoxSlice, { change, selectActive } from "../../slices/logBoxSlice";
 
 const Header = () => {
+
+    const loginOpen = useSelector(selectActive);
+
+    const dispatch = useDispatch();
+
     const [navbarOpen, setNavbarOpen] = useState(false);
-    const [loginOpen, setLoginOpen] = useState(false);
 
     let mobileDictionary: { [name: string]: string}={
         '/' : 'HCL.hr',
@@ -28,11 +34,6 @@ const Header = () => {
         setNavbarOpen(prev => !prev);
         setNavbarOpen(!navbarOpen);
     }
-
-    function handleLoginForm() {
-        setLoginOpen(prev => !prev);
-        console.log("nice");
-    };
 
     const router = useRouter();
 
@@ -78,7 +79,7 @@ const Header = () => {
                             <button aria-label="Pretraži"><MagnifyingGlassIcon className="h-6 w-6 hover:text-orange-500 hover:scale-110"/></button>
                         </form>
                         <div className={style.user}>
-                            <button aria-label="Prijavi se" onClick={handleLoginForm} className={style.login}>Prijavi se</button>
+                            <button aria-label="Prijavi se" onClick={() => dispatch(change())} className={style.login}>Prijavi se</button>
 
                             {/* <button className="group px-2 py-4" aria-label="Notifikacije"><BellAlertIcon className="h-8 w-8 group-hover:text-orange-500 group-hover:scale-110" /></button>
                             <button className="group px-2 py-4" aria-label="Korisnik"><UserIcon className="h-8 w-8 border-white border-2 rounded-full group-hover:text-orange-500 group-hover:scale-110 group-hover:border-orange-500" /></button> */}
@@ -86,7 +87,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            {loginOpen && <Login onClose={handleLoginForm} />}
+            {loginOpen && <Login/>}
         </>
     );
 }
