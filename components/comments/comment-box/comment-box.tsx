@@ -23,7 +23,7 @@ const CommentBox: React.FC<ICommentBox> = ({ slug }) => {
 
     const commentLoader = (slug: string) => {
         axios.get(
-            `http://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com:3000/comments/load/?slug=${slug}`
+            `https://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com/comments/load/?slug=${slug}`
         ).then(response => {
             setCommentArray({array: response.data.data});
         }).catch(error => console.log(error));
@@ -57,7 +57,7 @@ const CommentBox: React.FC<ICommentBox> = ({ slug }) => {
         console.log(newComment);
 
         axios.post(
-            `http://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com:3000/comments/create`,
+            `https://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com/comments/create`,
             {
                 slug: slug,
                 content: newComment,

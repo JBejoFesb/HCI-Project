@@ -24,7 +24,7 @@ const Register = () => {
     const handleSubmit = () => {
         event?.preventDefault();
         axios.post(
-            `http://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com:3000/users/register`,
+            `https://ec2-3-70-46-221.eu-central-1.compute.amazonaws.com/users/register`,
             {
                 username: username,
                 passwordHash: SHA256(password).toString()
