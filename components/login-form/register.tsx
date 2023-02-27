@@ -32,10 +32,12 @@ const Register = () => {
         ).then(response => {
             const data: IRegisterResponseData = response.data;
             if (data.success)
+                setTimeout(()=>{
+                    handleRegister();
+                },1000);
                 setRegistrationMessage(data.message);
             
         }).catch(error => console.log(error))
-        // kad uspjesno zavrsi poslat onClose opet
     }
 
     const handleRegister = () => {
@@ -61,7 +63,7 @@ const Register = () => {
                     <input className="mb-6 border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400/25 text-white focus:ring-blue-500 focus:border-blue-500"
                         type="password" placeholder="••••••••" value={password2} onChange={(e) => setPassword2(e.target.value)}/>
                     {(password != password2)&&<label className="block mb-6 font-medium text-white">Lozinke nisu jednake!</label> }
-                    <label>{registrationMessage}</label>
+                    <label className="mb-4">{registrationMessage}</label>
                     <button type="submit" className={`${(password != password2) || password == '' || password2 == '' ? 'bg-blue-400/50 pointer-events-none' : 'bg-blue-700/75'} px-6 py-3 rounded-lg text-lg font-semibold text-white mb-2 hover:bg-main-orange transition-colors duration-500`}>Registriraj se</button>
                     <p className="text-md font-light text-gray-400">
                       Vec imas racun? <span onClick={handleRegister} className="font-medium hover:cursor-pointer hover:underline text-main-orange"> Prijavi se</span>
